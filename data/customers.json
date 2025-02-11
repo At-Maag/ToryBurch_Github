@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "Alice Smith", "bags": ["Romy Bucket Bag"] },
+    { "id": 2, "name": "Bob Johnson", "bags": ["Gray Romy Crossbody", "Small Romy Crossbody"] },
+    { "id": 3, "name": "Charlie Brown", "bags": ["Tan Romy Bucket Bag"] },
+    { "id": 4, "name": "David Miller", "bags": ["Romy Bucket Bag", "Gray Romy Crossbody"] },
+    { "id": 5, "name": "Emma Wilson", "bags": ["Small White Romy Crossbody"] }
+  ]
+  

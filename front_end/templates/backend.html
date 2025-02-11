@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Customer Lookup</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Customer Lookup</h1>
+        <a href="/">Back to Home</a>
+    </div>
+    <form id="lookup-form">
+        <label for="name">Lookup Customer by Name or ID</label><br>
+        <input list="suggestions" id="name" name="name" placeholder="Enter customer name or ID" autocomplete="off">
+        <datalist id="suggestions"></datalist>
+        <button type="submit">Search</button>
+    </form>
+    <div id="result"></div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
