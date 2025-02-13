@@ -1,0 +1,3635 @@
+[
+    {
+        "customer_id":"821138",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-05-16",
+        "quantity":5
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-05-04",
+        "quantity":2
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-03-12",
+        "quantity":5
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-11-03",
+        "quantity":2
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-01-16",
+        "quantity":5
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-08-17",
+        "quantity":3
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-10-08",
+        "quantity":4
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-08-05",
+        "quantity":2
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-09-21",
+        "quantity":3
+    },
+    {
+        "customer_id":"821138",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-01-01",
+        "quantity":2
+    },
+    {
+        "customer_id":"595594",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-08-25",
+        "quantity":3
+    },
+    {
+        "customer_id":"641076",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-04-02",
+        "quantity":1
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-12-02",
+        "quantity":2
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-11-27",
+        "quantity":3
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-04-08",
+        "quantity":2
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-02-22",
+        "quantity":3
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-08-25",
+        "quantity":2
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-04-15",
+        "quantity":1
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-04-25",
+        "quantity":5
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-15",
+        "quantity":3
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-10-22",
+        "quantity":1
+    },
+    {
+        "customer_id":"395060",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-05-09",
+        "quantity":2
+    },
+    {
+        "customer_id":"361477",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-10-12",
+        "quantity":1
+    },
+    {
+        "customer_id":"361477",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-26",
+        "quantity":4
+    },
+    {
+        "customer_id":"361477",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-12-18",
+        "quantity":4
+    },
+    {
+        "customer_id":"361477",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-02-27",
+        "quantity":2
+    },
+    {
+        "customer_id":"361477",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-04-08",
+        "quantity":2
+    },
+    {
+        "customer_id":"361477",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-04-16",
+        "quantity":2
+    },
+    {
+        "customer_id":"924304",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-02-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"924304",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-10-16",
+        "quantity":4
+    },
+    {
+        "customer_id":"924304",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-10-17",
+        "quantity":3
+    },
+    {
+        "customer_id":"924304",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-02-29",
+        "quantity":4
+    },
+    {
+        "customer_id":"924304",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-04-08",
+        "quantity":2
+    },
+    {
+        "customer_id":"924304",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-09-23",
+        "quantity":3
+    },
+    {
+        "customer_id":"796764",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-05-02",
+        "quantity":5
+    },
+    {
+        "customer_id":"796764",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-02-28",
+        "quantity":3
+    },
+    {
+        "customer_id":"796764",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-07-29",
+        "quantity":1
+    },
+    {
+        "customer_id":"796764",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-01-04",
+        "quantity":4
+    },
+    {
+        "customer_id":"796764",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-04-03",
+        "quantity":1
+    },
+    {
+        "customer_id":"796764",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-05-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"790828",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-04-29",
+        "quantity":3
+    },
+    {
+        "customer_id":"790828",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-19",
+        "quantity":1
+    },
+    {
+        "customer_id":"790828",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-05-02",
+        "quantity":1
+    },
+    {
+        "customer_id":"274982",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-05-25",
+        "quantity":5
+    },
+    {
+        "customer_id":"274982",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-09-26",
+        "quantity":3
+    },
+    {
+        "customer_id":"274982",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-10-15",
+        "quantity":3
+    },
+    {
+        "customer_id":"274982",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-02-13",
+        "quantity":3
+    },
+    {
+        "customer_id":"274982",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-01-19",
+        "quantity":5
+    },
+    {
+        "customer_id":"274982",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-10-09",
+        "quantity":2
+    },
+    {
+        "customer_id":"820935",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-10-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"820935",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-05-19",
+        "quantity":2
+    },
+    {
+        "customer_id":"820935",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-01-27",
+        "quantity":1
+    },
+    {
+        "customer_id":"820935",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-01-03",
+        "quantity":3
+    },
+    {
+        "customer_id":"820935",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-07-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-07-26",
+        "quantity":1
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-06-16",
+        "quantity":2
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-22",
+        "quantity":1
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-05-24",
+        "quantity":1
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-09-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-10-12",
+        "quantity":4
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-11-21",
+        "quantity":5
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-03-30",
+        "quantity":2
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-04-15",
+        "quantity":3
+    },
+    {
+        "customer_id":"912711",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-03-05",
+        "quantity":2
+    },
+    {
+        "customer_id":"564762",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-05-31",
+        "quantity":3
+    },
+    {
+        "customer_id":"564762",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-08-19",
+        "quantity":5
+    },
+    {
+        "customer_id":"306274",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-01-30",
+        "quantity":5
+    },
+    {
+        "customer_id":"306274",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-17",
+        "quantity":5
+    },
+    {
+        "customer_id":"306274",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-11-09",
+        "quantity":2
+    },
+    {
+        "customer_id":"306274",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-10-03",
+        "quantity":3
+    },
+    {
+        "customer_id":"306274",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-12-22",
+        "quantity":1
+    },
+    {
+        "customer_id":"349526",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-11-21",
+        "quantity":4
+    },
+    {
+        "customer_id":"349526",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-02-15",
+        "quantity":5
+    },
+    {
+        "customer_id":"349526",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-12-18",
+        "quantity":3
+    },
+    {
+        "customer_id":"349526",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-21",
+        "quantity":2
+    },
+    {
+        "customer_id":"349526",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-01-14",
+        "quantity":1
+    },
+    {
+        "customer_id":"349526",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-11-09",
+        "quantity":1
+    },
+    {
+        "customer_id":"349526",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-07-21",
+        "quantity":2
+    },
+    {
+        "customer_id":"982177",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-12-28",
+        "quantity":4
+    },
+    {
+        "customer_id":"982177",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-06-20",
+        "quantity":4
+    },
+    {
+        "customer_id":"982177",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-04-11",
+        "quantity":1
+    },
+    {
+        "customer_id":"982177",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-01-02",
+        "quantity":5
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-12-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-09-27",
+        "quantity":2
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-13",
+        "quantity":2
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-03-12",
+        "quantity":3
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-01-25",
+        "quantity":5
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-08-09",
+        "quantity":2
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-03-18",
+        "quantity":1
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-03-31",
+        "quantity":3
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-06-11",
+        "quantity":1
+    },
+    {
+        "customer_id":"241997",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-05-01",
+        "quantity":2
+    },
+    {
+        "customer_id":"316011",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-10-24",
+        "quantity":1
+    },
+    {
+        "customer_id":"316011",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-09-30",
+        "quantity":3
+    },
+    {
+        "customer_id":"316011",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-11-01",
+        "quantity":5
+    },
+    {
+        "customer_id":"813091",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-05-18",
+        "quantity":5
+    },
+    {
+        "customer_id":"515209",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-09-26",
+        "quantity":4
+    },
+    {
+        "customer_id":"515209",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-06-22",
+        "quantity":4
+    },
+    {
+        "customer_id":"515209",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-05-28",
+        "quantity":2
+    },
+    {
+        "customer_id":"515209",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-08-04",
+        "quantity":2
+    },
+    {
+        "customer_id":"515209",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-02-23",
+        "quantity":1
+    },
+    {
+        "customer_id":"442170",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-10-21",
+        "quantity":3
+    },
+    {
+        "customer_id":"442170",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-20",
+        "quantity":3
+    },
+    {
+        "customer_id":"442170",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-08-15",
+        "quantity":1
+    },
+    {
+        "customer_id":"175990",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-02-14",
+        "quantity":1
+    },
+    {
+        "customer_id":"175990",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-08-16",
+        "quantity":5
+    },
+    {
+        "customer_id":"175990",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-02-17",
+        "quantity":4
+    },
+    {
+        "customer_id":"175990",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-09-20",
+        "quantity":5
+    },
+    {
+        "customer_id":"692768",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-06-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"692768",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-05-10",
+        "quantity":5
+    },
+    {
+        "customer_id":"692768",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-01-02",
+        "quantity":2
+    },
+    {
+        "customer_id":"692768",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-12-23",
+        "quantity":4
+    },
+    {
+        "customer_id":"840736",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-04-11",
+        "quantity":3
+    },
+    {
+        "customer_id":"840736",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-01-10",
+        "quantity":4
+    },
+    {
+        "customer_id":"840736",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-02-02",
+        "quantity":3
+    },
+    {
+        "customer_id":"840736",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-11-01",
+        "quantity":5
+    },
+    {
+        "customer_id":"166866",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-15",
+        "quantity":1
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-01-11",
+        "quantity":2
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-10-31",
+        "quantity":3
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-12-12",
+        "quantity":2
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-26",
+        "quantity":4
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-06-22",
+        "quantity":4
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-03-27",
+        "quantity":2
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-06-09",
+        "quantity":2
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-12-23",
+        "quantity":2
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-02-19",
+        "quantity":3
+    },
+    {
+        "customer_id":"643649",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-04-14",
+        "quantity":3
+    },
+    {
+        "customer_id":"160275",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-05-25",
+        "quantity":4
+    },
+    {
+        "customer_id":"160275",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-07-25",
+        "quantity":4
+    },
+    {
+        "customer_id":"160275",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-04",
+        "quantity":3
+    },
+    {
+        "customer_id":"160275",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-02-13",
+        "quantity":3
+    },
+    {
+        "customer_id":"160275",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-10-04",
+        "quantity":4
+    },
+    {
+        "customer_id":"882337",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-06-29",
+        "quantity":3
+    },
+    {
+        "customer_id":"882337",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-09-05",
+        "quantity":1
+    },
+    {
+        "customer_id":"882337",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-01-06",
+        "quantity":1
+    },
+    {
+        "customer_id":"882337",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-05-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"882337",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-02-28",
+        "quantity":1
+    },
+    {
+        "customer_id":"902389",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-01-05",
+        "quantity":2
+    },
+    {
+        "customer_id":"902389",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-03-02",
+        "quantity":1
+    },
+    {
+        "customer_id":"902389",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-01-26",
+        "quantity":3
+    },
+    {
+        "customer_id":"544763",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-05-16",
+        "quantity":3
+    },
+    {
+        "customer_id":"544763",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-10-21",
+        "quantity":1
+    },
+    {
+        "customer_id":"544763",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-02-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"544763",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-06-16",
+        "quantity":5
+    },
+    {
+        "customer_id":"544763",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-02-29",
+        "quantity":1
+    },
+    {
+        "customer_id":"320321",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-08-01",
+        "quantity":4
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-07-15",
+        "quantity":1
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-03-06",
+        "quantity":1
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-04-07",
+        "quantity":5
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-04-26",
+        "quantity":2
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-02-14",
+        "quantity":1
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-08-26",
+        "quantity":1
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-25",
+        "quantity":2
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-11-24",
+        "quantity":4
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-04-14",
+        "quantity":5
+    },
+    {
+        "customer_id":"369946",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-02-24",
+        "quantity":1
+    },
+    {
+        "customer_id":"703877",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-08-02",
+        "quantity":2
+    },
+    {
+        "customer_id":"703877",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-01-23",
+        "quantity":5
+    },
+    {
+        "customer_id":"703877",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-03-14",
+        "quantity":3
+    },
+    {
+        "customer_id":"703877",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-01-19",
+        "quantity":1
+    },
+    {
+        "customer_id":"703877",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-02-28",
+        "quantity":5
+    },
+    {
+        "customer_id":"703877",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-09-02",
+        "quantity":4
+    },
+    {
+        "customer_id":"666601",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-07-30",
+        "quantity":5
+    },
+    {
+        "customer_id":"666601",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-12-19",
+        "quantity":5
+    },
+    {
+        "customer_id":"666601",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-01-18",
+        "quantity":2
+    },
+    {
+        "customer_id":"666601",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-07-05",
+        "quantity":4
+    },
+    {
+        "customer_id":"666601",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-07-11",
+        "quantity":3
+    },
+    {
+        "customer_id":"666601",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-11-13",
+        "quantity":5
+    },
+    {
+        "customer_id":"209448",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-10-12",
+        "quantity":4
+    },
+    {
+        "customer_id":"209448",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-06-30",
+        "quantity":1
+    },
+    {
+        "customer_id":"209448",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-11-16",
+        "quantity":1
+    },
+    {
+        "customer_id":"209448",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-09-30",
+        "quantity":2
+    },
+    {
+        "customer_id":"209448",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-07-12",
+        "quantity":4
+    },
+    {
+        "customer_id":"209448",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-03-26",
+        "quantity":1
+    },
+    {
+        "customer_id":"776985",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-11-16",
+        "quantity":1
+    },
+    {
+        "customer_id":"776985",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-04-21",
+        "quantity":5
+    },
+    {
+        "customer_id":"707941",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-02-27",
+        "quantity":5
+    },
+    {
+        "customer_id":"707941",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-12-05",
+        "quantity":4
+    },
+    {
+        "customer_id":"707941",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-12-30",
+        "quantity":5
+    },
+    {
+        "customer_id":"707941",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-09-19",
+        "quantity":1
+    },
+    {
+        "customer_id":"182647",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-06-19",
+        "quantity":1
+    },
+    {
+        "customer_id":"182647",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-07-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"182647",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-08-15",
+        "quantity":1
+    },
+    {
+        "customer_id":"182647",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-06-21",
+        "quantity":4
+    },
+    {
+        "customer_id":"428777",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-02-20",
+        "quantity":5
+    },
+    {
+        "customer_id":"428777",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-06-27",
+        "quantity":1
+    },
+    {
+        "customer_id":"428777",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-04-07",
+        "quantity":5
+    },
+    {
+        "customer_id":"428777",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-10-17",
+        "quantity":3
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-03-11",
+        "quantity":5
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-10-01",
+        "quantity":1
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-08-12",
+        "quantity":1
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-10-08",
+        "quantity":3
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-01-31",
+        "quantity":5
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-03-02",
+        "quantity":2
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-08-05",
+        "quantity":1
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-06-03",
+        "quantity":3
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-06-08",
+        "quantity":2
+    },
+    {
+        "customer_id":"688880",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-09-21",
+        "quantity":3
+    },
+    {
+        "customer_id":"145942",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-11-25",
+        "quantity":5
+    },
+    {
+        "customer_id":"145942",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-08-17",
+        "quantity":2
+    },
+    {
+        "customer_id":"145942",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-09-29",
+        "quantity":5
+    },
+    {
+        "customer_id":"145942",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-29",
+        "quantity":1
+    },
+    {
+        "customer_id":"145942",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-11-04",
+        "quantity":2
+    },
+    {
+        "customer_id":"145942",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-10-01",
+        "quantity":3
+    },
+    {
+        "customer_id":"145942",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-09-08",
+        "quantity":3
+    },
+    {
+        "customer_id":"145942",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-06-13",
+        "quantity":4
+    },
+    {
+        "customer_id":"673431",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-02-17",
+        "quantity":4
+    },
+    {
+        "customer_id":"953274",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-05-06",
+        "quantity":5
+    },
+    {
+        "customer_id":"260586",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-02-10",
+        "quantity":4
+    },
+    {
+        "customer_id":"260586",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-07-29",
+        "quantity":5
+    },
+    {
+        "customer_id":"260586",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-15",
+        "quantity":1
+    },
+    {
+        "customer_id":"260586",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-30",
+        "quantity":4
+    },
+    {
+        "customer_id":"260586",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-12-21",
+        "quantity":5
+    },
+    {
+        "customer_id":"260586",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-12-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"260586",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-10-27",
+        "quantity":3
+    },
+    {
+        "customer_id":"523799",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-06-11",
+        "quantity":1
+    },
+    {
+        "customer_id":"523799",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-03-31",
+        "quantity":1
+    },
+    {
+        "customer_id":"154885",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-06-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"154885",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-12-05",
+        "quantity":1
+    },
+    {
+        "customer_id":"367695",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-12-02",
+        "quantity":4
+    },
+    {
+        "customer_id":"367695",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-10-02",
+        "quantity":5
+    },
+    {
+        "customer_id":"367695",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-06-07",
+        "quantity":3
+    },
+    {
+        "customer_id":"367695",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-10-05",
+        "quantity":1
+    },
+    {
+        "customer_id":"367695",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-16",
+        "quantity":2
+    },
+    {
+        "customer_id":"367695",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-12-23",
+        "quantity":4
+    },
+    {
+        "customer_id":"367695",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-02-16",
+        "quantity":5
+    },
+    {
+        "customer_id":"367695",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-03-31",
+        "quantity":3
+    },
+    {
+        "customer_id":"601613",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-12-29",
+        "quantity":3
+    },
+    {
+        "customer_id":"601613",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-06-20",
+        "quantity":3
+    },
+    {
+        "customer_id":"601613",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-05-14",
+        "quantity":5
+    },
+    {
+        "customer_id":"601613",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-06-28",
+        "quantity":2
+    },
+    {
+        "customer_id":"601613",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-02-26",
+        "quantity":5
+    },
+    {
+        "customer_id":"140231",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-05-24",
+        "quantity":5
+    },
+    {
+        "customer_id":"140231",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-01-18",
+        "quantity":3
+    },
+    {
+        "customer_id":"140231",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-05-25",
+        "quantity":1
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-03-04",
+        "quantity":2
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-09-22",
+        "quantity":4
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-08-22",
+        "quantity":2
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-09-12",
+        "quantity":2
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-12-03",
+        "quantity":2
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-08-05",
+        "quantity":5
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-12-19",
+        "quantity":3
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-27",
+        "quantity":4
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-12-11",
+        "quantity":3
+    },
+    {
+        "customer_id":"797430",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-09-23",
+        "quantity":3
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-01-17",
+        "quantity":2
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-08-07",
+        "quantity":3
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-12-04",
+        "quantity":1
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-02-17",
+        "quantity":1
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-01-10",
+        "quantity":2
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-12-24",
+        "quantity":3
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-05-11",
+        "quantity":4
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-08-11",
+        "quantity":5
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-09-25",
+        "quantity":3
+    },
+    {
+        "customer_id":"841962",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-03-29",
+        "quantity":5
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-05",
+        "quantity":5
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-10-17",
+        "quantity":2
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-10-05",
+        "quantity":1
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-10-19",
+        "quantity":4
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-07-21",
+        "quantity":1
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-05-03",
+        "quantity":4
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-06-14",
+        "quantity":4
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-02-04",
+        "quantity":1
+    },
+    {
+        "customer_id":"469699",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-11-10",
+        "quantity":4
+    },
+    {
+        "customer_id":"817006",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-09-17",
+        "quantity":4
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-07-11",
+        "quantity":3
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-06-29",
+        "quantity":1
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-03-01",
+        "quantity":4
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-11-12",
+        "quantity":5
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-02-12",
+        "quantity":3
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-09-08",
+        "quantity":2
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-05-10",
+        "quantity":1
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-08-30",
+        "quantity":2
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-07-18",
+        "quantity":4
+    },
+    {
+        "customer_id":"890451",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-07-21",
+        "quantity":2
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-06-01",
+        "quantity":1
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-12-14",
+        "quantity":4
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-10-10",
+        "quantity":5
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-07-30",
+        "quantity":2
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-06-26",
+        "quantity":2
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-06-06",
+        "quantity":4
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-03-29",
+        "quantity":4
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-05-22",
+        "quantity":1
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-04-16",
+        "quantity":4
+    },
+    {
+        "customer_id":"582891",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-05-13",
+        "quantity":3
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-09-09",
+        "quantity":1
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-07-12",
+        "quantity":5
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-05-27",
+        "quantity":3
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-04-22",
+        "quantity":3
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-09-21",
+        "quantity":5
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-09",
+        "quantity":1
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-01-03",
+        "quantity":4
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-05-05",
+        "quantity":4
+    },
+    {
+        "customer_id":"446181",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-09-29",
+        "quantity":2
+    },
+    {
+        "customer_id":"810001",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-12-17",
+        "quantity":4
+    },
+    {
+        "customer_id":"810001",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-02-03",
+        "quantity":2
+    },
+    {
+        "customer_id":"810001",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-11-12",
+        "quantity":5
+    },
+    {
+        "customer_id":"810001",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-06-13",
+        "quantity":5
+    },
+    {
+        "customer_id":"810001",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-11-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"810001",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-01-27",
+        "quantity":5
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-07-03",
+        "quantity":3
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-03-11",
+        "quantity":4
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-12-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-11-22",
+        "quantity":1
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-04-17",
+        "quantity":5
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-12-29",
+        "quantity":2
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-06-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-23",
+        "quantity":2
+    },
+    {
+        "customer_id":"160162",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-12",
+        "quantity":4
+    },
+    {
+        "customer_id":"722819",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-02-28",
+        "quantity":5
+    },
+    {
+        "customer_id":"722819",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-10-18",
+        "quantity":3
+    },
+    {
+        "customer_id":"722819",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-02-24",
+        "quantity":3
+    },
+    {
+        "customer_id":"722819",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-07-24",
+        "quantity":4
+    },
+    {
+        "customer_id":"722819",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-05-18",
+        "quantity":3
+    },
+    {
+        "customer_id":"722819",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-01-16",
+        "quantity":3
+    },
+    {
+        "customer_id":"722819",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-12-22",
+        "quantity":3
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-09-18",
+        "quantity":1
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-07-06",
+        "quantity":5
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-09-27",
+        "quantity":3
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-03-08",
+        "quantity":1
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-02-25",
+        "quantity":5
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-02-03",
+        "quantity":5
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-05-27",
+        "quantity":1
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-06-26",
+        "quantity":3
+    },
+    {
+        "customer_id":"355794",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-11-12",
+        "quantity":1
+    },
+    {
+        "customer_id":"351348",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-04-01",
+        "quantity":3
+    },
+    {
+        "customer_id":"351348",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-04-15",
+        "quantity":3
+    },
+    {
+        "customer_id":"351348",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-08-14",
+        "quantity":3
+    },
+    {
+        "customer_id":"351348",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-05-03",
+        "quantity":2
+    },
+    {
+        "customer_id":"351348",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-01-06",
+        "quantity":5
+    },
+    {
+        "customer_id":"304964",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-03-27",
+        "quantity":1
+    },
+    {
+        "customer_id":"304964",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-07-31",
+        "quantity":1
+    },
+    {
+        "customer_id":"304964",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-02-14",
+        "quantity":2
+    },
+    {
+        "customer_id":"304964",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-12-20",
+        "quantity":4
+    },
+    {
+        "customer_id":"304964",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-09-22",
+        "quantity":4
+    },
+    {
+        "customer_id":"304964",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-08",
+        "quantity":3
+    },
+    {
+        "customer_id":"885909",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-05-04",
+        "quantity":3
+    },
+    {
+        "customer_id":"885909",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-01-10",
+        "quantity":4
+    },
+    {
+        "customer_id":"885909",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-05-03",
+        "quantity":5
+    },
+    {
+        "customer_id":"543670",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-03-19",
+        "quantity":5
+    },
+    {
+        "customer_id":"543670",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-06-21",
+        "quantity":1
+    },
+    {
+        "customer_id":"543670",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-08-01",
+        "quantity":2
+    },
+    {
+        "customer_id":"543670",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-24",
+        "quantity":3
+    },
+    {
+        "customer_id":"543670",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-10-10",
+        "quantity":3
+    },
+    {
+        "customer_id":"543670",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-02-24",
+        "quantity":4
+    },
+    {
+        "customer_id":"883735",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-07-24",
+        "quantity":2
+    },
+    {
+        "customer_id":"883735",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-07-11",
+        "quantity":2
+    },
+    {
+        "customer_id":"883735",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-11-15",
+        "quantity":5
+    },
+    {
+        "customer_id":"883735",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-03-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"883735",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-08-20",
+        "quantity":5
+    },
+    {
+        "customer_id":"883735",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-09-17",
+        "quantity":4
+    },
+    {
+        "customer_id":"883735",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"192622",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-06-20",
+        "quantity":3
+    },
+    {
+        "customer_id":"192622",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-01-13",
+        "quantity":4
+    },
+    {
+        "customer_id":"192622",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-06-03",
+        "quantity":5
+    },
+    {
+        "customer_id":"192622",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-11-10",
+        "quantity":3
+    },
+    {
+        "customer_id":"707185",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-01-03",
+        "quantity":3
+    },
+    {
+        "customer_id":"707185",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-12-07",
+        "quantity":4
+    },
+    {
+        "customer_id":"707185",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-11-16",
+        "quantity":4
+    },
+    {
+        "customer_id":"707185",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-05-30",
+        "quantity":2
+    },
+    {
+        "customer_id":"707185",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-03-24",
+        "quantity":2
+    },
+    {
+        "customer_id":"189573",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-07-23",
+        "quantity":1
+    },
+    {
+        "customer_id":"189573",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-01-04",
+        "quantity":3
+    },
+    {
+        "customer_id":"189573",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-12-31",
+        "quantity":2
+    },
+    {
+        "customer_id":"442491",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-06-24",
+        "quantity":1
+    },
+    {
+        "customer_id":"442491",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-03-24",
+        "quantity":4
+    },
+    {
+        "customer_id":"442491",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-10-22",
+        "quantity":5
+    },
+    {
+        "customer_id":"442491",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-06-15",
+        "quantity":5
+    },
+    {
+        "customer_id":"442491",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-02-11",
+        "quantity":4
+    },
+    {
+        "customer_id":"442491",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-08-22",
+        "quantity":5
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-17",
+        "quantity":5
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-04-12",
+        "quantity":5
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-12-14",
+        "quantity":4
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-06-24",
+        "quantity":2
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-21",
+        "quantity":5
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-09-21",
+        "quantity":5
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-02-29",
+        "quantity":4
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-07-08",
+        "quantity":2
+    },
+    {
+        "customer_id":"955724",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-04-27",
+        "quantity":2
+    },
+    {
+        "customer_id":"249498",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-10-08",
+        "quantity":2
+    },
+    {
+        "customer_id":"249498",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-04-29",
+        "quantity":2
+    },
+    {
+        "customer_id":"249498",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-09-16",
+        "quantity":2
+    },
+    {
+        "customer_id":"249498",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-05-14",
+        "quantity":1
+    },
+    {
+        "customer_id":"249498",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-12-01",
+        "quantity":3
+    },
+    {
+        "customer_id":"314404",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-04-17",
+        "quantity":1
+    },
+    {
+        "customer_id":"314404",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-11-13",
+        "quantity":1
+    },
+    {
+        "customer_id":"314404",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-10-14",
+        "quantity":5
+    },
+    {
+        "customer_id":"314404",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-11-06",
+        "quantity":1
+    },
+    {
+        "customer_id":"314404",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-01-15",
+        "quantity":2
+    },
+    {
+        "customer_id":"314404",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-11-15",
+        "quantity":3
+    },
+    {
+        "customer_id":"921753",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-05-13",
+        "quantity":2
+    },
+    {
+        "customer_id":"921753",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-11-24",
+        "quantity":3
+    },
+    {
+        "customer_id":"138771",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-05-22",
+        "quantity":4
+    },
+    {
+        "customer_id":"138771",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-08-11",
+        "quantity":2
+    },
+    {
+        "customer_id":"138771",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-11-04",
+        "quantity":5
+    },
+    {
+        "customer_id":"138771",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-05-22",
+        "quantity":2
+    },
+    {
+        "customer_id":"488053",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-12-31",
+        "quantity":3
+    },
+    {
+        "customer_id":"488053",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-12-30",
+        "quantity":1
+    },
+    {
+        "customer_id":"488053",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-31",
+        "quantity":2
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-01",
+        "quantity":5
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-01-23",
+        "quantity":5
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-06-29",
+        "quantity":2
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-09-04",
+        "quantity":1
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-05-11",
+        "quantity":4
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-02-07",
+        "quantity":3
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-07-02",
+        "quantity":3
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-10-27",
+        "quantity":4
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-06-07",
+        "quantity":1
+    },
+    {
+        "customer_id":"982222",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-02-23",
+        "quantity":3
+    },
+    {
+        "customer_id":"712682",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-07-11",
+        "quantity":1
+    },
+    {
+        "customer_id":"712682",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-01-30",
+        "quantity":3
+    },
+    {
+        "customer_id":"712682",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-08-30",
+        "quantity":1
+    },
+    {
+        "customer_id":"712682",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-10-23",
+        "quantity":2
+    },
+    {
+        "customer_id":"712682",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-03-28",
+        "quantity":5
+    },
+    {
+        "customer_id":"712682",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-06-22",
+        "quantity":3
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-08-12",
+        "quantity":4
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-02-15",
+        "quantity":3
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-12",
+        "quantity":5
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-11-11",
+        "quantity":1
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-12-26",
+        "quantity":4
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-09-27",
+        "quantity":5
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-08-19",
+        "quantity":1
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-11-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"798886",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-10-26",
+        "quantity":5
+    },
+    {
+        "customer_id":"346124",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-03-16",
+        "quantity":1
+    },
+    {
+        "customer_id":"346124",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-01-04",
+        "quantity":5
+    },
+    {
+        "customer_id":"346124",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-12-09",
+        "quantity":1
+    },
+    {
+        "customer_id":"346124",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-05-15",
+        "quantity":1
+    },
+    {
+        "customer_id":"587666",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-01-22",
+        "quantity":3
+    },
+    {
+        "customer_id":"587666",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-12-30",
+        "quantity":1
+    },
+    {
+        "customer_id":"587666",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-11-18",
+        "quantity":2
+    },
+    {
+        "customer_id":"587666",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-07-09",
+        "quantity":1
+    },
+    {
+        "customer_id":"659683",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-02-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"659683",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-02-02",
+        "quantity":2
+    },
+    {
+        "customer_id":"659683",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-02-24",
+        "quantity":1
+    },
+    {
+        "customer_id":"659683",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-23",
+        "quantity":2
+    },
+    {
+        "customer_id":"659683",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-03-23",
+        "quantity":1
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-02-14",
+        "quantity":3
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-04-23",
+        "quantity":2
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-07-13",
+        "quantity":5
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-12-04",
+        "quantity":5
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-06-06",
+        "quantity":5
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-10-04",
+        "quantity":1
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-23",
+        "quantity":5
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-01",
+        "quantity":3
+    },
+    {
+        "customer_id":"397870",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-07-18",
+        "quantity":4
+    },
+    {
+        "customer_id":"341155",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-31",
+        "quantity":1
+    },
+    {
+        "customer_id":"715656",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-06-30",
+        "quantity":1
+    },
+    {
+        "customer_id":"715656",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-11-17",
+        "quantity":4
+    },
+    {
+        "customer_id":"715656",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-04-06",
+        "quantity":1
+    },
+    {
+        "customer_id":"715656",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-11-26",
+        "quantity":4
+    },
+    {
+        "customer_id":"715656",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-11-01",
+        "quantity":4
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-06-30",
+        "quantity":4
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-12-17",
+        "quantity":3
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-12-06",
+        "quantity":4
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-03-04",
+        "quantity":2
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-09",
+        "quantity":3
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-05-09",
+        "quantity":5
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-03-11",
+        "quantity":4
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-02-01",
+        "quantity":3
+    },
+    {
+        "customer_id":"690117",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-12-29",
+        "quantity":5
+    },
+    {
+        "customer_id":"355584",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-02-22",
+        "quantity":5
+    },
+    {
+        "customer_id":"355584",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-11-07",
+        "quantity":2
+    },
+    {
+        "customer_id":"355584",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-01-29",
+        "quantity":2
+    },
+    {
+        "customer_id":"355584",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-02-22",
+        "quantity":4
+    },
+    {
+        "customer_id":"355584",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-05-08",
+        "quantity":2
+    },
+    {
+        "customer_id":"355584",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-12-10",
+        "quantity":1
+    },
+    {
+        "customer_id":"601808",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-12-05",
+        "quantity":3
+    },
+    {
+        "customer_id":"601808",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-02-03",
+        "quantity":5
+    },
+    {
+        "customer_id":"601808",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-06-27",
+        "quantity":4
+    },
+    {
+        "customer_id":"601808",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-01-23",
+        "quantity":5
+    },
+    {
+        "customer_id":"601808",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-07-02",
+        "quantity":5
+    },
+    {
+        "customer_id":"668427",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-08-02",
+        "quantity":5
+    },
+    {
+        "customer_id":"668427",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-10-22",
+        "quantity":2
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-10-25",
+        "quantity":3
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-18",
+        "quantity":1
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-02-20",
+        "quantity":1
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-12-14",
+        "quantity":2
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-12-16",
+        "quantity":4
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2025-08-29",
+        "quantity":2
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-07-23",
+        "quantity":2
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-04-02",
+        "quantity":2
+    },
+    {
+        "customer_id":"936711",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-06-04",
+        "quantity":4
+    },
+    {
+        "customer_id":"501656",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2024-01-10",
+        "quantity":5
+    },
+    {
+        "customer_id":"621757",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-07-27",
+        "quantity":3
+    },
+    {
+        "customer_id":"621757",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2025-06-17",
+        "quantity":3
+    },
+    {
+        "customer_id":"653312",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-01-03",
+        "quantity":5
+    },
+    {
+        "customer_id":"289682",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-11-27",
+        "quantity":2
+    },
+    {
+        "customer_id":"289682",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-07-28",
+        "quantity":2
+    },
+    {
+        "customer_id":"289682",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-07-28",
+        "quantity":4
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-06-19",
+        "quantity":1
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-11-25",
+        "quantity":2
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"278707",
+        "product_name":"Mini Fleming Soft Bucket Bag",
+        "purchase_date":"2024-10-06",
+        "quantity":4
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-03-22",
+        "quantity":5
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-06-18",
+        "quantity":3
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-08-29",
+        "quantity":3
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-04-01",
+        "quantity":4
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2024-02-08",
+        "quantity":1
+    },
+    {
+        "customer_id":"393403",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-04-27",
+        "quantity":2
+    },
+    {
+        "customer_id":"633342",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-05-12",
+        "quantity":3
+    },
+    {
+        "customer_id":"633342",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-09-24",
+        "quantity":4
+    },
+    {
+        "customer_id":"633342",
+        "style_number":"220945",
+        "product_name":"Perry Triple-Compartment Tote Bag",
+        "purchase_date":"2025-04-06",
+        "quantity":3
+    },
+    {
+        "customer_id":"633342",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-09-12",
+        "quantity":4
+    },
+    {
+        "customer_id":"667068",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-02-22",
+        "quantity":4
+    },
+    {
+        "customer_id":"219700",
+        "style_number":"550922",
+        "product_name":"Ella Printed Tote Bag",
+        "purchase_date":"2024-03-09",
+        "quantity":1
+    },
+    {
+        "customer_id":"219700",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-05-31",
+        "quantity":2
+    },
+    {
+        "customer_id":"219700",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-05-17",
+        "quantity":1
+    },
+    {
+        "customer_id":"219700",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2025-08-06",
+        "quantity":1
+    },
+    {
+        "customer_id":"219700",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-10-22",
+        "quantity":1
+    },
+    {
+        "customer_id":"219700",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2025-11-03",
+        "quantity":5
+    },
+    {
+        "customer_id":"154190",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2025-11-10",
+        "quantity":1
+    },
+    {
+        "customer_id":"421939",
+        "style_number":"243174",
+        "product_name":"Small Fleming Soft Bucket Bag",
+        "purchase_date":"2024-12-23",
+        "quantity":3
+    },
+    {
+        "customer_id":"421939",
+        "style_number":"576539",
+        "product_name":"Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-08-14",
+        "quantity":2
+    },
+    {
+        "customer_id":"421939",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2025-03-09",
+        "quantity":4
+    },
+    {
+        "customer_id":"982484",
+        "style_number":"842402",
+        "product_name":"Small Kira Diamond Quilted Shoulder Bag",
+        "purchase_date":"2024-08-27",
+        "quantity":3
+    },
+    {
+        "customer_id":"982484",
+        "style_number":"652004",
+        "product_name":"Miller Mini Crossbody Bag",
+        "purchase_date":"2025-11-24",
+        "quantity":3
+    },
+    {
+        "customer_id":"982484",
+        "style_number":"311868",
+        "product_name":"Small Ella Tote",
+        "purchase_date":"2024-05-02",
+        "quantity":2
+    },
+    {
+        "customer_id":"614819",
+        "style_number":"162577",
+        "product_name":"Fleming Soft Tote",
+        "purchase_date":"2024-08-05",
+        "quantity":5
+    },
+    {
+        "customer_id":"614819",
+        "style_number":"423214",
+        "product_name":"Mini Miller Canvas Crossbody Bag",
+        "purchase_date":"2024-10-06",
+        "quantity":4
+    }
+]
