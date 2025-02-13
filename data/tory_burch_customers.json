@@ -1,0 +1,902 @@
+[
+    {
+        "customer_id": "821138",
+        "first_name": "Danielle",
+        "last_name": "Johnson",
+        "address": "18196 Anthony Forge, New Carolyn, ID 94351",
+        "email": "daniellejohnson600@example.com",
+        "phone_number": "+1-863-794-0265x4235",
+        "birthday": "1961-01-26"
+    },
+    {
+        "customer_id": "595594",
+        "first_name": "Christopher",
+        "last_name": "Davis",
+        "address": "78161 Calderon River Suite 931, Lake Jeremyport, IN 13739",
+        "email": "christopherdavis298@example.com",
+        "phone_number": "(475)255-3419x2832",
+        "birthday": "1985-07-28"
+    },
+    {
+        "customer_id": "641076",
+        "first_name": "Noah",
+        "last_name": "Mayo",
+        "address": "503 Linda Locks, Carlshire, VT 41746",
+        "email": "noahmayo511@example.com",
+        "phone_number": "767.242.3884",
+        "birthday": "2004-12-13"
+    },
+    {
+        "customer_id": "395060",
+        "first_name": "Brenda",
+        "last_name": "Hurst",
+        "address": "87101 Courtney Turnpike, Carlsonfurt, PA 61849",
+        "email": "brendahurst397@example.com",
+        "phone_number": "480.184.5146x27048",
+        "birthday": "2005-12-19"
+    },
+    {
+        "customer_id": "361477",
+        "first_name": "Guy",
+        "last_name": "Gaines",
+        "address": "893 Nathaniel Estates Apt. 957, North Sarahport, AR 32072",
+        "email": "guygaines667@example.com",
+        "phone_number": "001-117-182-2782",
+        "birthday": "1972-02-26"
+    },
+    {
+        "customer_id": "924304",
+        "first_name": "Allison",
+        "last_name": "Obrien",
+        "address": "Unit 8346 Box 5787, DPO AE 32994",
+        "email": "allisonobrien685@example.com",
+        "phone_number": "150.983.9301",
+        "birthday": "2002-04-14"
+    },
+    {
+        "customer_id": "796764",
+        "first_name": "Crystal",
+        "last_name": "Perez",
+        "address": "PSC 5183, Box 4738, APO AE 95312",
+        "email": "crystalperez748@example.com",
+        "phone_number": "001-973-763-1165",
+        "birthday": "1982-12-10"
+    },
+    {
+        "customer_id": "790828",
+        "first_name": "Robert",
+        "last_name": "Shields",
+        "address": "65133 Amanda Dam, Whitemouth, CA 58583",
+        "email": "robertshields889@example.com",
+        "phone_number": "+1-108-013-2677",
+        "birthday": "1968-08-29"
+    },
+    {
+        "customer_id": "274982",
+        "first_name": "Michelle",
+        "last_name": "Barrera",
+        "address": "4746 Moore Hill, North Beth, AR 98539",
+        "email": "michellebarrera359@example.com",
+        "phone_number": "009-788-2081x21913",
+        "birthday": "1981-08-04"
+    },
+    {
+        "customer_id": "820935",
+        "first_name": "David",
+        "last_name": "Zamora",
+        "address": "169 Donovan Ford, Johnfurt, TN 85108",
+        "email": "davidzamora204@example.com",
+        "phone_number": "751-079-9118x3842",
+        "birthday": "1977-11-12"
+    },
+    {
+        "customer_id": "912711",
+        "first_name": "Nicole",
+        "last_name": "Suarez",
+        "address": "8498 Elizabeth Plaza, Sarahville, DC 35165",
+        "email": "nicolesuarez985@example.com",
+        "phone_number": "182-449-3534",
+        "birthday": "1988-07-05"
+    },
+    {
+        "customer_id": "564762",
+        "first_name": "Tracy",
+        "last_name": "Whitehead",
+        "address": "640 Matthew Curve, Evanmouth, VT 56558",
+        "email": "tracywhitehead669@example.com",
+        "phone_number": "+1-011-280-5982",
+        "birthday": "1983-05-13"
+    },
+    {
+        "customer_id": "306274",
+        "first_name": "David",
+        "last_name": "Parker",
+        "address": "PSC 0533, Box 1586, APO AP 98736",
+        "email": "davidparker104@example.com",
+        "phone_number": "(322)602-5634",
+        "birthday": "1964-12-12"
+    },
+    {
+        "customer_id": "349526",
+        "first_name": "Kristin",
+        "last_name": "Rodriguez",
+        "address": "37543 Andrew Fields Suite 541, Michaelhaven, TX 70783",
+        "email": "kristinrodriguez700@example.com",
+        "phone_number": "014-294-0196x55698",
+        "birthday": "1961-12-26"
+    },
+    {
+        "customer_id": "982177",
+        "first_name": "Paul",
+        "last_name": "Ray",
+        "address": "88356 Stacy Isle Suite 148, Elizabethmouth, UT 39253",
+        "email": "paulray893@example.com",
+        "phone_number": "+1-236-629-9468",
+        "birthday": "1954-02-22"
+    },
+    {
+        "customer_id": "241997",
+        "first_name": "Kevin",
+        "last_name": "Clark",
+        "address": "7738 Leon Underpass Apt. 148, Clarencebury, ME 29945",
+        "email": "kevinclark709@example.com",
+        "phone_number": "200.379.1769",
+        "birthday": "1967-05-07"
+    },
+    {
+        "customer_id": "316011",
+        "first_name": "Jennifer",
+        "last_name": "Cruz",
+        "address": "016 Gregory Square, Williamsbury, DE 60330",
+        "email": "jennifercruz299@example.com",
+        "phone_number": "(788)957-9868",
+        "birthday": "1984-06-17"
+    },
+    {
+        "customer_id": "813091",
+        "first_name": "Phyllis",
+        "last_name": "Manning",
+        "address": "48734 Jones Heights Apt. 455, East Edwardfurt, FL 93092",
+        "email": "phyllismanning811@example.com",
+        "phone_number": "166.587.6036",
+        "birthday": "1980-08-14"
+    },
+    {
+        "customer_id": "515209",
+        "first_name": "Rebecca",
+        "last_name": "Silva",
+        "address": "0546 Medina Street Apt. 734, Tuckerfurt, TN 89517",
+        "email": "rebeccasilva568@example.com",
+        "phone_number": "(272)980-6990x1627",
+        "birthday": "1966-06-25"
+    },
+    {
+        "customer_id": "442170",
+        "first_name": "Brent",
+        "last_name": "Gray",
+        "address": "6464 Thomas Summit Apt. 531, Port Anthonybury, AK 81940",
+        "email": "brentgray166@example.com",
+        "phone_number": "(327)193-7452",
+        "birthday": "1995-05-07"
+    },
+    {
+        "customer_id": "175990",
+        "first_name": "Catherine",
+        "last_name": "Adkins",
+        "address": "1904 Sanders Stravenue, North Brittany, SC 32331",
+        "email": "catherineadkins902@example.com",
+        "phone_number": "491-905-8651",
+        "birthday": "1988-07-18"
+    },
+    {
+        "customer_id": "692768",
+        "first_name": "Deborah",
+        "last_name": "Smith",
+        "address": "65726 Jessica Run Suite 987, Grahamshire, MD 32678",
+        "email": "deborahsmith542@example.com",
+        "phone_number": "473-799-6507",
+        "birthday": "1976-03-26"
+    },
+    {
+        "customer_id": "840736",
+        "first_name": "Hunter",
+        "last_name": "Lewis",
+        "address": "9480 Christopher Stravenue Suite 783, Brewerfort, WY 02761",
+        "email": "hunterlewis315@example.com",
+        "phone_number": "436-349-5788",
+        "birthday": "1977-07-05"
+    },
+    {
+        "customer_id": "166866",
+        "first_name": "Ronald",
+        "last_name": "Reese",
+        "address": "4431 Leslie Summit Apt. 337, Jennyhaven, LA 13677",
+        "email": "ronaldreese410@example.com",
+        "phone_number": "435.240.8240",
+        "birthday": "1957-10-29"
+    },
+    {
+        "customer_id": "643649",
+        "first_name": "Angela",
+        "last_name": "Terry",
+        "address": "09477 Peterson Center Suite 711, Vasquezshire, TX 07527",
+        "email": "angelaterry873@example.com",
+        "phone_number": "(294)131-8699",
+        "birthday": "1996-03-13"
+    },
+    {
+        "customer_id": "160275",
+        "first_name": "Jeremiah",
+        "last_name": "Mills",
+        "address": "9649 Chelsea Streets Apt. 334, East Johnside, GA 00851",
+        "email": "jeremiahmills963@example.com",
+        "phone_number": "(797)403-4471x34936",
+        "birthday": "1961-12-04"
+    },
+    {
+        "customer_id": "882337",
+        "first_name": "Amy",
+        "last_name": "Holland",
+        "address": "PSC 2102, Box 4994, APO AA 16800",
+        "email": "amyholland963@example.com",
+        "phone_number": "464.887.7190x659",
+        "birthday": "1971-02-25"
+    },
+    {
+        "customer_id": "902389",
+        "first_name": "Anthony",
+        "last_name": "Perez",
+        "address": "490 Thomas Run, Moonburgh, NE 83703",
+        "email": "anthonyperez408@example.com",
+        "phone_number": "175.655.1256x7468",
+        "birthday": "1956-08-12"
+    },
+    {
+        "customer_id": "544763",
+        "first_name": "Shawn",
+        "last_name": "Edwards",
+        "address": "087 Brown Path Suite 977, East Josephberg, NV 92022",
+        "email": "shawnedwards688@example.com",
+        "phone_number": "109.324.8086x1317",
+        "birthday": "1962-02-09"
+    },
+    {
+        "customer_id": "320321",
+        "first_name": "Deborah",
+        "last_name": "Moore",
+        "address": "USNV Hicks, FPO AA 54960",
+        "email": "deborahmoore621@example.com",
+        "phone_number": "737.826.3982x1465",
+        "birthday": "1988-08-31"
+    },
+    {
+        "customer_id": "369946",
+        "first_name": "Joseph",
+        "last_name": "Smith",
+        "address": "78755 Gibson Islands Apt. 396, Port Kimberly, MD 98110",
+        "email": "josephsmith358@example.com",
+        "phone_number": "662.702.8951x7187",
+        "birthday": "1955-02-28"
+    },
+    {
+        "customer_id": "703877",
+        "first_name": "Jennifer",
+        "last_name": "Ortiz",
+        "address": "74596 Melissa Walk, Finleyfort, ND 05206",
+        "email": "jenniferortiz141@example.com",
+        "phone_number": "+1-134-316-1172x400",
+        "birthday": "1976-03-10"
+    },
+    {
+        "customer_id": "666601",
+        "first_name": "Laura",
+        "last_name": "Carter",
+        "address": "86922 Christian Ways, Harveybury, OR 19259",
+        "email": "lauracarter299@example.com",
+        "phone_number": "747.407.4821",
+        "birthday": "1984-03-05"
+    },
+    {
+        "customer_id": "209448",
+        "first_name": "Sierra",
+        "last_name": "Huerta",
+        "address": "474 Yvonne Walk Suite 136, Baileyport, TN 52380",
+        "email": "sierrahuerta891@example.com",
+        "phone_number": "090-974-3953x394",
+        "birthday": "2000-03-27"
+    },
+    {
+        "customer_id": "776985",
+        "first_name": "Karla",
+        "last_name": "Saunders",
+        "address": "104 Johnson Lakes, North Renee, WA 54961",
+        "email": "karlasaunders184@example.com",
+        "phone_number": "(328)588-4247",
+        "birthday": "1974-03-14"
+    },
+    {
+        "customer_id": "707941",
+        "first_name": "Julie",
+        "last_name": "Morgan",
+        "address": "36851 Smith Plain, South Miguelview, MS 84196",
+        "email": "juliemorgan724@example.com",
+        "phone_number": "(137)098-5931x746",
+        "birthday": "1962-01-20"
+    },
+    {
+        "customer_id": "182647",
+        "first_name": "Donald",
+        "last_name": "Shah",
+        "address": "13826 Watson Summit Suite 926, Port Tracychester, AZ 90977",
+        "email": "donaldshah937@example.com",
+        "phone_number": "(377)351-5850x643",
+        "birthday": "1962-06-06"
+    },
+    {
+        "customer_id": "428777",
+        "first_name": "Stacy",
+        "last_name": "Holloway",
+        "address": "900 Sanchez Crossroad, North Maria, IL 77359",
+        "email": "stacyholloway994@example.com",
+        "phone_number": "352.904.2284",
+        "birthday": "1965-12-28"
+    },
+    {
+        "customer_id": "688880",
+        "first_name": "Daniel",
+        "last_name": "Delacruz",
+        "address": "95024 David Manor Apt. 177, Williamville, NY 29539",
+        "email": "danieldelacruz584@example.com",
+        "phone_number": "+1-084-700-7661x771",
+        "birthday": "1959-08-13"
+    },
+    {
+        "customer_id": "145942",
+        "first_name": "Marc",
+        "last_name": "Hernandez",
+        "address": "9847 Garcia Squares Apt. 836, Beasleychester, NH 52763",
+        "email": "marchernandez231@example.com",
+        "phone_number": "(156)545-2711x11615",
+        "birthday": "1962-12-21"
+    },
+    {
+        "customer_id": "673431",
+        "first_name": "Angela",
+        "last_name": "Willis",
+        "address": "165 Parrish Stravenue Apt. 494, Dalehaven, FL 86580",
+        "email": "angelawillis854@example.com",
+        "phone_number": "315.851.4936x8998",
+        "birthday": "1955-11-26"
+    },
+    {
+        "customer_id": "953274",
+        "first_name": "Chelsea",
+        "last_name": "Barrett",
+        "address": "44550 Molly Port, Jonestown, WA 70032",
+        "email": "chelseabarrett609@example.com",
+        "phone_number": "667.525.4599",
+        "birthday": "1959-11-24"
+    },
+    {
+        "customer_id": "260586",
+        "first_name": "Nicole",
+        "last_name": "Moore",
+        "address": "147 Tucker Mills, Nelsonhaven, MI 56850",
+        "email": "nicolemoore255@example.com",
+        "phone_number": "497-840-3690",
+        "birthday": "1954-08-22"
+    },
+    {
+        "customer_id": "523799",
+        "first_name": "James",
+        "last_name": "Dougherty",
+        "address": "5107 Thompson Light Apt. 885, South Michelleton, AK 60761",
+        "email": "jamesdougherty721@example.com",
+        "phone_number": "596-966-4160",
+        "birthday": "1976-03-20"
+    },
+    {
+        "customer_id": "154885",
+        "first_name": "George",
+        "last_name": "Meza",
+        "address": "61369 Warren Locks Suite 535, North William, NC 67341",
+        "email": "georgemeza634@example.com",
+        "phone_number": "552.312.4329",
+        "birthday": "1964-07-08"
+    },
+    {
+        "customer_id": "367695",
+        "first_name": "Kathleen",
+        "last_name": "Rios",
+        "address": "9979 Lin Road Suite 271, Ramosport, KY 78019",
+        "email": "kathleenrios768@example.com",
+        "phone_number": "5814770054",
+        "birthday": "1959-05-04"
+    },
+    {
+        "customer_id": "601613",
+        "first_name": "Deanna",
+        "last_name": "Madden",
+        "address": "9807 Marc Mountains Apt. 071, Toniland, SD 23118",
+        "email": "deannamadden499@example.com",
+        "phone_number": "3778892554",
+        "birthday": "1980-06-24"
+    },
+    {
+        "customer_id": "140231",
+        "first_name": "Riley",
+        "last_name": "Morgan",
+        "address": "51864 Cummings Shoals Apt. 519, West Kyle, UT 87288",
+        "email": "rileymorgan857@example.com",
+        "phone_number": "(291)486-5281x6850",
+        "birthday": "1978-10-16"
+    },
+    {
+        "customer_id": "797430",
+        "first_name": "Kyle",
+        "last_name": "Bean",
+        "address": "32214 William Plains Apt. 592, Mooreburgh, UT 82386",
+        "email": "kylebean571@example.com",
+        "phone_number": "(706)537-9473",
+        "birthday": "1990-06-15"
+    },
+    {
+        "customer_id": "841962",
+        "first_name": "John",
+        "last_name": "Sheppard",
+        "address": "9774 Shaw Manor, Port James, DC 33269",
+        "email": "johnsheppard271@example.com",
+        "phone_number": "7581814124",
+        "birthday": "1984-09-09"
+    },
+    {
+        "customer_id": "469699",
+        "first_name": "Rebecca",
+        "last_name": "Hernandez",
+        "address": "5060 Shaw Freeway, Vangstad, AK 42271",
+        "email": "rebeccahernandez345@example.com",
+        "phone_number": "522-047-2779",
+        "birthday": "1954-06-22"
+    },
+    {
+        "customer_id": "817006",
+        "first_name": "Rebecca",
+        "last_name": "Smith",
+        "address": "986 Kimberly Freeway, Davidbury, SC 82134",
+        "email": "rebeccasmith620@example.com",
+        "phone_number": "117.980.8932x460",
+        "birthday": "1995-12-15"
+    },
+    {
+        "customer_id": "890451",
+        "first_name": "Michael",
+        "last_name": "Duncan",
+        "address": "518 Peter Mountains, Lake Paulstad, WA 02629",
+        "email": "michaelduncan813@example.com",
+        "phone_number": "(153)195-2058x527",
+        "birthday": "2001-06-08"
+    },
+    {
+        "customer_id": "582891",
+        "first_name": "Timothy",
+        "last_name": "White",
+        "address": "43030 Mahoney Passage Suite 874, Port Deborahport, WI 06766",
+        "email": "timothywhite332@example.com",
+        "phone_number": "+1-541-566-7652x7758",
+        "birthday": "1972-04-07"
+    },
+    {
+        "customer_id": "446181",
+        "first_name": "Laurie",
+        "last_name": "Acosta",
+        "address": "451 Mark Hill, Seanchester, UT 58684",
+        "email": "laurieacosta100@example.com",
+        "phone_number": "(705)964-0165x820",
+        "birthday": "1963-10-31"
+    },
+    {
+        "customer_id": "810001",
+        "first_name": "Melinda",
+        "last_name": "Gregory",
+        "address": "35569 Cassie Springs, Rushstad, WV 10578",
+        "email": "melindagregory413@example.com",
+        "phone_number": "001-285-654-3102",
+        "birthday": "1988-01-28"
+    },
+    {
+        "customer_id": "160162",
+        "first_name": "April",
+        "last_name": "Mcintyre",
+        "address": "739 Benson Overpass Apt. 121, Thompsonmouth, TX 42390",
+        "email": "aprilmcintyre661@example.com",
+        "phone_number": "+1-518-844-2258x31323",
+        "birthday": "1987-09-25"
+    },
+    {
+        "customer_id": "722819",
+        "first_name": "Anthony",
+        "last_name": "Spencer",
+        "address": "114 Key Stravenue, Foxchester, OK 10167",
+        "email": "anthonyspencer720@example.com",
+        "phone_number": "(517)785-2892",
+        "birthday": "2006-05-13"
+    },
+    {
+        "customer_id": "355794",
+        "first_name": "Tammy",
+        "last_name": "Reynolds",
+        "address": "PSC 0182, Box 4225, APO AP 30053",
+        "email": "tammyreynolds384@example.com",
+        "phone_number": "(841)438-4249x818",
+        "birthday": "1997-09-25"
+    },
+    {
+        "customer_id": "351348",
+        "first_name": "Gary",
+        "last_name": "David",
+        "address": "001 Stacy Trail Suite 396, South Pamelaside, SD 40097",
+        "email": "garydavid158@example.com",
+        "phone_number": "364.710.2767x7359",
+        "birthday": "1963-11-22"
+    },
+    {
+        "customer_id": "304964",
+        "first_name": "Larry",
+        "last_name": "Higgins",
+        "address": "2588 Luis Mountain Apt. 473, North Brent, RI 55306",
+        "email": "larryhiggins902@example.com",
+        "phone_number": "259.532.7877",
+        "birthday": "1975-02-10"
+    },
+    {
+        "customer_id": "885909",
+        "first_name": "Tyler",
+        "last_name": "Davis",
+        "address": "39500 Simpson Ville Suite 480, South Dennisview, MN 53356",
+        "email": "tylerdavis706@example.com",
+        "phone_number": "(060)983-5841x687",
+        "birthday": "2006-02-18"
+    },
+    {
+        "customer_id": "543670",
+        "first_name": "Andrea",
+        "last_name": "Bryan",
+        "address": "16558 Fischer Flat, Porterton, DC 94032",
+        "email": "andreabryan147@example.com",
+        "phone_number": "787-298-2595x26949",
+        "birthday": "1977-01-02"
+    },
+    {
+        "customer_id": "883735",
+        "first_name": "William",
+        "last_name": "Hicks",
+        "address": "0551 Silva Underpass Apt. 974, Lake Brett, GA 69213",
+        "email": "williamhicks671@example.com",
+        "phone_number": "+1-962-309-1307x5626",
+        "birthday": "2001-02-07"
+    },
+    {
+        "customer_id": "192622",
+        "first_name": "James",
+        "last_name": "Shaw",
+        "address": "028 Ann Shore Suite 865, South Rhonda, ND 46938",
+        "email": "jamesshaw366@example.com",
+        "phone_number": "+1-497-334-8434x43757",
+        "birthday": "1977-11-07"
+    },
+    {
+        "customer_id": "707185",
+        "first_name": "Ann",
+        "last_name": "Michael",
+        "address": "98665 Kelly Heights Apt. 574, Lewisside, OH 91749",
+        "email": "annmichael485@example.com",
+        "phone_number": "219-933-0833x016",
+        "birthday": "1976-08-04"
+    },
+    {
+        "customer_id": "189573",
+        "first_name": "Jennifer",
+        "last_name": "Garcia",
+        "address": "267 Santos Throughway, Manuelton, WI 12226",
+        "email": "jennifergarcia281@example.com",
+        "phone_number": "+1-938-026-2067x2400",
+        "birthday": "1974-06-03"
+    },
+    {
+        "customer_id": "442491",
+        "first_name": "Ashley",
+        "last_name": "Rodriguez",
+        "address": "Unit 4788 Box 7287, DPO AA 25773",
+        "email": "ashleyrodriguez378@example.com",
+        "phone_number": "527-420-5493",
+        "birthday": "1966-01-21"
+    },
+    {
+        "customer_id": "955724",
+        "first_name": "Cheryl",
+        "last_name": "Fowler",
+        "address": "516 Jack Dam Suite 530, Patrickmouth, KY 43705",
+        "email": "cherylfowler712@example.com",
+        "phone_number": "990-453-0174x2684",
+        "birthday": "2001-02-02"
+    },
+    {
+        "customer_id": "249498",
+        "first_name": "David",
+        "last_name": "Hendricks",
+        "address": "27279 Perry Plaza, Toddborough, IA 89674",
+        "email": "davidhendricks297@example.com",
+        "phone_number": "001-918-785-1910x88398",
+        "birthday": "1964-04-24"
+    },
+    {
+        "customer_id": "314404",
+        "first_name": "Franklin",
+        "last_name": "Bond",
+        "address": "971 Stokes Motorway, New Robert, AR 73743",
+        "email": "franklinbond847@example.com",
+        "phone_number": "406.403.9106x518",
+        "birthday": "1958-03-20"
+    },
+    {
+        "customer_id": "921753",
+        "first_name": "Sarah",
+        "last_name": "Jones",
+        "address": "USS Mitchell, FPO AE 18251",
+        "email": "sarahjones648@example.com",
+        "phone_number": "001-656-766-1825x12868",
+        "birthday": "1962-10-13"
+    },
+    {
+        "customer_id": "138771",
+        "first_name": "Jessica",
+        "last_name": "Walker",
+        "address": "7868 Morrow Gateway, Reedview, VA 15291",
+        "email": "jessicawalker885@example.com",
+        "phone_number": "6903311907",
+        "birthday": "1994-10-18"
+    },
+    {
+        "customer_id": "488053",
+        "first_name": "Emily",
+        "last_name": "Brennan",
+        "address": "7383 Donald Highway, Port Sabrina, MD 76191",
+        "email": "emilybrennan669@example.com",
+        "phone_number": "+1-534-283-6440x892",
+        "birthday": "1996-09-18"
+    },
+    {
+        "customer_id": "982222",
+        "first_name": "Erika",
+        "last_name": "Peters",
+        "address": "685 Russell Hills Suite 287, Port Jeremiah, VT 19421",
+        "email": "erikapeters976@example.com",
+        "phone_number": "086.688.2634x351",
+        "birthday": "1984-09-21"
+    },
+    {
+        "customer_id": "712682",
+        "first_name": "Melanie",
+        "last_name": "Davis",
+        "address": "46990 Jacob Trace, South Jason, MA 40240",
+        "email": "melaniedavis595@example.com",
+        "phone_number": "3317393638",
+        "birthday": "1976-01-01"
+    },
+    {
+        "customer_id": "798886",
+        "first_name": "Kimberly",
+        "last_name": "James",
+        "address": "4587 Garcia Stravenue Suite 535, Robertshire, IN 97658",
+        "email": "kimberlyjames739@example.com",
+        "phone_number": "(048)996-4235",
+        "birthday": "1969-10-08"
+    },
+    {
+        "customer_id": "346124",
+        "first_name": "Noah",
+        "last_name": "Whitaker",
+        "address": "7772 Jackson Stravenue Suite 280, Port Melanieton, AL 54554",
+        "email": "noahwhitaker229@example.com",
+        "phone_number": "(312)038-7509",
+        "birthday": "1997-07-06"
+    },
+    {
+        "customer_id": "587666",
+        "first_name": "Elizabeth",
+        "last_name": "Jensen",
+        "address": "08860 Alyssa Harbor Suite 086, North Samantha, FL 32085",
+        "email": "elizabethjensen873@example.com",
+        "phone_number": "984.546.1567",
+        "birthday": "1992-07-25"
+    },
+    {
+        "customer_id": "659683",
+        "first_name": "John",
+        "last_name": "Terry",
+        "address": "016 Bennett Mountains, Lake Albertburgh, NM 57374",
+        "email": "johnterry982@example.com",
+        "phone_number": "+1-591-803-3974x0148",
+        "birthday": "1992-06-18"
+    },
+    {
+        "customer_id": "397870",
+        "first_name": "Dominique",
+        "last_name": "White",
+        "address": "92614 Anne Port, Rhodesside, MS 99540",
+        "email": "dominiquewhite901@example.com",
+        "phone_number": "001-218-501-6315x9996",
+        "birthday": "2006-10-03"
+    },
+    {
+        "customer_id": "341155",
+        "first_name": "Mark",
+        "last_name": "Walters",
+        "address": "3586 Lopez Prairie Suite 194, Lake Charles, FL 50308",
+        "email": "markwalters438@example.com",
+        "phone_number": "001-265-511-0475x412",
+        "birthday": "1960-01-21"
+    },
+    {
+        "customer_id": "715656",
+        "first_name": "Jacob",
+        "last_name": "Cole",
+        "address": "01581 Shields Bridge Suite 661, New Adriana, MS 22717",
+        "email": "jacobcole612@example.com",
+        "phone_number": "(444)721-2646",
+        "birthday": "1974-07-07"
+    },
+    {
+        "customer_id": "690117",
+        "first_name": "Todd",
+        "last_name": "Jones",
+        "address": "799 Stephen Dale, Adamfurt, RI 50293",
+        "email": "toddjones410@example.com",
+        "phone_number": "756-924-5937x52654",
+        "birthday": "2004-02-15"
+    },
+    {
+        "customer_id": "355584",
+        "first_name": "Heather",
+        "last_name": "Henry",
+        "address": "6465 Sarah Flats, Lake Katrina, VA 61006",
+        "email": "heatherhenry914@example.com",
+        "phone_number": "001-374-167-2434x266",
+        "birthday": "1959-02-24"
+    },
+    {
+        "customer_id": "601808",
+        "first_name": "Shane",
+        "last_name": "Harper",
+        "address": "058 Daniel Gateway Suite 290, Rasmussenmouth, NE 14387",
+        "email": "shaneharper940@example.com",
+        "phone_number": "1438889937",
+        "birthday": "1979-07-29"
+    },
+    {
+        "customer_id": "668427",
+        "first_name": "Peter",
+        "last_name": "Barton",
+        "address": "0714 Knapp Corner, Port Sheliaberg, ME 45467",
+        "email": "peterbarton125@example.com",
+        "phone_number": "387.571.7751x401",
+        "birthday": "1955-08-27"
+    },
+    {
+        "customer_id": "936711",
+        "first_name": "Melinda",
+        "last_name": "Wong",
+        "address": "382 Mark Meadow, Hallfurt, HI 24931",
+        "email": "melindawong288@example.com",
+        "phone_number": "+1-660-937-9660x3341",
+        "birthday": "1993-05-28"
+    },
+    {
+        "customer_id": "501656",
+        "first_name": "Cristian",
+        "last_name": "Wiggins",
+        "address": "71478 Harper Ridge Suite 915, Meganburgh, TX 93036",
+        "email": "cristianwiggins747@example.com",
+        "phone_number": "991-251-3412x5286",
+        "birthday": "1982-07-30"
+    },
+    {
+        "customer_id": "621757",
+        "first_name": "Candace",
+        "last_name": "Andrews",
+        "address": "828 Tracy Dam Apt. 579, Port Michaeltown, DC 26076",
+        "email": "candaceandrews437@example.com",
+        "phone_number": "(887)676-7721x9034",
+        "birthday": "1956-05-04"
+    },
+    {
+        "customer_id": "653312",
+        "first_name": "Joshua",
+        "last_name": "Medina",
+        "address": "788 Ashley Grove Suite 807, South Curtis, SD 98981",
+        "email": "joshuamedina355@example.com",
+        "phone_number": "407.451.7133",
+        "birthday": "2004-04-23"
+    },
+    {
+        "customer_id": "289682",
+        "first_name": "Brianna",
+        "last_name": "Bell",
+        "address": "92330 Patel Ranch Apt. 544, Stephaniehaven, TX 12982",
+        "email": "briannabell845@example.com",
+        "phone_number": "(604)223-2536",
+        "birthday": "1987-06-04"
+    },
+    {
+        "customer_id": "393403",
+        "first_name": "Douglas",
+        "last_name": "Chen",
+        "address": "1168 Neal Wells Suite 775, Port Kimland, NH 83710",
+        "email": "douglaschen865@example.com",
+        "phone_number": "+1-518-636-3745x45892",
+        "birthday": "1992-08-22"
+    },
+    {
+        "customer_id": "633342",
+        "first_name": "Melissa",
+        "last_name": "Kramer",
+        "address": "PSC 0017, Box 0127, APO AA 00589",
+        "email": "melissakramer988@example.com",
+        "phone_number": "(324)241-5415x20643",
+        "birthday": "1983-04-29"
+    },
+    {
+        "customer_id": "667068",
+        "first_name": "Diana",
+        "last_name": "Padilla",
+        "address": "29387 Alan Junctions Apt. 627, East Patrickville, MD 48678",
+        "email": "dianapadilla272@example.com",
+        "phone_number": "262-218-9092x7532",
+        "birthday": "1982-02-18"
+    },
+    {
+        "customer_id": "219700",
+        "first_name": "Christina",
+        "last_name": "Ramos",
+        "address": "19656 Moody Gateway, Deannabury, PA 79145",
+        "email": "christinaramos431@example.com",
+        "phone_number": "001-940-438-9836x4037",
+        "birthday": "1980-05-17"
+    },
+    {
+        "customer_id": "154190",
+        "first_name": "Daniel",
+        "last_name": "Porter",
+        "address": "5269 Diaz Springs, Port Thomas, CA 02688",
+        "email": "danielporter294@example.com",
+        "phone_number": "001-104-300-6848",
+        "birthday": "2006-04-26"
+    },
+    {
+        "customer_id": "421939",
+        "first_name": "Robert",
+        "last_name": "Miles",
+        "address": "1418 Terri Drives, Peterland, UT 57843",
+        "email": "robertmiles124@example.com",
+        "phone_number": "001-303-161-7990x4210",
+        "birthday": "2002-04-15"
+    },
+    {
+        "customer_id": "982484",
+        "first_name": "Derrick",
+        "last_name": "Smith",
+        "address": "842 Martinez Tunnel Suite 105, Nelsonland, VT 76083",
+        "email": "derricksmith662@example.com",
+        "phone_number": "+1-177-850-7925x2419",
+        "birthday": "1999-12-28"
+    },
+    {
+        "customer_id": "614819",
+        "first_name": "Jennifer",
+        "last_name": "Perez",
+        "address": "30756 Harold Walks, New Lindachester, MD 33041",
+        "email": "jenniferperez134@example.com",
+        "phone_number": "(541)951-8023x80617",
+        "birthday": "1973-04-29"
+    }
+]

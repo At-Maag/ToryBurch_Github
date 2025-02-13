@@ -6,10 +6,19 @@ app = Flask(__name__, template_folder="../front_end/templates", static_folder=".
 
 recent_searches = []  # Store recent searches
 
-def load_data():
+def load_customers():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(base_dir, '../data/customers.json')
-    with open(file_path) as f:
+    with open(os.path.join(base_dir, '../data/tory_burch_customers.json')) as f:
+        return json.load(f)
+
+def load_purchase_history():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(base_dir, '../data/tory_burch_purchase_history.json')) as f:
+        return json.load(f)
+
+def load_products():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(base_dir, '../data/tory_burch_products.json')) as f:
         return json.load(f)
 
 @app.route('/')
@@ -23,14 +32,41 @@ def backend():
 @app.route('/lookup', methods=['POST'])
 def lookup_customer():
     query = request.form['name']
-    customers = load_data()
+    customers = load_customers()
+    purchase_history = load_purchase_history()
+    products = load_products()
+
     global recent_searches
     recent_searches = [query] + recent_searches[:9]
 
-    if query.isdigit():
-        result = [customer for customer in customers if customer.get('id') == int(query)]
-    else:
-        result = [customer for customer in customers if query.lower() in customer['name'].lower()]
+    result = []
+    for customer in customers:
+        if query.isdigit() and customer['customer_id'] == query:
+            customer_purchases = [
+                {
+                    "product_id": h['style_number'],
+                    "product_name": next((p["product_name"] for p in products if p["style_number"] == h["style_number"]), "Unknown Product"),
+                    "purchase_date": h['purchase_date'],
+                    "quantity": h['quantity'],
+                    "category": next((p["category"] for p in products if p["style_number"] == h["style_number"]), "Unknown Category")
+                }
+                for h in purchase_history if h['customer_id'] == query
+            ]
+            customer['purchase_history'] = customer_purchases
+            result.append(customer)
+        elif query.lower() in (customer['first_name'].lower() + " " + customer['last_name'].lower()):
+            customer_purchases = [
+                {
+                    "product_id": h['style_number'],
+                    "product_name": next((p["product_name"] for p in products if p["style_number"] == h["style_number"]), "Unknown Product"),
+                    "purchase_date": h['purchase_date'],
+                    "quantity": h['quantity'],
+                    "category": next((p["category"] for p in products if p["style_number"] == h["style_number"]), "Unknown Category")
+                }
+                for h in purchase_history if h['customer_id'] == customer['customer_id']
+            ]
+            customer['purchase_history'] = customer_purchases
+            result.append(customer)
 
     return jsonify(result=result)
 
@@ -41,8 +77,8 @@ def get_recent():
 @app.route('/autocomplete', methods=['GET'])
 def autocomplete():
     query = request.args.get('term', '')
-    customers = load_data()
-    suggestions = [customer['name'] for customer in customers if query.lower() in customer['name'].lower()]
+    customers = load_customers()
+    suggestions = [f"{c['first_name']} {c['last_name']}" for c in customers if query.lower() in (c['first_name'].lower() + " " + c['last_name'].lower())]
     return jsonify(suggestions=suggestions)
 
 if __name__ == "__main__":

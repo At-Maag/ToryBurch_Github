@@ -44,3 +44,15 @@ th {
   background-color: #f4a261;
   color: white;
 }
+
+.filter table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.filter table td {
+  padding: 5px;
+  vertical-align: middle;
+}
+.filter input[type="checkbox"] {
+  margin-right: 10px;
+}
