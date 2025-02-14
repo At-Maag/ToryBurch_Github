@@ -1,5 +1,5 @@
 ## Tory Burch Web Application
-### Made By: At Maag, Pilar Flores, Tatiana, David Eliason
+### Made By: At Maag, Pilar Flores, Tatiana Obando, David Eliason
 
 ## **Overview**  
 The Tory Burch web application is a Flask-based project that allows users to view featured products and perform customer lookups. This guide provides instructions on how to install dependencies, set up the environment, and run the application.
