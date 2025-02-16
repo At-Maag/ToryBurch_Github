@@ -4,7 +4,13 @@ import os
 
 app = Flask(__name__, template_folder="../front_end/templates", static_folder="../front_end/static")
 
-recent_searches = []  # Store recent searches
+
+# Debugging: Check if index.html exists at the specified path
+index_html_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../templates/index.html"))
+print("index.html absolute path:", index_html_path)
+print("index.html exists:", os.path.exists(index_html_path))
+
+recent_searches = []
 
 def load_customers():
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -44,11 +50,11 @@ def lookup_customer():
         if query.isdigit() and customer['customer_id'] == query:
             customer_purchases = [
                 {
-                    "product_id": h['style_number'],
-                    "product_name": next((p["product_name"] for p in products if p["style_number"] == h["style_number"]), "Unknown Product"),
-                    "purchase_date": h['purchase_date'],
+                    "product_id": f"{h.get('style_number', 'UNKNOWN')}-{h.get('color_code', '000')}",
+                    "product_name": h["product_name"],
+                    "purchase_date": h['date'],
                     "quantity": h['quantity'],
-                    "category": next((p["category"] for p in products if p["style_number"] == h["style_number"]), "Unknown Category")
+                    "category": next((p.get("bag-type", "Unknown Category") for p in products if str(p.get("style-number", "")) in h["product_id"]), "Unknown Category")
                 }
                 for h in purchase_history if h['customer_id'] == query
             ]
@@ -57,11 +63,11 @@ def lookup_customer():
         elif query.lower() in (customer['first_name'].lower() + " " + customer['last_name'].lower()):
             customer_purchases = [
                 {
-                    "product_id": h['style_number'],
-                    "product_name": next((p["product_name"] for p in products if p["style_number"] == h["style_number"]), "Unknown Product"),
-                    "purchase_date": h['purchase_date'],
+                    "product_id": f"{h.get('style_number', 'UNKNOWN')}-{h.get('color_code', '000')}",
+                    "product_name": h["product_name"],
+                    "purchase_date": h['date'],
                     "quantity": h['quantity'],
-                    "category": next((p["category"] for p in products if p["style_number"] == h["style_number"]), "Unknown Category")
+                    "category": next((p.get("bag-type", "Unknown Category") for p in products if str(p.get("style-number", "")) in h["product_id"]), "Unknown Category")
                 }
                 for h in purchase_history if h['customer_id'] == customer['customer_id']
             ]
