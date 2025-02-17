@@ -1,110 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/static/style.css">
-  <title>Customer Lookup</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-    }
-    .header {
-      background-color: #f4a261;
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-    .container {
-      display: flex;
-    }
-    .filter {
-      width: 20%;
-      padding: 20px;
-      background-color: #fff;
-      border-right: 1px solid #ddd;
-    }
-    .content {
-      width: 80%;
-      padding: 20px;
-    }
-    .table-container {
-      margin-top: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #ddd;
-      text-align: left;
-    }
-    th {
-      background-color: #f4a261;
-      color: white;
-    }
-    .filter h3 {
-      margin-bottom: 10px;
-    }
-    .filter label {
-      display: block;
-      margin-bottom: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Lookup | Tory Burch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="header">
-    <h1>Customer Lookup</h1>
-    <a href="/" style="color: white; text-decoration: none;">Back to Home</a>
-  </div>
 
-  <div class="container">
-    <div class="filter">
-        <h3>Filter by Product Category</h3>
-        <table>
-          <tbody id="category-filters"></tbody>
-        </table>
-      </div>
-    <div class="content">
-      <form id="lookup-form">
-        <label for="name">Lookup Customer by Name or ID</label><br>
-        <input list="suggestions" id="name" name="name" placeholder="Enter customer name or ID" autocomplete="off" style="width: 70%; padding: 10px;">
-        <datalist id="suggestions"></datalist>
-        <button type="submit" style="padding: 10px 20px; background-color: green; color: white; border: none; cursor: pointer;">Search</button>
-      </form>
+    <!-- HEADER -->
+    <header class="nav-header">
+        <div class="nav-left">
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/tory-burch-logo.svg') }}" alt="Tory Burch Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-center">
+            <h1 class="page-title">CUSTOMER LOOKUP</h1>
+        </div>
+        <div class="nav-right">
+            <a href="#">Search 🔍</a>
+            <a href="#">🛒</a>
+        </div>
+    </header>
 
-      <div id="customer-details" class="table-container">
-        <h2>Customer Details</h2>
-        <table>
-          <tr><th>Customer ID</th><td id="customer-id"></td></tr>
-          <tr><th>Name</th><td id="customer-name"></td></tr>
-          <tr><th>Email</th><td id="customer-email"></td></tr>
-          <tr><th>Phone</th><td id="customer-phone"></td></tr>
-        </table>
-      </div>
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        
+        <!-- SEARCH BAR -->
+        <div class="search-bar">
+            <input type="text" placeholder="Enter customer name or ID">
+            <button>Search</button>
+        </div>
 
-      <div id="purchase-history" class="table-container">
-        <h2>Purchase History</h2>
-        <table id="history-table">
-          <thead>
-            <tr>
-              <th>Product ID</th>
-              <th>Product Name</th>
-              <th>Date</th>
-              <th>Quantity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Purchase history rows will be dynamically inserted here -->
-          </tbody>
-        </table>
-      </div>
+        <!-- CUSTOMER DETAILS -->
+        <section class="customer-details">
+            <h2>Customer Information</h2>
+            <table>
+                <tr><th>Customer ID</th><td>420916</td></tr>
+                <tr><th>Name</th><td>Chris Garcia</td></tr>
+                <tr><th>Email</th><td>john189@example.com</td></tr>
+                <tr><th>Phone</th><td>(425) 703-5204</td></tr>
+            </table>
+        </section>
+
+        <!-- PURCHASE HISTORY -->
+        <section class="purchase-history">
+            <h2>Purchase History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Date</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>KIRA DIAMOND QUILT VANITY CASE</td>
+                        <td>2024-01-29</td>
+                        <td>1</td>
+                        <td>$448.00</td>
+                    </tr>
+                    <tr>
+                        <td>SMALL ELLA PATENT TOTE BAG</td>
+                        <td>2024-03-26</td>
+                        <td>1</td>
+                        <td>$228.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
     </div>
-  </div>
 
-  <script src="/static/script.js"></script>
 </body>
 </html>

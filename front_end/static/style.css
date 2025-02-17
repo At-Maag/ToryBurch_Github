@@ -1,58 +1,110 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f6f6f8;
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Proxima Nova', sans-serif;
 }
 
-.header {
-  background-color: #f4a261;
-  padding: 20px;
-  text-align: center;
-  color: white;
+/* NAVIGATION HEADER */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: white;
+  border-bottom: 2px solid #E27D30;
 }
 
-form {
-  margin: 20px;
+.nav-left .nav-logo {
+  height: 45px;
+  width: auto;
 }
 
-input {
-  width: 80%;
-  padding: 10px;
-  margin-right: 10px;
+.nav-center .page-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: green;
+.nav-right a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* PAGE CONTENT */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  padding: 12px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 12px;
+  background-color: #E27D30;
   color: white;
   border: none;
   cursor: pointer;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-table {
+.search-bar button:hover {
+  background-color: black;
+}
+
+/* CUSTOMER DETAILS & PURCHASE HISTORY */
+.customer-details, .purchase-history {
+  margin-top: 30px;
+}
+
+.customer-details h2, .purchase-history h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #E27D30;
+}
+
+.customer-details table, .purchase-history table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-th, td {
-  padding: 10px;
+.customer-details table th, .purchase-history table th,
+.customer-details table td, .purchase-history table td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.customer-details table th, .purchase-history table th {
   text-align: left;
-  border: 1px solid #ddd;
-}
-
-th {
-  background-color: #f4a261;
-  color: white;
-}
-
-.filter table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.filter table td {
-  padding: 5px;
-  vertical-align: middle;
-}
-.filter input[type="checkbox"] {
-  margin-right: 10px;
+  font-size: 14px;
+  background-color: #FAF0E6;
+  font-weight: 600;
 }
