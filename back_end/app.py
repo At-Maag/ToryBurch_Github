@@ -5,69 +5,60 @@ import os
 app = Flask(__name__, template_folder="../front_end/templates", static_folder="../front_end/static")
 
 
-# Debugging: Check if index.html exists at the specified path
-index_html_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../templates/index.html"))
-print("index.html absolute path:", index_html_path)
-print("index.html exists:", os.path.exists(index_html_path))
-
-recent_searches = []
-
-def load_customers():
+def load_json(file_name):
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    with open(os.path.join(base_dir, '../data/tory_burch_customers.json')) as f:
+    with open(os.path.join(base_dir, f'../data/{file_name}')) as f:
         return json.load(f)
 
-def load_purchase_history():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    with open(os.path.join(base_dir, '../data/tory_burch_purchase_history.json')) as f:
-        return json.load(f)
 
-def load_products():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    with open(os.path.join(base_dir, '../data/tory_burch_products.json')) as f:
-        return json.load(f)
+def get_product_category(product_id, products):
+    style_number = product_id.split('-')[0] if '-' in product_id else product_id
+    for product in products:
+        if str(product.get("style-number", "")) == style_number:
+            return product.get("bag-type", "Other") if product.get("bag-type") else "Other"
+    return "Other"
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/backend')
 def backend():
     return render_template('backend.html')
 
+
 @app.route('/lookup', methods=['POST'])
 def lookup_customer():
     query = request.form['name']
-    customers = load_customers()
-    purchase_history = load_purchase_history()
-    products = load_products()
-
-    global recent_searches
-    recent_searches = [query] + recent_searches[:9]
+    customers = load_json('tory_burch_customers.json')
+    purchase_history = load_json('tory_burch_purchase_history.json')
+    products = load_json('tory_burch_products.json')
 
     result = []
     for customer in customers:
         if query.isdigit() and customer['customer_id'] == query:
             customer_purchases = [
                 {
-                    "product_id": f"{h.get('style_number', 'UNKNOWN')}-{h.get('color_code', '000')}",
-                    "product_name": h["product_name"],
-                    "purchase_date": h['date'],
-                    "quantity": h['quantity'],
-                    "category": next((p.get("bag-type", "Unknown Category") for p in products if str(p.get("style-number", "")) in h["product_id"]), "Unknown Category")
+                    "product_id": h.get("product_id", ""),
+                    "product_name": h.get("product_name", "Unknown Product"),
+                    "purchase_date": h.get("date", "Unknown Date"),
+                    "quantity": h.get("quantity", 0),
+                    "category": get_product_category(h.get("product_id", ""), products)
                 }
-                for h in purchase_history if h['customer_id'] == query
+                for h in purchase_history if h.get('customer_id') == query
             ]
             customer['purchase_history'] = customer_purchases
             result.append(customer)
         elif query.lower() in (customer['first_name'].lower() + " " + customer['last_name'].lower()):
             customer_purchases = [
                 {
-                    "product_id": f"{h.get('style_number', 'UNKNOWN')}-{h.get('color_code', '000')}",
-                    "product_name": h["product_name"],
-                    "purchase_date": h['date'],
-                    "quantity": h['quantity'],
-                    "category": next((p.get("bag-type", "Unknown Category") for p in products if str(p.get("style-number", "")) in h["product_id"]), "Unknown Category")
+                    "product_id": h.get("product_id", ""),
+                    "product_name": h.get("product_name", "Unknown Product"),
+                    "purchase_date": h.get("date", "Unknown Date"),
+                    "quantity": h.get("quantity", 0),
+                    "category": get_product_category(h.get("product_id", ""), products)
                 }
                 for h in purchase_history if h['customer_id'] == customer['customer_id']
             ]
@@ -76,16 +67,6 @@ def lookup_customer():
 
     return jsonify(result=result)
 
-@app.route('/recent')
-def get_recent():
-    return jsonify(recent=recent_searches)
-
-@app.route('/autocomplete', methods=['GET'])
-def autocomplete():
-    query = request.args.get('term', '')
-    customers = load_customers()
-    suggestions = [f"{c['first_name']} {c['last_name']}" for c in customers if query.lower() in (c['first_name'].lower() + " " + c['last_name'].lower())]
-    return jsonify(suggestions=suggestions)
 
 if __name__ == "__main__":
     app.run(debug=True)
