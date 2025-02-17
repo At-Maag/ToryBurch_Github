@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Lookup | Tory Burch</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header class="nav-header">
         <div class="nav-left">
             <a href="/">
@@ -19,61 +18,35 @@
         <div class="nav-center">
             <h1 class="page-title">CUSTOMER LOOKUP</h1>
         </div>
-        <div class="nav-right">
-            <a href="#">Search 🔍</a>
-            <a href="#">🛒</a>
-        </div>
     </header>
 
-    <!-- MAIN CONTAINER -->
     <div class="container">
-        
-        <!-- SEARCH BAR -->
-        <div class="search-bar">
-            <input type="text" placeholder="Enter customer name or ID">
-            <button>Search</button>
-        </div>
+        <form id="lookup-form">
+            <div class="search-bar">
+                <input type="text" id="customer-search" name="name" placeholder="Enter customer name or ID">
+                <button type="submit">Search</button>
+            </div>
+        </form>
 
-        <!-- CUSTOMER DETAILS -->
         <section class="customer-details">
             <h2>Customer Information</h2>
             <table>
-                <tr><th>Customer ID</th><td>420916</td></tr>
-                <tr><th>Name</th><td>Chris Garcia</td></tr>
-                <tr><th>Email</th><td>john189@example.com</td></tr>
-                <tr><th>Phone</th><td>(425) 703-5204</td></tr>
+                <tr><th>Customer ID</th><td id="customer-id"></td></tr>
+                <tr><th>Name</th><td id="customer-name"></td></tr>
+                <tr><th>Email</th><td id="customer-email"></td></tr>
+                <tr><th>Phone</th><td id="customer-phone"></td></tr>
             </table>
         </section>
 
-        <!-- PURCHASE HISTORY -->
         <section class="purchase-history">
             <h2>Purchase History</h2>
             <table>
                 <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Date</th>
-                        <th>Quantity</th>
-                        <th>Amount</th>
-                    </tr>
+                    <tr><th>Product</th><th>Date</th><th>Quantity</th><th>Amount</th></tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>KIRA DIAMOND QUILT VANITY CASE</td>
-                        <td>2024-01-29</td>
-                        <td>1</td>
-                        <td>$448.00</td>
-                    </tr>
-                    <tr>
-                        <td>SMALL ELLA PATENT TOTE BAG</td>
-                        <td>2024-03-26</td>
-                        <td>1</td>
-                        <td>$228.00</td>
-                    </tr>
-                </tbody>
+                <tbody id="purchase-history-body"></tbody>
             </table>
         </section>
-
     </div>
 
 </body>
