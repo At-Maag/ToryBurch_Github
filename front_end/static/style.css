@@ -161,3 +161,47 @@
 .expand-btn:hover {
   background-color: #D56F20;
 }
+
+.hidden {
+  display: none;
+}
+
+.sub-table-row {
+  background-color: #f9f9f9;
+}
+/* Improve Expand Button */
+.expand-btn {
+  background-color: #d87c37;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease-in-out;
+}
+.expand-btn:hover {
+  background-color: #b8632e;
+}
+
+/* Sub-Table Formatting */
+.sub-table-row {
+  background-color: #f9f9f9;
+}
+.sub-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+.sub-table th, .sub-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.sub-table th {
+  background-color: #f5e6d8;
+  color: #333;
+}
+.sub-table td {
+  background-color: white;
+}

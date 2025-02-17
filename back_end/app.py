@@ -15,6 +15,10 @@ def load_json(file_name):
     with open(file_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 # Route for main customer lookup page
 @app.route('/backend')
 def backend():
@@ -36,31 +40,50 @@ def lookup_customer():
         full_name = f"{customer['first_name']} {customer['last_name']}".lower()
         if query == customer['customer_id'] or query in full_name:
             customer_purchases = []
-
             grouped_purchases = defaultdict(list)
+
             for h in purchase_history:
                 if h['customer_id'] == customer['customer_id']:
-                    grouped_purchases[h['product_id']].append({
+                    style_number = h['product_id'].split('-')[0]  # Extract style number (ignores color)
+                    grouped_purchases[style_number].append({
                         "purchase_date": h.get("date", "Unknown Date"),
+                        "product_id": h.get("product_id"),
                         "quantity": h.get("quantity", 0),
                         "total_amount": h.get("total_amount", "$0.00"),
                         "store_location": h.get("store_location", "Unknown"),
                         "payment_method": h.get("payment_method", "Unknown")
                     })
 
-            for product_id, purchases in grouped_purchases.items():
-                product_name = next((p["name"] for p in products if str(p.get("style-number", "")) == product_id.split('-')[0]), "Unknown Product")
+            for style_number, purchases in grouped_purchases.items():
+                total_quantity = sum(p["quantity"] for p in purchases)
+                total_amount = sum(float(p["total_amount"].replace("$", "")) for p in purchases)
+
+                product_name = next(
+                    (p["name"] for p in products if str(p.get("style-number", "")) == style_number),
+                    "Unknown Product"
+                )
 
                 customer_purchases.append({
-                    "product_id": product_id,
+                    "style_number": style_number,
                     "product_name": product_name,
-                    "purchases": purchases
+                    "total_quantity": total_quantity,
+                    "total_amount": f"${total_amount:.2f}",
+                    "purchases": purchases  # Sub-table details
                 })
 
-            customer['purchase_history'] = customer_purchases
-            result.append(customer)
+            customer_info = {
+    "customer_id": customer.get("customer_id", "N/A"),
+    "first_name": customer.get("first_name", "N/A"),
+    "last_name": customer.get("last_name", "N/A"),
+    "email": customer.get("email", "N/A"),
+    "phone": customer.get("phone_number", "N/A"),
+    "purchase_history": customer_purchases
+}
+            
+            result.append(customer_info)
 
     return jsonify(result=result)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
