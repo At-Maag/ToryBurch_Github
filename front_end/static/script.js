@@ -217,3 +217,383 @@ function updateTableDisplay() {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Ensure main table is sorted by most recent purchase date on page load
+    sortTable(2, 'date', true);
+});
+
+// Sorting function with ascending/descending toggle
+let sortDirections = {}; // Tracks sorting direction for each column
+
+function parseDate(dateString) {
+    // Handle MM/DD/YYYY format and YYYY-MM-DD format
+    if (dateString.includes('/')) { 
+        let parts = dateString.split('/');
+        return new Date(parts[2], parts[0] - 1, parts[1]);  // MM/DD/YYYY -> YYYY, MM, DD
+    } 
+    if (dateString.includes('-')) {  
+        let parts = dateString.split('-');
+        return new Date(parts[0], parts[1] - 1, parts[2]);  // YYYY-MM-DD -> YYYY, MM, DD
+    }
+    return new Date(dateString);
+}
+
+
+function sortTable(columnIndex, type = 'string', defaultSort = false) {
+    let table = document.getElementById("purchaseHistoryTable");
+    if (!table) return; // Ensure table exists
+
+    let tbody = table.querySelector("tbody");
+    let rows = Array.from(tbody.rows);
+
+    // Initialize sorting direction
+    if (defaultSort || !sortDirections[columnIndex]) {
+        sortDirections[columnIndex] = "desc"; // Default to most recent first
+    } else {
+        sortDirections[columnIndex] = sortDirections[columnIndex] === "asc" ? "desc" : "asc";
+    }
+
+    let direction = sortDirections[columnIndex] === "asc" ? 1 : -1;
+
+    rows.sort((rowA, rowB) => {
+        let cellA = rowA.cells[columnIndex]?.textContent.trim() || "";
+        let cellB = rowB.cells[columnIndex]?.textContent.trim() || "";
+
+        if (type === 'date') {
+            let dateA = parseDate(cellA);
+            let dateB = parseDate(cellB);
+            return direction * (dateB - dateA); // Ensures most recent appears first
+        } else {
+            return direction * cellA.localeCompare(cellB, undefined, { numeric: true });
+        }
+    });
+
+    tbody.innerHTML = "";
+    rows.forEach(row => tbody.appendChild(row));
+}
+
+// Ensure sorting applies on page load
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => sortTable(2, 'date', true), 500);
+});
+
+
+// Function to populate purchase history correctly
+function populatePurchaseHistory(purchaseHistory) {
+    const tableBody = document.getElementById('purchase-history-body');
+    tableBody.innerHTML = '';
+
+    if (purchaseHistory.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="5">No Purchase History</td></tr>';
+        return;
+    }
+
+    purchaseHistory.forEach((purchase, index) => {
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${purchase.style_number || 'N/A'}</td>  
+            <td>${purchase.product_name || 'N/A'}</td>  
+            <td>${purchase.purchases.length > 1 
+                ? `<button class="expand-btn" onclick="toggleDetails(${index})">Expand</button>` 
+                : purchase.purchases[0]?.purchase_date || 'N/A'}</td>
+            <td>${purchase.total_quantity}</td>
+            <td>${purchase.total_amount}</td>
+        `;
+        tableBody.appendChild(row);
+
+        // Handle Subtable Sorting
+        if (purchase.purchases.length > 1) {
+            let subTableRow = document.createElement('tr');
+            subTableRow.id = `details-${index}`;
+            subTableRow.classList.add("sub-table-row", "hidden");
+            subTableRow.innerHTML = `
+                <td colspan="5">
+                    <table class="sub-table">
+                        <thead>
+                            <tr>
+                                <th>Product ID</th>
+                                <th>Date</th>
+                                <th>Store</th>
+                                <th>Quantity</th>
+                                <th>Amount</th>
+                                <th>Payment Method</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sub-table-body-${index}">
+                            ${purchase.purchases.map(p => `
+                                <tr>
+                                    <td>${p.product_id}</td>
+                                    <td>${p.purchase_date}</td>
+                                    <td>${p.store_location}</td>
+                                    <td>${p.quantity}</td>
+                                    <td>${p.total_amount}</td>
+                                    <td>${p.payment_method}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </td>
+            `;
+            tableBody.appendChild(subTableRow);
+
+            // **Sort Subtable by Most Recent Date**
+            let subTableBody = document.getElementById(`sub-table-body-${index}`);
+            let subRows = Array.from(subTableBody.rows);
+
+            subRows.sort((a, b) => {
+                let dateA = new Date(a.cells[1].innerText.trim());
+                let dateB = new Date(b.cells[1].innerText.trim());
+                return dateB - dateA; // Always sort desc (most recent first)
+            });
+
+            subTableBody.innerHTML = "";
+            subRows.forEach(row => subTableBody.appendChild(row));
+        }
+    });
+}
+
+// Function to toggle subtable visibility
+function toggleDetails(index) {
+    let subTable = document.getElementById(`details-${index}`);
+    if (subTable) {
+        subTable.classList.toggle("hidden");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("customer-name");
+    let suggestionsBox = document.getElementById("suggestions-box");
+
+    // Prevent duplicate suggestion boxes
+    if (!suggestionsBox) {
+        suggestionsBox = document.createElement("div");
+        suggestionsBox.setAttribute("id", "suggestions-box");
+        searchInput.parentNode.appendChild(suggestionsBox);
+    }
+
+    searchInput.addEventListener("input", async function () {
+        const query = this.value.trim().toLowerCase();
+        if (query.length < 2) {
+            suggestionsBox.style.display = "none";
+            return;
+        }
+
+        try {
+            console.log("Fetching autocomplete for:", query);
+            const response = await fetch(`/autocomplete?query=${query}`);
+            if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
+            const data = await response.json();
+
+            // Clear existing suggestions
+            suggestionsBox.innerHTML = "";
+            if (data.length > 0) {
+                suggestionsBox.style.display = "block";
+                positionSuggestionsBox(); // Adjust based on input height
+            } else {
+                suggestionsBox.style.display = "none";
+            }
+
+            data.forEach(customer => {
+                const suggestion = document.createElement("div");
+                suggestion.classList.add("suggestion-item");
+                suggestion.innerHTML = `<strong>${customer.first_name} ${customer.last_name}</strong> <span>(${customer.customer_id})</span>`;
+
+                suggestion.addEventListener("click", function () {
+                    searchInput.value = `${customer.first_name} ${customer.last_name}`;
+                    suggestionsBox.style.display = "none";
+                });
+
+                suggestionsBox.appendChild(suggestion);
+            });
+
+        } catch (error) {
+            console.error("Error fetching autocomplete suggestions:", error);
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!searchInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
+            suggestionsBox.style.display = "none";
+        }
+    });
+});
+
+
+async function fetchAutocomplete(query) {
+    try {
+        let response = await fetch(`http://127.0.0.1:5000/autocomplete?query=${query}`);
+        if (!response.ok) throw new Error("Request failed");
+        
+        let data = await response.json();
+        console.log("Autocomplete results:", data);
+        return data;
+    } catch (error) {
+        console.error("Error fetching autocomplete:", error);
+        return [];
+    }
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("customer-name");
+    const suggestionsBox = document.getElementById("suggestions-box");
+
+    let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+    function saveToHistory(query) {
+        if (!searchHistory.includes(query)) {
+            if (searchHistory.length >= 5) {
+                searchHistory.shift(); // Keep only the last 5 searches
+            }
+            searchHistory.push(query);
+            localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+        }
+    }
+
+    function showSearchHistory() {
+        const searchInput = document.getElementById("customer-name");
+        let recentBox = document.getElementById("recent-searches-box");
+    
+        if (!recentBox) {
+            recentBox = document.createElement("div");
+            recentBox.setAttribute("id", "recent-searches-box");
+            searchInput.parentNode.appendChild(recentBox);
+        }
+    
+        recentBox.innerHTML = "";
+        if (searchHistory.length > 0) {
+            searchHistory.forEach(query => {
+                const historyItem = document.createElement("div");
+                historyItem.classList.add("recent-search-item");
+                historyItem.innerHTML = `<strong>${query}</strong>`;
+                
+                historyItem.addEventListener("click", function () {
+                    searchInput.value = query;
+                    recentBox.style.display = "none";
+                    searchInput.dispatchEvent(new Event("input")); // Trigger search
+                });
+    
+                recentBox.appendChild(historyItem);
+            });
+    
+            positionRecentSearchBox(); // Position correctly
+            recentBox.style.display = "block";
+        }
+    }
+    
+    function positionRecentSearchBox() {
+        const searchInput = document.getElementById("customer-name");
+        const recentBox = document.getElementById("recent-searches-box");
+    
+        if (!recentBox) return;
+    
+        const parentRect = searchInput.parentElement.getBoundingClientRect();
+        const inputRect = searchInput.getBoundingClientRect();
+    
+        recentBox.style.width = `${inputRect.width}px`; // Match input width
+        recentBox.style.left = `${inputRect.left - parentRect.left}px`; // Align within parent container
+        recentBox.style.top = `${searchInput.offsetHeight + 5}px`; // Position slightly below input
+    }
+    
+
+    searchInput.addEventListener("focus", function () {
+        if (searchInput.value.trim() === "") {
+            showSearchHistory();
+        }
+    });
+
+    searchInput.addEventListener("input", async function () {
+        const query = this.value.trim().toLowerCase();
+        if (query.length < 2) {
+            suggestionsBox.style.display = "none";
+            return;
+        }
+
+        try {
+            const response = await fetch(`/autocomplete?query=${query}`);
+            if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
+            const data = await response.json();
+
+            suggestionsBox.innerHTML = "";
+            if (data.length > 0) {
+                suggestionsBox.style.display = "block";
+                positionSuggestionsBox();// Adjust based on input height
+            } else {
+                suggestionsBox.style.display = "none";
+            }
+
+            data.forEach(customer => {
+                const suggestion = document.createElement("div");
+                suggestion.classList.add("suggestion-item");
+                suggestion.innerHTML = `<strong>${customer.first_name} ${customer.last_name}</strong> <span>(${customer.customer_id})</span>`;
+                
+                suggestion.addEventListener("click", function () {
+                    searchInput.value = `${customer.first_name} ${customer.last_name}`;
+                    saveToHistory(searchInput.value);
+                    suggestionsBox.style.display = "none";
+                });
+
+                suggestionsBox.appendChild(suggestion);
+            });
+
+        } catch (error) {
+            console.error("Error fetching autocomplete suggestions:", error);
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!searchInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
+            suggestionsBox.style.display = "none";
+        }
+    });
+});
+
+function positionSuggestionsBox() {
+    const searchInput = document.getElementById("customer-name");
+    const suggestionsBox = document.getElementById("suggestions-box");
+
+    if (!suggestionsBox) return;
+
+    const parentRect = searchInput.parentElement.getBoundingClientRect();
+    const inputRect = searchInput.getBoundingClientRect();
+
+    suggestionsBox.style.width = `${inputRect.width}px`; // Match input width
+    suggestionsBox.style.left = `${inputRect.left - parentRect.left}px`; // Align within parent container
+    suggestionsBox.style.top = `${searchInput.offsetHeight + 5}px`; // Position slightly below input
+}
+
+function showSearchHistory() {
+    const searchInput = document.getElementById("customer-name");
+    let recentBox = document.getElementById("recent-searches-box");
+
+    if (!recentBox) {
+        recentBox = document.createElement("div");
+        recentBox.setAttribute("id", "recent-searches-box");
+        searchInput.parentNode.appendChild(recentBox);
+    }
+
+    recentBox.innerHTML = "";
+    if (searchHistory.length > 0) {
+        searchHistory.forEach(query => {
+            const historyItem = document.createElement("div");
+            historyItem.classList.add("recent-search-item");
+            historyItem.innerHTML = `<strong>${query}</strong>`;
+
+            historyItem.addEventListener("click", function () {
+                searchInput.value = query;
+                recentBox.style.display = "none";
+                searchInput.dispatchEvent(new Event("input")); // Trigger search
+            });
+
+            recentBox.appendChild(historyItem);
+        });
+
+        positionRecentSearchBox(); // Position correctly
+        recentBox.style.display = "block";
+    }
+}
+
+document.getElementById("customer-name").addEventListener("input", function () {
+    const recentBox = document.getElementById("recent-searches-box");
+    if (recentBox) {
+        recentBox.style.display = "none"; // Hide recent searches when typing
+    }
+});

@@ -22,8 +22,9 @@
 
     <div class="container">
         <form id="lookup-form">
-            <div class="search-bar">
-                <input type="text" id="customer-name" name="name" placeholder="Enter customer name or ID">
+            <div class="search-bar" style="position: relative;">
+                <input type="text" id="customer-name" name="name" placeholder="Enter customer name or ID" autocomplete="off">
+                <div id="suggestions-box"></div>
                 <button type="submit">Search</button>
             </div>
         </form>
@@ -49,26 +50,25 @@
 
                 <section class="purchase-history">
                     <h2>Purchase History</h2>
-                    <table class="data-table">
+                    <table class="data-table" id="purchaseHistoryTable">
                         <thead>
                             <tr>
-                                <th>Product (Style Number)</th>
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Quantity</th>
-                                <th>Amount</th>
+                                <th>Product (Style Number) <button class="sort-btn" onclick="sortTable(0, 'string')">▲▼</button></th>
+                                <th>Name <button class="sort-btn" onclick="sortTable(1, 'string')">▲▼</button></th>
+                                <th>Date <button class="sort-btn" onclick="sortTable(2, 'date')">▲▼</button></th>
+                                <th>Quantity <button class="sort-btn" onclick="sortTable(3, 'number')">▲▼</button></th>
+                                <th>Amount <button class="sort-btn" onclick="sortTable(4, 'number')">▲▼</button></th>
                             </tr>
                         </thead>
                         <tbody id="purchase-history-body">
-                            <!-- Data will be populated dynamically -->
+                            <!-- Data will be dynamically populated -->
                         </tbody>
                     </table>
+                    
                 </section>
                 
-
             </div>
         </div>
     </div>
-
 </body>
 </html>

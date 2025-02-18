@@ -41,6 +41,8 @@
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  position: relative;
+  z-index: 1050;
 }
 
 .search-bar input {
@@ -227,4 +229,93 @@
 .filter-section {
   border-left: 3px solid #E27D30; /* Keep border fixed */
   box-sizing: border-box; /* Ensure padding doesn't affect size */
+}
+
+.sort-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 5px;
+  color: #555;
+}
+
+.sort-btn:hover {
+  color: #000;
+}
+
+#suggestions-box, #recent-searches-box {
+  position: absolute;
+  top: calc(100% + 5px); /* Ensures dropdown appears below search bar */
+  left: 0;
+  width: 100%;
+  max-width: 300px; /* Prevents excessive stretching */
+  min-width: 200px; /* Ensures it's not too small */
+  border: 1px solid #ddd;
+  background: white;
+  z-index: 1050;
+  display: none;
+  max-height: 180px;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure search bar container positions correctly */
+.search-bar {
+  position: relative;
+  z-index: 1050;
+}
+
+/* Minimal Suggestion Item */
+.suggestion-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  transition: background 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Minimal Hover Effect */
+.suggestion-item:hover {
+  background: #f7f7f7;
+}
+
+/* Customer ID Styling */
+.suggestion-item span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Customer ID Styling */
+.suggestion-item span {
+  font-size: 0.85em; /* Make it slightly smaller */
+  color: #777;
+}
+
+
+
+/* Recent Search Items (Same as Suggestion Items) */
+.recent-search-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  transition: background 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.recent-search-item:hover {
+  background: #f7f7f7;
 }
