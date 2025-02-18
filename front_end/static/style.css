@@ -1,58 +1,321 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f6f6f8;
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Proxima Nova', sans-serif;
 }
 
-.header {
-  background-color: #f4a261;
-  padding: 20px;
-  text-align: center;
-  color: white;
+/* NAVIGATION HEADER */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: white;
+  border-bottom: 2px solid #E27D30;
 }
 
-form {
-  margin: 20px;
+.nav-left .nav-logo {
+  height: 45px;
+  width: auto;
 }
 
-input {
-  width: 80%;
-  padding: 10px;
-  margin-right: 10px;
+.nav-center .page-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: green;
+/* PAGE CONTENT */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1050;
+}
+
+.search-bar input {
+  padding: 12px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 12px;
+  background-color: #E27D30;
   color: white;
   border: none;
   cursor: pointer;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+.search-bar button:hover {
+  background-color: black;
 }
 
-th, td {
-  padding: 10px;
-  text-align: left;
+/* MAIN CONTAINER LAYOUT */
+.main-container {
+  display: flex;
+  gap: 20px;
+}
+
+.filter-section {
+  width: 200px;
+  padding: 15px;
   border: 1px solid #ddd;
+  
 }
 
-th {
-  background-color: #f4a261;
-  color: white;
+.content-section {
+  flex-grow: 1;
 }
 
-.filter table {
+/* CUSTOMER DETAILS & PURCHASE HISTORY */
+.customer-details, .purchase-history {
+  margin-top: 30px;
+}
+
+.customer-details h2, .purchase-history h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #E27D30;
+}
+
+.customer-details table, .purchase-history table {
   width: 100%;
   border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-.filter table td {
-  padding: 5px;
-  vertical-align: middle;
+
+.customer-details table th, .purchase-history table th,
+.customer-details table td, .purchase-history table td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
 }
-.filter input[type="checkbox"] {
-  margin-right: 10px;
+
+.customer-details table th {
+  background-color: #FAF0E6 !important;
+  font-weight: 600;
+  width: 30%; /* Adjusts the left column width */
+}
+
+.customer-details table td {
+  background-color: white !important;
+  color: black;
+  width: 70%; /* Expands the right column */
+}
+
+.customer-details table tr td:empty {
+  background-color: white !important; /* Ensures blank fields remain white */
+}
+
+.purchase-history table th {
+  background-color: #FAF0E6 !important; /* Restores beige background */
+  font-weight: 600;
+}
+
+.expand-btn {
+  background-color: #E27D30;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background 0.2s ease-in-out;
+}
+
+.expand-btn:hover {
+  background-color: #D56F20;
+}
+
+.sub-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+
+.sub-table th, .sub-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Keep filter section size fixed */
+.filter-section {
+  border-radius: 10px;
+  padding: 15px;
+  width: 220px; /* Keep width */
+  height: 280px; /* Increase height for better spacing */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 10px;
+  overflow-y: auto; /* Enable scrolling inside */
+  border-left: 3px solid #E27D30; /* Keep the orange border */
+  box-sizing: border-box; /* Prevents layout shifts */
+}
+
+
+
+
+
+/* Prevent filter options from getting cut off */
+#filter-options {
+  max-height: 170px;
+  overflow-y: auto;
+  padding-bottom: 5px;
+  margin-bottom: 0px; /* Keep spacing consistent */
+}
+
+
+/* Improve checkbox styling */
+#filter-options label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 5px 0; /* Reduce spacing */
+  cursor: pointer;
+}
+
+/* Make checkboxes orange */
+#filter-options input[type="checkbox"] {
+  margin-right: 8px;
+  margin-left: 2px; /* Ensures checkbox is not cut off */
+  accent-color: #ffdab9;
+  transform: scale(1.1);
+}
+
+
+/* Hover effect */
+#filter-options label:hover {
+  background-color: #ffdab9;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+/* Sticky scrolling effect */
+.filter-section {
+  position: sticky;
+  top: 10px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.filter-section {
+  border-left: 3px solid #E27D30; /* Keep border fixed */
+  box-sizing: border-box; /* Ensure padding doesn't affect size */
+}
+
+.sort-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 5px;
+  color: #555;
+}
+
+.sort-btn:hover {
+  color: #000;
+}
+
+#suggestions-box, #recent-searches-box {
+  position: absolute;
+  top: calc(100% + 5px); /* Ensures dropdown appears below search bar */
+  left: 0;
+  width: 100%;
+  max-width: 300px; /* Prevents excessive stretching */
+  min-width: 200px; /* Ensures it's not too small */
+  border: 1px solid #ddd;
+  background: white;
+  z-index: 1050;
+  display: none;
+  max-height: 180px;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure search bar container positions correctly */
+.search-bar {
+  position: relative;
+  z-index: 1050;
+}
+
+/* Minimal Suggestion Item */
+.suggestion-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  transition: background 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Minimal Hover Effect */
+.suggestion-item:hover {
+  background: #f7f7f7;
+}
+
+/* Customer ID Styling */
+.suggestion-item span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Customer ID Styling */
+.suggestion-item span {
+  font-size: 0.85em; /* Make it slightly smaller */
+  color: #777;
+}
+
+
+
+/* Recent Search Items (Same as Suggestion Items) */
+.recent-search-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  transition: background 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.recent-search-item:hover {
+  background: #f7f7f7;
 }
