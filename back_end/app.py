@@ -1,10 +1,21 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from collections import defaultdict
 import json
 import os
 
 app = Flask(__name__, template_folder="../front_end/templates", static_folder="../front_end/static")
 
+# Route to serve JSON files from the data directory
+@app.route('/data/<filename>')
+def get_json_data(filename):
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, '../data')
+
+    if os.path.exists(os.path.join(file_path, filename)):
+        return send_from_directory(file_path, filename)
+    else:
+        return jsonify({"error": "File not found"}), 404
+    
 # Helper function to load JSON data
 def load_json(file_name):
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -87,3 +98,19 @@ def lookup_customer():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+@app.route('/purchases', methods=['GET'])
+def get_purchases():
+    purchases = load_json('tory_burch_purchase_history.json')
+    products = load_json('tory_burch_products.json')
+
+    # Map style-number to bag type
+    bag_type_map = {str(p["style-number"]): p.get("bag-type", "Other Bags") for p in products}
+
+    # Attach bag type to each purchase
+    for p in purchases:
+        style_number = p["product_id"].split('-')[0]  # Ensure correct mapping
+        p["bag_type"] = bag_type_map.get(style_number, "Other Bags")
+
+    return jsonify(purchases)

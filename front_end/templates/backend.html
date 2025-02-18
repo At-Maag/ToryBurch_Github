@@ -27,32 +27,47 @@
                 <button type="submit">Search</button>
             </div>
         </form>
+        
+        <div class="main-container">
+            <aside class="filter-section">
+                <h3>Filter</h3>
+                <div id="filter-options">
+                    <label><input type="radio" name="bag-filter" value="all" checked> All</label><br>
+                </div>
+            </aside>
 
-        <section class="customer-details">
-            <h2>Customer Information</h2>
-            <table>
-                <tr><th>Customer ID</th><td id="customer-id"></td></tr>
-                <tr><th>Name</th><td id="customer-name-display"></td></tr>
-                <tr><th>Email</th><td id="customer-email"></td></tr>
-                <tr><th>Phone</th><td id="customer-phone"></td></tr>
-            </table>
-        </section>
+            <div class="content-section">
+                <section class="customer-details">
+                    <h2>Customer Information</h2>
+                    <table class="info-table">
+                        <tr><th>Customer ID</th><td id="customer-id"></td></tr>
+                        <tr><th>Name</th><td id="customer-name-display"></td></tr>
+                        <tr><th>Email</th><td id="customer-email"></td></tr>
+                        <tr><th>Phone</th><td id="customer-phone"></td></tr>
+                    </table>
+                </section>
 
-        <section class="purchase-history">
-            <h2>Purchase History</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product (Style Number)</th>
-                        <th>Name</th>
-                        <th>Date</th>
-                        <th>Quantity</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody id="purchase-history-body"></tbody>
-            </table>
-        </section>
+                <section class="purchase-history">
+                    <h2>Purchase History</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product (Style Number)</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Quantity</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="purchase-history-body">
+                            <!-- Data will be populated dynamically -->
+                        </tbody>
+                    </table>
+                </section>
+                
+
+            </div>
+        </div>
     </div>
 
 </body>

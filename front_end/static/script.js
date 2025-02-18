@@ -27,12 +27,10 @@ document.getElementById('lookup-form').addEventListener('submit', function(event
 
 function populateCustomerDetails(customer) {
   document.getElementById('customer-id').textContent = customer.customer_id || 'N/A';
-
   let fullName = (customer.first_name && customer.last_name) 
       ? `${customer.first_name} ${customer.last_name}` 
       : "N/A";
-      document.getElementById('customer-name-display').textContent = fullName;
-
+  document.getElementById('customer-name-display').textContent = fullName;
   document.getElementById('customer-email').textContent = customer.email || 'N/A';
   document.getElementById('customer-phone').textContent = customer.phone && customer.phone !== "N/A" ? customer.phone : "N/A";
 }
@@ -44,8 +42,6 @@ function clearCustomerDetails() {
   document.getElementById('customer-phone').textContent = '';
   document.getElementById('purchase-history-body').innerHTML = '<tr><td colspan="5">No Purchase History</td></tr>';
 }
-
-
 
 function populatePurchaseHistory(purchaseHistory) {
   const tableBody = document.getElementById('purchase-history-body');
@@ -111,14 +107,113 @@ function populatePurchaseHistory(purchaseHistory) {
 function toggleDetails(index) {
   let subTable = document.getElementById(`details-${index}`);
   if (subTable) {
-      if (subTable.style.display === "none" || subTable.classList.contains("hidden")) {
-          subTable.style.display = "table-row";  // ✅ Ensures it appears immediately
-          subTable.classList.remove("hidden");
-      } else {
-          subTable.style.display = "none";  // ✅ Ensures it hides immediately
-          subTable.classList.add("hidden");
-      }
+      subTable.classList.toggle("hidden");
   }
 }
 
+document.addEventListener("DOMContentLoaded", async function () {
+    const filterContainer = document.getElementById("filter-options");
+    const purchaseTable = document.getElementById("purchase-history-body");
+
+    try {
+        let response = await fetch("/data/tory_burch_products.json");
+        let products = await response.json();
+
+        let bagTypeMap = {};  // Move this to a global variable
+        let categories = new Set();
+
+        products.forEach(product => {
+            let bagType = product["bag-type"];
+
+            // Assign a default category if bag-type is null, empty, or missing
+            if (!bagType || bagType === null || bagType.trim() === "") {
+                bagType = "Other Bags";
+            }
+
+            bagTypeMap[product["style-number"]] = bagType;
+            categories.add(bagType);
+        });
+
+        // **Attach bagTypeMap to the global window object**
+        window.bagTypeMap = bagTypeMap;
+
+        // **Update filter options**
+        filterContainer.innerHTML = "";
+
+        let sortedCategories = Array.from(categories).filter(c => c !== "Other Bags").sort();
+        sortedCategories.unshift("All");
+        sortedCategories.push("Other Bags");
+        sortedCategories = sortedCategories.map(category => category.replace("|", "").trim());
+
+        sortedCategories.forEach(category => {
+            let label = document.createElement("label");
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.name = "bag-filter";
+            checkbox.value = category;
+            if (category === "All") checkbox.checked = true;
+
+            checkbox.addEventListener("change", function () {
+                handleFilterSelection(category);
+            });
+
+            label.appendChild(checkbox);
+            label.append(` ${category}`);
+            filterContainer.appendChild(label);
+        });
+
+        // **Ensure filtering updates the table when categories are ready**
+        updateTableDisplay();
+
+    } catch (error) {
+        console.error("Error loading bag type data:", error);
+    }
+});
+
+
+function handleFilterSelection(category) {
+    let allCheckbox = document.querySelector('input[name="bag-filter"][value="All"]');
+    let checkboxes = document.querySelectorAll('input[name="bag-filter"]');
+
+    if (category === "All") {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = allCheckbox.checked;
+        });
+    } else {
+        allCheckbox.checked = false;
+    }
+
+    let selectedCategories = Array.from(document.querySelectorAll('input[name="bag-filter"]:checked'))
+        .map(checkbox => checkbox.value);
+
+    if (selectedCategories.length === 0) {
+        allCheckbox.checked = true;
+    }
+
+    // **Explicitly call updateTableDisplay() to refresh the table**
+    updateTableDisplay();
+}
+
+function updateTableDisplay() {
+    let selectedCategories = Array.from(document.querySelectorAll('input[name="bag-filter"]:checked'))
+        .map(checkbox => checkbox.value);
+
+    let allSelected = selectedCategories.includes("All");
+    let rows = document.querySelectorAll("#purchase-history-body tr");
+
+    rows.forEach(row => {
+        let styleNumberCell = row.querySelector("td:first-child");
+        if (!styleNumberCell) return; // Prevent errors if row structure is different
+
+        let styleNumber = styleNumberCell.textContent.trim();
+        let productCategory = window.bagTypeMap[styleNumber] || "Other Bags";
+
+        // **Check if product belongs to selected categories and update visibility**
+        if (allSelected || selectedCategories.includes(productCategory)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
 
