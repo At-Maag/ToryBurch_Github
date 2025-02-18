@@ -1,3 +1,7 @@
+
+
+
+
 /* Reset Styles */
 * {
   margin: 0;
@@ -14,18 +18,65 @@
   padding: 15px 50px;
   background-color: white;
   border-bottom: 2px solid #E27D30;
+  
+}
+
+/* Left Section - Logo */
+.nav-left {
+  flex: 1;
 }
 
 .nav-left .nav-logo {
-  height: 45px;
+  height: 50px;
   width: auto;
 }
 
-.nav-center .page-title {
-  font-size: 20px;
+/* Center Section - Banner */
+.nav-center {
+  flex: 2;
+  text-align: center;
+}
+
+.nav-center .nav-banner {
+  max-width: 300px; /* Adjust size as needed */
+  height: auto;
+}
+
+.nav-right {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-right .nav-text {
+  font-size: 18px; /* Increase text size */
+  font-weight: bold; /* Make it bolder */
+  color: #333; /* Keep dark gray for readability */
+  text-decoration: none;
+  letter-spacing: 0.5px; /* Slightly improve spacing */
+  text-transform: uppercase; /* Optional: Makes text uppercase */
+  transition: color 0.3s ease, transform 0.2s ease-in-out;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.nav-right .nav-text:hover {
+  color: #E27D30; /* Change to brand color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+
+.lookup-button {
+  padding: 10px 15px;
+  background-color: #E27D30;
+  color: white;
+  text-decoration: none;
   font-weight: 600;
-  text-transform: uppercase;
-  color: black;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.lookup-button:hover {
+  background-color: black;
 }
 
 /* PAGE CONTENT */
@@ -80,7 +131,6 @@
   width: 200px;
   padding: 15px;
   border: 1px solid #ddd;
-  
 }
 
 .content-section {
@@ -130,9 +180,23 @@
   background-color: white !important; /* Ensures blank fields remain white */
 }
 
+/* General Table Styling */
+.purchase-history table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Headers */
 .purchase-history table th {
-  background-color: #FAF0E6 !important; /* Restores beige background */
-  font-weight: 600;
+  background-color: #FAF0E6 !important;
+  font-weight: bold;
+  text-align: left; /* Keeps text columns aligned left */
+  padding: 12px;
+  border-bottom: 2px solid #E27D30;
 }
 
 .expand-btn {
@@ -180,10 +244,6 @@
   box-sizing: border-box; /* Prevents layout shifts */
 }
 
-
-
-
-
 /* Prevent filter options from getting cut off */
 #filter-options {
   max-height: 170px;
@@ -191,7 +251,6 @@
   padding-bottom: 5px;
   margin-bottom: 0px; /* Keep spacing consistent */
 }
-
 
 /* Improve checkbox styling */
 #filter-options label {
@@ -209,7 +268,6 @@
   accent-color: #ffdab9;
   transform: scale(1.1);
 }
-
 
 /* Hover effect */
 #filter-options label:hover {
@@ -286,20 +344,6 @@
 .suggestion-item:hover {
   background: #f7f7f7;
 }
-
-/* Customer ID Styling */
-.suggestion-item span {
-  font-size: 12px;
-  color: #777;
-}
-
-/* Customer ID Styling */
-.suggestion-item span {
-  font-size: 0.85em; /* Make it slightly smaller */
-  color: #777;
-}
-
-
 
 /* Recent Search Items (Same as Suggestion Items) */
 .recent-search-item {
