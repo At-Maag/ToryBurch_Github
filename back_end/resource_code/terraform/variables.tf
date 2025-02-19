@@ -17,3 +17,9 @@ variable "pub_subnet_cidr_blocks" {
   type        = list(string)
   default     = ["10.16.0.0/20", "10.16.16.0/20"]
 }
+
+variable "availability_zones" {
+  description = "The availability zones for the subnets"
+  type        = list(string)
+  default     = ["us-west-2a", "us-west-2b"]
+}
