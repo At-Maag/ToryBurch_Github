@@ -11,3 +11,9 @@ variable "resource_tags" {
     Name = "main-vpc"
   }
 }
+
+variable "pub_subnet_cidr_blocks" {
+  description = "The CIDR blocks for the public subnets"
+  type        = list(string)
+  default     = ["10.16.0.0/20", "10.16.16.0/20"]
+}
