@@ -1,25 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tory Burch - Home</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TORY BURCH STORE</title>
+
+    <!-- Embedded CSS for Minimal, Modern Aesthetic -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Proxima Nova', sans-serif;
+        }
+
+        /* Minimalist Body */
+        body {
+            background-color: #ffffff;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* NAVIGATION HEADER */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: white;
+  border-bottom: 2px solid #E27D30;
+  
+}
+
+/* Left Section - Logo */
+.nav-left {
+  flex: 1;
+}
+
+.nav-left .nav-logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Center Section - Banner */
+.nav-center {
+  flex: 2;
+  text-align: center;
+}
+
+.nav-center .nav-banner {
+  max-width: 300px; /* Adjust size as needed */
+  height: auto;
+}
+
+.nav-right {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-right .nav-text {
+  font-size: 18px; /* Increase text size */
+  font-weight: bold; /* Make it bolder */
+  color: #333; /* Keep dark gray for readability */
+  text-decoration: none;
+  letter-spacing: 0.5px; /* Slightly improve spacing */
+  text-transform: uppercase; /* Optional: Makes text uppercase */
+  transition: color 0.3s ease, transform 0.2s ease-in-out;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.nav-right .nav-text:hover {
+  color: #E27D30; /* Change to brand color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+        /* Page Title */
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        /* Category Titles - Centered Above Products */
+        .category-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 40px 0 20px;
+            text-align: center;
+            color: #000;
+            width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 20px 5%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        /* Product Cards - Minimalist Look */
+        .product-card {
+            text-align: center;
+            background-color: transparent;
+        }
+
+        /* Image - No Borders, Clean Look */
+        .product-card img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 0;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Image Hover Effect */
+        .product-card:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Product Name */
+        .product-card h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Price */
+        .price {
+            font-size: 15px;
+            font-weight: 400;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        /* Promo - Only If Available */
+        .promo {
+            font-size: 14px;
+            font-weight: bold;
+            color: #007600;
+            margin-top: 5px;
+        }
+
+        /* Clickable Image & Name */
+        .product-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .product-link:hover h3 {
+            text-decoration: underline;
+        }
+
+/* Centering the "View All" button properly */
+.view-all-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    grid-column: span 4; /* Ensures it spans the full width */
+}
+
+/* Style for the "View All" Button */
+.view-all-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    border: 1px solid #000;
+    background-color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Ensure the button is properly positioned in grid layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Hover Effect */
+.view-all-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .category-title {
+                font-size: 18px;
+            }
+
+            .product-card h3 {
+                font-size: 14px;
+            }
+
+            .price {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Tory Burch</h1>
-    <a href="/backend" class="button">Customer Lookup</a>
-  </div>
+    <header class="nav-header">
+        <div class="nav-left">
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/tory-burch-logo.jpeg') }}" alt="Tory Burch Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-center">
+            <img src="{{ url_for('static', filename='images/tory-burch-banner.png') }}" alt="Tory Burch Banner" class="nav-banner">
+        </div>
+        <div class="nav-right">
+            <a href="/backend" class="nav-text">Customer Lookup</a>
+        </div>
+    </header>
 
-  <div class="content">
-    <h2>Featured Bags</h2>
-    <div class="bag-gallery">
-      <div class="bag-item">Gray Romy Crossbody - $398</div>
-      <div class="bag-item">Tan Romy Bucket Bag - $398</div>
-      <div class="bag-item">Small Tan Romy Crossbody - $398</div>
-      <div class="bag-item">Small White Romy Crossbody - $398</div>
-    </div>
-  </div>
+    <h1>Shop Our Collection</h1>
+
+    <!-- TOTE BAGS -->
+    <h2 class="category-title">TOTE BAGS</h2>
+    <div id="tote-container" class="product-grid"></div>
+
+    <!-- CROSSBODY BAGS -->
+    <h2 class="category-title">CROSSBODY BAGS</h2>
+    <div id="crossbody-container" class="product-grid"></div>
+
+    <!-- SHOULDER BAGS -->
+    <h2 class="category-title">SHOULDER BAGS</h2>
+    <div id="shoulder-container" class="product-grid"></div>
+
+    <!-- OTHER BAGS -->
+    <h2 class="category-title">OTHER BAGS</h2>
+    <div id="other-container" class="product-grid"></div>
+
+    <script>
+        let expandedCategories = {}; // Keep track of expanded categories
+    
+        fetch('/get_products')
+            .then(response => response.json())
+            .then(data => {
+                displayProducts(data);
+            })
+            .catch(error => console.error("Error fetching products:", error));
+    
+        function displayProducts(data) {
+            let categories = {
+                "Tote Bags": document.getElementById("tote-container"),
+                "Crossbody Bags": document.getElementById("crossbody-container"),
+                "Shoulder Bags": document.getElementById("shoulder-container"),
+                "Other Bags": document.getElementById("other-container"),
+            };
+    
+            Object.keys(categories).forEach(category => {
+                categories[category].innerHTML = ""; // Clear previous content
+    
+                let filteredProducts = data.filter(product => product["bag-type"] === category);
+    
+                // Check if the category is expanded or not
+                let productsToShow = expandedCategories[category] ? filteredProducts : filteredProducts.slice(0, 8);
+    
+                productsToShow.forEach(product => {
+                    categories[category].appendChild(createProductCard(product));
+                });
+    
+                // Add "View All / Collapse" button if there are more products
+                if (filteredProducts.length > 8) {
+                    let viewAllButton = document.createElement("div");
+                    viewAllButton.classList.add("view-all-container");
+    
+                    viewAllButton.innerHTML = `
+                        <button class="view-all-btn" onclick="toggleCategory('${category}')">
+                            ${expandedCategories[category] ? "COLLAPSE " : "VIEW ALL "} ${category.toUpperCase()}
+                        </button>
+                    `;
+    
+                    categories[category].appendChild(viewAllButton);
+                }
+            });
+        }
+    
+        // Function to create a product card
+        function createProductCard(product) {
+            let productCard = document.createElement("div");
+            productCard.classList.add("product-card");
+    
+            let promoText = product["promo"] ? `<p class="promo">${product["promo"]}</p>` : "";
+    
+            productCard.innerHTML = `
+                <a href="product.html?product_id=${product.id}" class="product-link">
+                    <img src="${product["product-img"]}" alt="${product["name"]}">
+                </a>
+                <h3><a href="product.html?product_id=${product.id}" class="product-link">${product["name"]}</a></h3>
+                <p class="price">${product["price"]}</p>
+                ${promoText}
+            `;
+    
+            return productCard;
+        }
+    
+        // Toggle Category Expansion Without Hiding Others
+        function toggleCategory(category) {
+            fetch('/get_products')
+                .then(response => response.json())
+                .then(data => {
+                    let categories = {
+                        "Tote Bags": document.getElementById("tote-container"),
+                        "Crossbody Bags": document.getElementById("crossbody-container"),
+                        "Shoulder Bags": document.getElementById("shoulder-container"),
+                        "Other Bags": document.getElementById("other-container"),
+                    };
+    
+                    let container = categories[category];
+    
+                    if (expandedCategories[category]) {
+                        // Collapse category back to 8 items
+                        container.innerHTML = ""; // Clear existing items
+                        let filteredProducts = data.filter(product => product["bag-type"] === category);
+                        let limitedProducts = filteredProducts.slice(0, 8);
+    
+                        limitedProducts.forEach(product => {
+                            container.appendChild(createProductCard(product));
+                        });
+    
+                        expandedCategories[category] = false; // Mark as collapsed
+                    } else {
+                        // Expand category to show all items
+                        let filteredProducts = data.filter(product => product["bag-type"] === category);
+                        container.innerHTML = ""; // Clear existing items
+    
+                        filteredProducts.forEach(product => {
+                            container.appendChild(createProductCard(product));
+                        });
+    
+                        expandedCategories[category] = true; // Mark as expanded
+                    }
+    
+                    // Re-add "View All / Collapse" button
+                    let viewAllButton = document.createElement("div");
+                    viewAllButton.classList.add("view-all-container");
+    
+                    viewAllButton.innerHTML = `
+                        <button class="view-all-btn" onclick="toggleCategory('${category}')">
+                            ${expandedCategories[category] ? "COLLAPSE " : "VIEW ALL "} ${category.toUpperCase()}
+                        </button>
+                    `;
+    
+                    container.appendChild(viewAllButton);
+                })
+                .catch(error => console.error("Error toggling category:", error));
+        }
+    </script>
+     
 </body>
 </html>
