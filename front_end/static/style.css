@@ -1,6 +1,9 @@
-
-
-
+/* Minimalist Font */
+body {
+  font-family: 'Proxima Nova', sans-serif; /* Matches Tory Burch */
+  background-color: #ffffff;
+  color: #333;
+}
 
 /* Reset Styles */
 * {
@@ -245,20 +248,40 @@
 }
 
 /* Prevent filter options from getting cut off */
+/* Improve filter container */
 #filter-options {
-  max-height: 170px;
-  overflow-y: auto;
-  padding-bottom: 5px;
-  margin-bottom: 0px; /* Keep spacing consistent */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  max-width: 220px;  /* ✅ Adjust width for longer names */
+}
+
+/* Ensure checkboxes align properly */
+#filter-options input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Make filter responsive */
+@media (max-width: 768px) {
+  #filter-options {
+      max-width: 100%;
+  }
 }
 
 /* Improve checkbox styling */
 #filter-options label {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 8px;
   font-size: 14px;
-  margin: 5px 0; /* Reduce spacing */
-  cursor: pointer;
+  margin-bottom: 5px;
+  width: 100%;
+  white-space: normal;  /* ✅ Allow wrapping */
+  word-break: break-word;
+  
 }
 
 /* Make checkboxes orange */
@@ -362,4 +385,144 @@
 
 .recent-search-item:hover {
   background: #f7f7f7;
+}
+
+/* CATEGORY HEADINGS */
+.category-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 40px 0 20px;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* PRODUCT CARDS */
+.product-card {
+  border: none;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+}
+
+/* PRODUCT IMAGE */
+.product-card img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* IMAGE HOVER EFFECT */
+.product-card:hover img {
+  transform: scale(1.03);
+}
+
+/* BAG NAME (Now Below the Image) */
+.product-card h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* PRICE - Minimal & Premium Look */
+.price {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* PROMO - Only if applicable */
+.promo {
+  font-size: 14px;
+  font-weight: bold;
+  color: #007600;
+  margin-top: 5px;
+}
+
+
+.product-card p {
+  font-size: 16px;
+  color: #E27D30;
+  font-weight: bold;
+}
+
+.product-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #E27D30;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.product-card a:hover {
+  background-color: #000;
+}
+
+.view-details {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #E27D30;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.view-details:hover {
+  background-color: #000;
+}
+
+/* REMOVE BUTTON - Clickable Name & Image Instead */
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* HOVER EFFECT */
+.product-link:hover h3 {
+  text-decoration: underline;
+}
+
+/* IMAGE HOVER EFFECT */
+.product-link:hover img {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+  }
+
+  .category-title {
+      font-size: 18px;
+  }
+
+  .product-card h3 {
+      font-size: 14px;
+  }
+
+  .price {
+      font-size: 14px;
+  }
 }

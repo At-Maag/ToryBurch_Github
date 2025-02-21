@@ -1,51 +1,81 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from collections import defaultdict
-from flask_cors import CORS  # Added for CORS support
+from flask_cors import CORS
 import json
 import os
 from datetime import datetime
 
+# ✅ Initialize Flask App
 app = Flask(__name__, template_folder="../front_end/templates", static_folder="../front_end/static")
-CORS(app)  # Allow frontend from different origins to call the API
+CORS(app)
 
-# Route to serve JSON files from the data directory
-@app.route('/data/<filename>')
-def get_json_data(filename):
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(base_dir, '../data')
+# ✅ Define paths for JSON files
+DATA_DIR = os.path.join(os.path.dirname(__file__), '../data')
+CUSTOMERS_FILE = os.path.join(DATA_DIR, 'tory_burch_customers.json')
+PRODUCTS_FILE = os.path.join(DATA_DIR, 'tory_burch_products.json')
+PURCHASE_HISTORY_FILE = os.path.join(DATA_DIR, 'tory_burch_purchase_history.json')
 
-    if os.path.exists(os.path.join(file_path, filename)):
-        return send_from_directory(file_path, filename)
-    else:
-        return jsonify({"error": "File not found"}), 404
-
-# Helper function to load JSON data
-def load_json(file_name):
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(base_dir, f'../data/{file_name}')
+# ✅ Load JSON Data Function
+def load_json(file_path):
     if not os.path.exists(file_path):
         print(f"Error: {file_path} not found")
         return []
     with open(file_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+# ✅ Load product data at startup
+products = load_json(PRODUCTS_FILE)
+
+# 🌟 HOME PAGE (STORE)
 @app.route('/')
-def home():
+def store():
     return render_template('index.html')
 
+# 👜 CATEGORY PAGE
+@app.route('/category')
+def category():
+    return render_template('category.html')
+
+# 🛍️ PRODUCT DETAIL PAGE
+@app.route('/product')
+def product():
+    return render_template('product.html')
+
+# 📇 CUSTOMER LOOKUP (BACKEND PAGE)
 @app.route('/backend')
 def backend():
     return render_template('backend.html')
 
+# 🌍 API: Get all products
+@app.route('/get_products')
+def get_products():
+    for product in products:
+        if not product.get('bag-type'):  # Assign "Other Bags" if missing
+            product['bag-type'] = "Other Bags"
+    return jsonify(products)
+
+# 🌍 API: Get products by category
+@app.route('/get_category_products')
+def get_category_products():
+    category = request.args.get('type')
+    return jsonify([p for p in products if p['bag-type'] == category])
+
+# 🌍 API: Get single product
+@app.route('/get_product')
+def get_product():
+    product_id = request.args.get('product_id')
+    product = next((p for p in products if str(p.get("id")) == product_id), None)
+    return jsonify(product) if product else ('Not Found', 404)
+
+# 🔎 CUSTOMER LOOKUP FUNCTION
 @app.route('/lookup', methods=['POST'])
 def lookup_customer():
     query = request.form.get('name', '').strip().lower()
     if not query:
         return jsonify(result=[])
 
-    customers = load_json('tory_burch_customers.json')
-    purchase_history = load_json('tory_burch_purchase_history.json')
-    products = load_json('tory_burch_products.json')
+    customers = load_json(CUSTOMERS_FILE)
+    purchase_history = load_json(PURCHASE_HISTORY_FILE)
 
     result = []
     for customer in customers:
@@ -56,15 +86,17 @@ def lookup_customer():
 
             for h in purchase_history:
                 if h['customer_id'] == customer['customer_id']:
-                    style_number = h['product_id'].split('-')[0]  # Extract style number (ignores color)
+                    style_number = h['product_id'].split('-')[0]  
 
-                    # ✅ Format dates correctly
+                    # ✅ Find the product and assign "Other Bags" if `bag-type` is missing
+                    product_info = next((p for p in products if str(p.get("style-number", "")) == style_number), None)
+                    product_name = product_info["name"] if product_info else "N/A"
+                    bag_type = product_info.get("bag-type", "Other Bags") if product_info else "Other Bags"
+
                     try:
                         raw_date = h.get("date", "Unknown Date").strip()
-                        if "/" in raw_date:
-                            formatted_date = datetime.strptime(raw_date, "%m/%d/%Y").strftime("%Y-%m-%d")
-                        else:
-                            formatted_date = datetime.strptime(raw_date, "%Y-%m-%d").strftime("%Y-%m-%d")
+                        formatted_date = datetime.strptime(raw_date, "%m/%d/%Y").strftime("%Y-%m-%d") \
+                            if "/" in raw_date else datetime.strptime(raw_date, "%Y-%m-%d").strftime("%Y-%m-%d")
                     except ValueError:
                         formatted_date = "Unknown Date"
 
@@ -74,21 +106,18 @@ def lookup_customer():
                         "quantity": h.get("quantity", 0),
                         "total_amount": h.get("total_amount", "$0.00"),
                         "store_location": h.get("store_location", "Unknown"),
-                        "payment_method": h.get("payment_method", "Unknown")
+                        "payment_method": h.get("payment_method", "Unknown"),
+                        "bag_type": bag_type  # ✅ Assign bag-type including "Other Bags"
                     })
 
             for style_number, purchases in grouped_purchases.items():
                 total_quantity = sum(p["quantity"] for p in purchases)
                 total_amount = sum(float(p["total_amount"].replace("$", "")) for p in purchases)
 
-                product_name = next(
-                    (p["name"] for p in products if str(p.get("style-number", "")) == style_number),
-                    "Unknown Product"
-                )
-
                 customer_purchases.append({
                     "style_number": style_number,
                     "product_name": product_name,
+                    "bag_type": purchases[0]["bag_type"],  # ✅ Ensure all purchases under this style number share a bag type
                     "total_quantity": total_quantity,
                     "total_amount": f"${total_amount:.2f}",
                     "purchases": purchases
@@ -102,27 +131,21 @@ def lookup_customer():
                 "phone": customer.get("phone_number", "N/A"),
                 "purchase_history": customer_purchases
             }
-            
+
             result.append(customer_info)
 
     return jsonify(result=result)
 
+# 🔍 CUSTOMER SEARCH AUTOCOMPLETE
 @app.route('/autocomplete', methods=['GET'])
 def autocomplete():
     query = request.args.get('query', '').strip().lower()
     if not query:
         return jsonify([])
 
-    try:
-        customers = load_json('tory_burch_customers.json')
-    except Exception as e:
-        print(f"Error loading customer data: {e}")
-        return jsonify([])
-
-    if not customers:
-        return jsonify([])
-
+    customers = load_json(CUSTOMERS_FILE)
     matches = []
+
     for customer in customers:
         first_name = customer.get("first_name", "").strip().lower()
         last_name = customer.get("last_name", "").strip().lower()
@@ -138,5 +161,6 @@ def autocomplete():
 
     return jsonify(matches[:5])
 
+# ✅ Run Flask Server
 if __name__ == "__main__":
     app.run(debug=True)

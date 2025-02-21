@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>TORY BURCH STORE</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/backend">Customer Lookup</a> 
+        </nav>
+    </header>
+
+    <div id="product-details"></div>
+    <button onclick="purchaseProduct()">Buy Now</button>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('product_id');
+
+        fetch(`/get_product?product_id=${productId}`)
+            .then(response => response.json())
+            .then(data => {
+                displayProductDetails(data);
+            });
+
+        function displayProductDetails(data) {
+            let container = document.getElementById("product-details");
+            container.innerHTML = `
+                <img src="${data['product-img']}" alt="${data['name']}">
+                <h1>${data['name']}</h1>
+                <p>${data['description']}</p>
+                <h2>Price: ${data['price']}</h2>
+            `;
+        }
+
+        function purchaseProduct() {
+            alert("Purchase functionality coming soon!");
+        }
+    </script>
+</body>
+</html>
