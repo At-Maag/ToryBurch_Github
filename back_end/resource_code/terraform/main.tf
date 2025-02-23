@@ -24,7 +24,7 @@ module "vpc" {
   tags = {
     Name = "ToryBurch-vpc"
   }
-
 }
+
 
 
