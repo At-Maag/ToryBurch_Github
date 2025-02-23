@@ -1,14 +1,26 @@
 # add Terraform and provider
 
-module "main-vpc" {
-  source               = "./modules/vpc"
-  cidr_block           = var.cidr_block
-  enable_dns_support   = true
-  enable_dns_hostnames = true
-  tags                 = var.resource_tags
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
 }
 
+# configure the aws provider
+provider "aws" {
+  shared_config_files      = ["~/.aws/config"]
+  shared_credentials_files = ["~/.aws/credentials"]
+  profile                  = "vscodeaws"
+  region                   = "us-west-2"
+}
 
+resource "aws_vpc" "main-vpc" {
+  cidr_block = var.vpc_cidr_block
+  tags       = var.resource_tags
+}
 
 
 resource "aws_internet_gateway" "main-igw" {
