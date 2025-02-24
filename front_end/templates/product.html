@@ -128,35 +128,59 @@
         }
 
         /* ✅ COLLAPSIBLE DESCRIPTION & DETAILS */
-        .collapsible {
-            font-weight: bold;
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-            font-size: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        .collapsible:hover {
-            color: #E27D30;
-        }
-        .arrow {
-            font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-        .expanded .arrow {
-            transform: rotate(45deg);
-        }
-        .content {
-            display: none;
-            padding: 10px 0;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .visible {
-            display: block;
-        }
+        /* ✅ DESCRIPTION & DETAILS - Minimalist & Modern */
+.collapsible {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 2px solid #EAEAEA;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.collapsible:hover {
+    color: #E27D30;
+}
+
+.arrow {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.expanded .arrow {
+    transform: rotate(90deg);
+}
+
+.content {
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    border-left: 3px solid #E27D30;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.visible {
+    display: block;
+}
+
+/* ✅ Bullet Styling for Details */
+#product-details li {
+    list-style: none;
+    padding: 6px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+#product-details li:last-child {
+    border-bottom: none;
+}
 
         /* ✅ BACK TO STORE */
         .back-button {
@@ -299,7 +323,7 @@
         <div class="collapsible" onclick="toggleDetails('description-content', this)">
             DESCRIPTION <span class="arrow">+</span>
         </div>
-        <div id="description-content" class="content">Hello there!</div>
+        <div id="description-content" class="content"></div>
 
         <!-- Details Section -->
         <div class="collapsible" onclick="toggleDetails('details-content', this)">
@@ -321,6 +345,42 @@
 
 <!-- ✅ JavaScript for Product & Related Products -->
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const styleNumber = params.get("style-number");
+    const colorCode = params.get("color-code");
+
+    fetch(`/get_product_by_id?style-number=${styleNumber}&color-code=${colorCode}`)
+        .then(response => response.json())
+        .then(product => {
+            document.getElementById("product-title").textContent = product["name"];
+            document.getElementById("product-image").src = product["product-img"];
+            document.getElementById("product-price").textContent = product["price"];
+
+            if (product["promo"]) {
+                let promo = document.getElementById("product-promo");
+                promo.textContent = product["promo"];
+                promo.style.display = "inline-block";
+            }
+
+            if (product["description"]) {
+                document.getElementById("description-content").textContent = product["description"];
+            }
+
+            let detailsList = document.getElementById("product-details");
+            detailsList.innerHTML = "";
+            let detailsKeys = ["dimension", "material", "closure-type", "strap", "num-of-pockets", "bag-size"];
+            detailsKeys.forEach(key => {
+                if (product[key]) { 
+                    let listItem = document.createElement("li");
+                    listItem.textContent = `${key.replace("-", " ")}: ${product[key]}`;
+                    detailsList.appendChild(listItem);
+                }
+            });
+        })
+        .catch(error => console.error("Error fetching product details:", error));
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
     const styleNumber = params.get("style-number");
