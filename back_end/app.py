@@ -46,6 +46,23 @@ def product():
 def backend():
     return render_template('backend.html')
 
+@app.route('/product.html')
+def product_page():
+    return render_template('product.html')
+
+#👜 Product Page
+@app.route('/get_product_by_id', methods=['GET'])
+def get_product_by_id():
+    style_number = request.args.get('style-number')
+    color_code = request.args.get('color-code')
+
+    product = next((p for p in products if str(p.get("style-number")) == style_number and str(p.get("color-code")) == color_code), None)
+
+    if product:
+        return jsonify(product)
+    return jsonify({"error": "Product not found"}), 404
+
+
 # 🌍 API: Get all products
 @app.route('/get_products')
 def get_products():
