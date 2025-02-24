@@ -40,3 +40,12 @@ variable "map_public_ip_on_launch" {
   default     = true
 }
 
+variable "private_subnet_cidr_block" {
+  description = "The CIDR block for the private subnet"
+  type        = string
+  default     = "10.16.2.0/24"
+}
+
+
+
+
