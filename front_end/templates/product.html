@@ -1,43 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Tory Burch</title>
+
+    <!-- ✅ Minimalist Styling -->
+    <style>
+        /* ✅ NAVIGATION HEADER (UNCHANGED) */
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: white;
+            border-bottom: 2px solid #E27D30;
+        }
+        .nav-left, .nav-center, .nav-right {
+            flex: 1;
+        }
+        .nav-left .nav-logo {
+            height: 50px;
+            width: auto;
+        }
+        .nav-center {
+            text-align: center;
+        }
+        .nav-center .nav-banner {
+            max-width: 300px;
+            height: auto;
+        }
+        .nav-right {
+            text-align: right;
+        }
+        .nav-right .nav-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.2s ease-in-out;
+            font-family: 'Proxima Nova', sans-serif;
+        }
+        .nav-right .nav-text:hover {
+            color: #E27D30;
+            transform: scale(1.05);
+        }
+
+        /* ✅ PRODUCT CONTAINER */
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+            background-color: #fff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            gap: 30px;
+        }
+        .product-image {
+            flex: 1;
+            min-width: 400px;
+            text-align: center;
+        }
+        .product-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 5px;
+        }
+        .product-info {
+            flex: 1;
+            min-width: 400px;
+        }
+
+        /* ✅ MINIMAL PROMO */
+        .promo {
+            background-color: #f8f8f8;
+            color: #E27D30;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* ✅ STAR RATINGS */
+        .rating {
+            color: gold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* ✅ ADD TO BAG BUTTON */
+        .add-to-bag {
+            background: black;
+            color: white;
+            font-size: 16px;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        .add-to-bag:hover {
+            background: #E27D30;
+        }
+
+        /* ✅ COLLAPSIBLE DESCRIPTION & DETAILS */
+        /* ✅ DESCRIPTION & DETAILS - Minimalist & Modern */
+.collapsible {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 2px solid #EAEAEA;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.collapsible:hover {
+    color: #E27D30;
+}
+
+.arrow {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.expanded .arrow {
+    transform: rotate(90deg);
+}
+
+.content {
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    border-left: 3px solid #E27D30;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.visible {
+    display: block;
+}
+
+/* ✅ Bullet Styling for Details */
+#product-details li {
+    list-style: none;
+    padding: 6px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+#product-details li:last-child {
+    border-bottom: none;
+}
+
+        /* ✅ BACK TO STORE */
+        .back-button {
+            display: block;
+            margin-top: 20px;
+            color: #E27D30;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: black;
+        }
+
+        /* ✅ RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .product-image, .product-info {
+                min-width: 100%;
+            }
+            .add-to-bag {
+                max-width: 300px;
+                margin: 20px auto;
+            }
+        }
+
+/* ✅ RATING SECTION */
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* ⭐ Improved Star Visibility */
+.stars {
+    color: gold;  /* Changed from black to gold */
+    font-size: 20px; /* Adjusted size for better visibility */
+    letter-spacing: 2px; /* Adjust spacing */
+    font-weight: bold; /* Make it bold */
+    display: flex;
+    align-items: center;
+}
+
+/* ⭐ Rating Number Style */
+.rating-number {
+    font-size: 14px; /* Slightly smaller for balance */
+    color: #333; /* Darker for better readability */
+    font-weight: bold;
+    margin-left: 5px; /* Ensure spacing from stars */
+}
+
+/* ✅ Hide if no rating */
+.rating-container.hidden {
+    display: none;
+}
+
+/* ✅ Related Products Section - Minimal & Modern */
+.related-products {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.related-title {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.related-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.related-card {
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.related-card:hover {
+    transform: scale(1.05);
+}
+
+.related-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.related-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    margin: 8px 0;
+}
+
+.related-card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.related-card .promo-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>TORY BURCH STORE</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/backend">Customer Lookup</a> 
-        </nav>
+
+    <!-- ✅ NAVIGATION HEADER -->
+    <header class="nav-header">
+        <div class="nav-left">
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/tory-burch-logo.jpeg') }}" alt="Tory Burch Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-center">
+            <img src="{{ url_for('static', filename='images/tory-burch-banner.png') }}" alt="Tory Burch Banner" class="nav-banner">
+        </div>
+        <div class="nav-right">
+            <a href="/backend" class="nav-text">Customer Lookup</a>
+        </div>
     </header>
 
-    <div id="product-details"></div>
-    <button onclick="purchaseProduct()">Buy Now</button>
+<!-- Product Details Section (Keeps Existing Logic) -->
+<div class="container">
+    <div class="product-image">
+        <img id="product-image" src="" alt="Product Image">
+    </div>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('product_id');
+    <div class="product-info">
+        <p id="product-promo" class="promo" style="display: none;"></p>
+        <h1 id="product-title">Loading...</h1>
+        <p class="price" id="product-price"></p>
 
-        fetch(`/get_product?product_id=${productId}`)
-            .then(response => response.json())
-            .then(data => {
-                displayProductDetails(data);
+        <!-- Star Rating -->
+        <div id="product-rating" class="rating-container hidden">
+            <span class="stars" id="stars"></span> 
+            <span class="rating-number" id="rating-number"></span>
+        </div>
+
+        <button class="add-to-bag">ADD TO BAG</button>
+
+        <!-- Description Section -->
+        <div class="collapsible" onclick="toggleDetails('description-content', this)">
+            DESCRIPTION <span class="arrow">+</span>
+        </div>
+        <div id="description-content" class="content"></div>
+
+        <!-- Details Section -->
+        <div class="collapsible" onclick="toggleDetails('details-content', this)">
+            DETAILS <span class="arrow">+</span>
+        </div>
+        <div id="details-content" class="content">
+            <ul id="product-details"></ul>
+        </div>
+
+        <a href="/" class="back-button">Back to Store</a>
+    </div>
+</div>
+
+<!-- ✅ "You May Also Like" Section (Now Below Product Details) -->
+<div class="related-products">
+    <h2 class="related-title">YOU MAY ALSO LIKE</h2>
+    <div class="related-container" id="related-products"></div>
+</div>
+
+<!-- ✅ JavaScript for Product & Related Products -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const styleNumber = params.get("style-number");
+    const colorCode = params.get("color-code");
+
+    fetch(`/get_product_by_id?style-number=${styleNumber}&color-code=${colorCode}`)
+        .then(response => response.json())
+        .then(product => {
+            document.getElementById("product-title").textContent = product["name"];
+            document.getElementById("product-image").src = product["product-img"];
+            document.getElementById("product-price").textContent = product["price"];
+
+            if (product["promo"]) {
+                let promo = document.getElementById("product-promo");
+                promo.textContent = product["promo"];
+                promo.style.display = "inline-block";
+            }
+
+            if (product["description"]) {
+                document.getElementById("description-content").textContent = product["description"];
+            }
+
+            let detailsList = document.getElementById("product-details");
+            detailsList.innerHTML = "";
+            let detailsKeys = ["dimension", "material", "closure-type", "strap", "num-of-pockets", "bag-size"];
+            detailsKeys.forEach(key => {
+                if (product[key]) { 
+                    let listItem = document.createElement("li");
+                    listItem.textContent = `${key.replace("-", " ")}: ${product[key]}`;
+                    detailsList.appendChild(listItem);
+                }
             });
+        })
+        .catch(error => console.error("Error fetching product details:", error));
+});
 
-        function displayProductDetails(data) {
-            let container = document.getElementById("product-details");
-            container.innerHTML = `
-                <img src="${data['product-img']}" alt="${data['name']}">
-                <h1>${data['name']}</h1>
-                <p>${data['description']}</p>
-                <h2>Price: ${data['price']}</h2>
-            `;
-        }
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const styleNumber = params.get("style-number");
+    const colorCode = params.get("color-code");
 
-        function purchaseProduct() {
-            alert("Purchase functionality coming soon!");
-        }
-    </script>
+    fetch(`/get_product_by_id?style-number=${styleNumber}&color-code=${colorCode}`)
+        .then(response => response.json())
+        .then(product => {
+            document.getElementById("product-title").textContent = product["name"];
+            document.getElementById("product-image").src = product["product-img"];
+            document.getElementById("product-price").textContent = product["price"];
+
+            if (product["promo"]) {
+                let promo = document.getElementById("product-promo");
+                promo.textContent = product["promo"];
+                promo.style.display = "inline-block";
+            }
+
+            // Fetch Related Products
+            fetch(`/get_related_products?bag-type=${encodeURIComponent(product["bag-type"])}&exclude=${styleNumber}`)
+                .then(response => response.json())
+                .then(relatedProducts => {
+                    let relatedContainer = document.getElementById("related-products");
+                    relatedContainer.innerHTML = ""; // Clear existing content
+
+                    relatedProducts.slice(0, 4).forEach(related => {
+                        let productCard = document.createElement("div");
+                        productCard.classList.add("related-card");
+
+                        let link = document.createElement("a");
+                        link.href = `product.html?style-number=${related["style-number"]}&color-code=${related["color-code"]}`;
+
+                        let img = document.createElement("img");
+                        img.src = related["product-img"];
+                        img.alt = related["name"];
+
+                        let title = document.createElement("h3");
+                        title.textContent = related["name"];
+
+                        let price = document.createElement("p");
+                        price.classList.add("price");
+                        price.textContent = related["price"];
+
+                        link.appendChild(img);
+                        productCard.appendChild(link);
+                        productCard.appendChild(title);
+                        productCard.appendChild(price);
+                        relatedContainer.appendChild(productCard);
+                    });
+                });
+        })
+        .catch(error => console.error("Error fetching product details:", error));
+});
+
+// ✅ Toggle Function for Description & Details
+function toggleDetails(id, element) {
+    let section = document.getElementById(id);
+    section.classList.toggle("visible");
+
+    // ✅ Change + to - when expanded
+    let arrow = element.querySelector(".arrow");
+    arrow.textContent = section.classList.contains("visible") ? "−" : "+";
+}
+</script>
+
 </body>
 </html>

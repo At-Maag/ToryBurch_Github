@@ -255,6 +255,7 @@
     <div id="other-container" class="product-grid"></div>
 
     <script>
+        
         let expandedCategories = {}; // Keep track of expanded categories
     
         fetch('/get_products')
@@ -290,9 +291,10 @@
                     viewAllButton.classList.add("view-all-container");
     
                     viewAllButton.innerHTML = `
-                        <button class="view-all-btn" onclick="toggleCategory('${category}')">
-                            ${expandedCategories[category] ? "COLLAPSE " : "VIEW ALL "} ${category.toUpperCase()}
-                        </button>
+                        <button class="view-all-btn" data-category="${category}">
+    ${expandedCategories[category] ? "COLLAPSE " : "VIEW ALL "} ${category.toUpperCase()}
+</button>
+
                     `;
     
                     categories[category].appendChild(viewAllButton);
@@ -300,76 +302,108 @@
             });
         }
     
-        // Function to create a product card
-        function createProductCard(product) {
-            let productCard = document.createElement("div");
-            productCard.classList.add("product-card");
-    
-            let promoText = product["promo"] ? `<p class="promo">${product["promo"]}</p>` : "";
-    
-            productCard.innerHTML = `
-                <a href="product.html?product_id=${product.id}" class="product-link">
-                    <img src="${product["product-img"]}" alt="${product["name"]}">
-                </a>
-                <h3><a href="product.html?product_id=${product.id}" class="product-link">${product["name"]}</a></h3>
-                <p class="price">${product["price"]}</p>
-                ${promoText}
-            `;
-    
-            return productCard;
-        }
-    
-        // Toggle Category Expansion Without Hiding Others
-        function toggleCategory(category) {
+ // Function to create a product card
+function createProductCard(product) {
+    let productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+
+    // Ensure proper URL encoding for safe parameter passing
+    let styleNumber = product["style-number"] ? encodeURIComponent(product["style-number"]) : "undefined";
+    let colorCode = product["color-code"] ? encodeURIComponent(product["color-code"]) : "undefined";
+
+    // ✅ Check if the product has a promo message
+    let promoText = product["promo"] 
+        ? `<p class="promo">${product["promo"]}</p>` 
+        : "";
+
+    productCard.innerHTML = `
+        <a href="product.html?style-number=${styleNumber}&color-code=${colorCode}" class="product-link">
+            <img src="${product['product-img']}" alt="${product['name']}">
+        </a>
+        <h3>
+            <a href="product.html?style-number=${styleNumber}&color-code=${colorCode}" class="product-link">
+                ${product["name"]}
+            </a>
+        </h3>
+        <p class="price">${product["price"]}</p>
+        ${promoText} <!-- ✅ Promo message appears only if available -->
+    `;
+
+    return productCard;
+}
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('/get_products')
+            .then(response => response.json())
+            .then(data => {
+                let container = document.getElementById("product-list");
+                data.forEach(product => {
+                    let productHTML = `
+                        <div class="product-card">
+                            <a href="product.html?style-number=${product['style-number']}&color-code=${product['color-code']}">
+                                <img src="${product['product-img']}" alt="${product['name']}">
+                                <h3>${product['name']}</h3>
+                            </a>
+                            <p class="price">$${product["price"]}</p>
+                        </div>
+                    `;
+                    container.innerHTML += productHTML;
+                });
+            })
+            .catch(error => console.error("Error loading products:", error));
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    document.body.addEventListener("click", function (event) {
+        if (event.target.classList.contains("view-all-btn")) {
+            let category = event.target.getAttribute("data-category");
+            expandedCategories[category] = !expandedCategories[category];
+
             fetch('/get_products')
                 .then(response => response.json())
                 .then(data => {
-                    let categories = {
-                        "Tote Bags": document.getElementById("tote-container"),
-                        "Crossbody Bags": document.getElementById("crossbody-container"),
-                        "Shoulder Bags": document.getElementById("shoulder-container"),
-                        "Other Bags": document.getElementById("other-container"),
-                    };
-    
-                    let container = categories[category];
-    
-                    if (expandedCategories[category]) {
-                        // Collapse category back to 8 items
-                        container.innerHTML = ""; // Clear existing items
-                        let filteredProducts = data.filter(product => product["bag-type"] === category);
-                        let limitedProducts = filteredProducts.slice(0, 8);
-    
-                        limitedProducts.forEach(product => {
-                            container.appendChild(createProductCard(product));
-                        });
-    
-                        expandedCategories[category] = false; // Mark as collapsed
-                    } else {
-                        // Expand category to show all items
-                        let filteredProducts = data.filter(product => product["bag-type"] === category);
-                        container.innerHTML = ""; // Clear existing items
-    
-                        filteredProducts.forEach(product => {
-                            container.appendChild(createProductCard(product));
-                        });
-    
-                        expandedCategories[category] = true; // Mark as expanded
-                    }
-    
-                    // Re-add "View All / Collapse" button
-                    let viewAllButton = document.createElement("div");
-                    viewAllButton.classList.add("view-all-container");
-    
-                    viewAllButton.innerHTML = `
-                        <button class="view-all-btn" onclick="toggleCategory('${category}')">
-                            ${expandedCategories[category] ? "COLLAPSE " : "VIEW ALL "} ${category.toUpperCase()}
-                        </button>
-                    `;
-    
-                    container.appendChild(viewAllButton);
+                    displayProducts(data);
                 })
-                .catch(error => console.error("Error toggling category:", error));
+                .catch(error => console.error("Error fetching products:", error));
         }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.addEventListener("click", function (event) {
+        if (event.target.classList.contains("view-all-btn")) {
+            let category = event.target.getAttribute("data-category");
+            let categoryElement = document.getElementById(category.toLowerCase().replace(" ", "-") + "-container");
+
+            if (categoryElement) {
+                // Save the current scroll position before expanding
+                if (!expandedCategories[category]) {
+                    expandedCategories[category] = true;
+                    sessionStorage.setItem("scrollPosition", window.scrollY); // Store scroll position
+                } else {
+                    // Scroll back to the stored position when collapsing
+                    expandedCategories[category] = false;
+                    let savedPosition = sessionStorage.getItem("scrollPosition");
+                    if (savedPosition !== null) {
+                        window.scrollTo({
+                            top: parseInt(savedPosition),
+                            behavior: "smooth"
+                        });
+                    }
+                }
+
+                // Fetch and update products
+                fetch('/get_products')
+                    .then(response => response.json())
+                    .then(data => {
+                        displayProducts(data);
+                    })
+                    .catch(error => console.error("Error fetching products:", error));
+            }
+        }
+    });
+});
+
+
     </script>
      
 </body>
