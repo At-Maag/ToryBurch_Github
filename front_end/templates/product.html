@@ -301,6 +301,89 @@
     color: green;
 }
 
+.product-colors {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.color-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color-swatch.selected {
+    border: 2px solid black;
+}
+
+#selected-color {
+    margin-top: 10px;
+    font-weight: bold;
+}
+.product-material {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product-colors {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-options {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.color-swatch {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease-in-out;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+}
+
+.color-swatch.selected {
+    border: 2px solid black;
+}
+
+#selected-color-name {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.add-to-bag {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.add-to-bag:hover {
+    opacity: 0.8;
+}
+
+
     </style>
 </head>
 <body>
@@ -331,12 +414,29 @@
         <h1 id="product-title">Loading...</h1>
         <p class="price" id="product-price"></p>
 
-        <!-- Star Rating -->
+        <!-- Star Rating (Hidden by Default) -->
         <div id="product-rating" class="rating-container hidden">
             <span class="stars" id="stars"></span> 
             <span class="rating-number" id="rating-number"></span>
         </div>
 
+        <!-- Material Section -->
+        <div class="product-material">
+            <h3>Material</h3>
+            <p id="product-material">Loading...</p>
+        </div>
+        
+        <hr>
+        
+        <!-- Color Selection -->
+        <div class="product-colors">
+            <h3>Color <span id="selected-color-name"></span></h3>
+            <div class="color-options" id="color-options"></div>
+        </div>
+        
+        <hr>
+        
+        <!-- Add to Bag Button -->
         <button class="add-to-bag">ADD TO BAG</button>
 
         <!-- Description Section -->
@@ -357,15 +457,16 @@
     </div>
 </div>
 
-<!-- ✅ "You May Also Like" Section (Now Below Product Details) -->
+<!-- "You May Also Like" Section Below Product Details -->
 <div class="related-products">
     <h2 class="related-title">YOU MAY ALSO LIKE</h2>
     <div class="related-container" id="related-products"></div>
 </div>
 
+
 <!-- ✅ JavaScript for Product & Related Products -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
     const styleNumber = params.get("style-number");
     const colorCode = params.get("color-code");
@@ -376,30 +477,57 @@
             document.getElementById("product-title").textContent = product["name"];
             document.getElementById("product-image").src = product["product-img"];
             document.getElementById("product-price").textContent = product["price"];
+            
+            // ✅ Material Section
+            document.getElementById("product-material").textContent = product["material"] || "N/A";
 
-            if (product["promo"]) {
-                let promo = document.getElementById("product-promo");
-                promo.textContent = product["promo"];
-                promo.style.display = "inline-block";
+            // ✅ Color Swatches
+            let colorContainer = document.getElementById("color-options");
+            colorContainer.innerHTML = "";
+
+            let colors = product["color"] ? product["color"].split(",") : [];
+
+            if (colors.length > 0) {
+                colors.forEach(colorName => {
+                    let swatch = document.createElement("div");
+                    swatch.classList.add("color-swatch");
+                    swatch.dataset.colorName = colorName.trim();
+                    swatch.style.backgroundColor = getColorCode(colorName.trim());
+
+                    swatch.addEventListener("click", function () {
+                        document.querySelector(".color-swatch.selected")?.classList.remove("selected");
+                        this.classList.add("selected");
+                        document.getElementById("selected-color-name").textContent = colorName;
+                    });
+
+                    colorContainer.appendChild(swatch);
+                });
+
+                // ✅ Auto-select the first color
+                colorContainer.firstChild.classList.add("selected");
+                document.getElementById("selected-color-name").textContent = colors[0].trim();
+            } else {
+                document.getElementById("selected-color-name").textContent = "No color available";
             }
-
-            if (product["description"]) {
-                document.getElementById("description-content").textContent = product["description"];
-            }
-
-            let detailsList = document.getElementById("product-details");
-            detailsList.innerHTML = "";
-            let detailsKeys = ["dimension", "material", "closure-type", "strap", "num-of-pockets", "bag-size"];
-            detailsKeys.forEach(key => {
-                if (product[key]) { 
-                    let listItem = document.createElement("li");
-                    listItem.textContent = `${key.replace("-", " ")}: ${product[key]}`;
-                    detailsList.appendChild(listItem);
-                }
-            });
         })
-        .catch(error => console.error("Error fetching product details:", error));
+        .catch(error => console.error("❌ Error fetching product details:", error));
 });
+
+// ✅ Function to map color names to actual color codes
+function getColorCode(colorName) {
+    const colorMap = {
+        "Powder Blue": "#B0C4DE",
+        "Tory Navy": "#1C2B4B",
+        "Black": "#000000",
+        "Brown": "#8B4513",
+        "Red": "#FF0000",
+        "Green": "#008000",
+        "White": "#FFFFFF",
+        "Pink": "#FFC0CB"
+    };
+    return colorMap[colorName] || "#D3D3D3"; // Default to light gray if unknown
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
