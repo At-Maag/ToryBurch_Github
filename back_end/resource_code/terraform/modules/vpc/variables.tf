@@ -26,7 +26,7 @@ variable "tags" {
 variable "public_subnet_cidr_block" {
   description = "The CIDR block for the public subnet"
   type        = string
-  default     = "10.16.1.0/20"
+  default     = "10.16.0.0/20"
 }
 variable "availability_zone" {
   description = "The availability zone for the public subnet"
@@ -43,7 +43,7 @@ variable "map_public_ip_on_launch" {
 variable "private_subnet_cidr_block" {
   description = "The CIDR block for the private subnet"
   type        = string
-  default     = "10.16.2.0/20"
+  default     = "10.16.16.0/20"
 }
 
 
