@@ -118,8 +118,14 @@ def lookup_customer():
                     style_number = h['product_id'].split('-')[0]  
 
                     # ✅ Find the product and assign "Other Bags" if `bag-type` is missing
+                    # ✅ Ensure we get the correct product based on style_number
                     product_info = next((p for p in products if str(p.get("style-number", "")) == style_number), None)
-                    product_name = product_info["name"] if product_info else "N/A"
+
+                    # ✅ Prevent overwriting product names with incorrect data
+                    if product_info:
+                        product_name = product_info.get("name", f"Unknown Product ({style_number})")
+                    else:
+                        product_name = f"Unknown Product ({style_number})"
                     bag_type = product_info.get("bag-type", "Other Bags") if product_info else "Other Bags"
 
                     try:
@@ -143,10 +149,18 @@ def lookup_customer():
                 total_quantity = sum(p["quantity"] for p in purchases)
                 total_amount = sum(float(p["total_amount"].replace("$", "")) for p in purchases)
 
+                # ✅ Get the correct product name for this style_number
+                correct_product = next((p for p in products if str(p.get("style-number", "")) == style_number), None)
+                correct_product_name = correct_product["name"] if correct_product else f"Unknown Product ({style_number})"
+
+                # ✅ If there's only 1 purchase, include the color code; otherwise, just show the style number
+                color_code = purchases[0]["product_id"].split('-')[1] if len(purchases) == 1 else None
+                display_style_number = f"{style_number}-{color_code}" if color_code else style_number
+
                 customer_purchases.append({
-                    "style_number": style_number,
-                    "product_name": product_name,
-                    "bag_type": purchases[0]["bag_type"],  # ✅ Ensure all purchases under this style number share a bag type
+                    "style_number": display_style_number,  # ✅ Shows `style_number-color_code` for single items
+                    "product_name": correct_product_name,  # ✅ Now assigns the correct name
+                    "bag_type": purchases[0]["bag_type"],
                     "total_quantity": total_quantity,
                     "total_amount": f"${total_amount:.2f}",
                     "purchases": purchases

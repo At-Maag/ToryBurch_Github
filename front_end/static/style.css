@@ -189,19 +189,33 @@ body {
   border-bottom: 2px solid #E27D30;
 }
 
+/* ✅ Slimmer Expand Button */
 .expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps text left, triangle right */
   background-color: #E27D30;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 5px 14px; /* Slightly larger padding */
+  font-size: 12px; /* Keep text readable */
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: background 0.2s ease-in-out;
+  border-radius: 5px; /* Smooth edges */
+  min-width: 90px; /* Adjusted width for better proportion */
+  text-align: center;
 }
 
+
+/* ✅ Triangle should always be on the right */
+.expand-btn .triangle {
+  margin-left: 8px; /* Moves it to the right side */
+  font-size: 10px;
+}
+
+/* ✅ Improve hover effect */
 .expand-btn:hover {
-  background-color: #D56F20;
+  background-color: #c25b1f;
 }
 
 .sub-table {

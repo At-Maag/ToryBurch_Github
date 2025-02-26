@@ -45,73 +45,22 @@ document.getElementById('lookup-form').addEventListener('submit', function(event
     document.getElementById('purchase-history-body').innerHTML = '<tr><td colspan="5">No Purchase History</td></tr>';
   }
   
-  function populatePurchaseHistory(purchaseHistory) {
-  const tableBody = document.getElementById('purchase-history-body');
-  tableBody.innerHTML = ''; 
-
-  if (purchaseHistory.length === 0) {
-      tableBody.innerHTML = '<tr><td colspan="5">No Purchase History</td></tr>';
-      return;
-  }
-
-  purchaseHistory.forEach((purchase, index) => {
-      let row = document.createElement('tr');
-      row.innerHTML = `
-          <td>${purchase.style_number || 'N/A'}</td>  
-          <td>${purchase.product_name || 'N/A'}</td>  
-          <td>
-              ${purchase.purchases.length > 1 
-                  ? `<button class="expand-btn" onclick="toggleDetails(${index})">Expand</button>` 
-                  : purchase.purchases[0]?.purchase_date || 'N/A'}
-          </td>
-          <td>${purchase.total_quantity}</td>
-          <td>${purchase.total_amount}</td>
-      `;
-      tableBody.appendChild(row);
-
-      if (purchase.purchases.length > 1) {
-          let subTableRow = document.createElement('tr');
-          subTableRow.id = `details-${index}`;
-          subTableRow.classList.add("sub-table-row", "hidden");
-          subTableRow.innerHTML = `
-              <td colspan="5">
-                  <table class="sub-table">
-                      <thead>
-                          <tr>
-                              <th>Product ID</th>
-                              <th>Date</th>
-                              <th>Store</th>
-                              <th>Quantity</th>
-                              <th>Amount</th>
-                              <th>Payment Method</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          ${purchase.purchases.map(p => `
-                              <tr>
-                                  <td>${p.product_id}</td>
-                                  <td>${p.purchase_date}</td>
-                                  <td>${p.store_location}</td>
-                                  <td>${p.quantity}</td>
-                                  <td>${p.total_amount}</td>
-                                  <td>${p.payment_method}</td>
-                              </tr>
-                          `).join('')}
-                      </tbody>
-                  </table>
-              </td>
-          `;
-          tableBody.appendChild(subTableRow);
-      }
-  });
-}
+ 
   
-  function toggleDetails(index) {
-    let subTable = document.getElementById(`details-${index}`);
-    if (subTable) {
-        subTable.classList.toggle("hidden");
+  function toggleDetails(index, button) {
+    let detailsRow = document.getElementById(`details-${index}`);
+    let triangle = button.querySelector(".triangle");
+
+    if (detailsRow.classList.contains("visible")) {
+        detailsRow.classList.remove("visible");
+        detailsRow.style.display = "none";
+        triangle.textContent = "▼";  // Collapse state
+    } else {
+        detailsRow.classList.add("visible");
+        detailsRow.style.display = "table-row";
+        triangle.textContent = "▲";  // Expanded state
     }
-  }
+}
   
   document.addEventListener("DOMContentLoaded", async function () {
       const filterContainer = document.getElementById("filter-options");
@@ -395,106 +344,66 @@ document.addEventListener("DOMContentLoaded", function() {
   // Function to populate purchase history correctly
   function populatePurchaseHistory(purchaseHistory) {
     const tableBody = document.getElementById('purchase-history-body');
-    tableBody.innerHTML = ''; 
+    tableBody.innerHTML = ''; // Clear previous content
 
     if (!purchaseHistory || purchaseHistory.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="5">No Purchase History</td></tr>';
+        tableBody.innerHTML = '<tr><td colspan="5" style="text-align: center;">No purchase history found</td></tr>';
         return;
     }
 
-    let bagTypeSet = new Set(); // ✅ Store unique bag-types for filtering
-
     purchaseHistory.forEach((purchase, index) => {
         let row = document.createElement('tr');
-
-        // ✅ Ensure `style-number` matches products from global data
-        let productMatch = window.allProducts.find(p => p["style-number"].toString() === purchase.style_number.toString());
-        let bagType = productMatch ? productMatch["bag-type"] || "Other Bags" : "Other Bags";
-        let correctName = productMatch ? productMatch["name"] : purchase.product_name || "Unknown Bag";
-
-        bagTypeSet.add(bagType); 
-
         row.innerHTML = `
-            <td>${purchase.style_number || 'N/A'}</td>  
-            <td>${correctName}</td>  
-            <td>${purchase.purchases[0]?.purchase_date || 'N/A'}</td>
+            <td class="product-number">${purchase.style_number}</td>
+            <td class="product-name">${purchase.product_name}</td>
+            <td>${purchase.purchases.length > 1 
+    ? `<button class="expand-btn" onclick="toggleDetails(${index}, this)">Expand <span class="triangle">▼</span></button>` 
+    : purchase.purchases[0]?.purchase_date || 'N/A'}
+</td>
             <td>${purchase.total_quantity}</td>
             <td>${purchase.total_amount}</td>
         `;
         tableBody.appendChild(row);
-    });
 
-    // ✅ Only update filters after all rows are added
-    updateFilterOptions(bagTypeSet);
+        /* ✅ Compact Sub-Table (Expand Section) */
+        if (purchase.purchases.length > 1) {
+            let subTableRow = document.createElement('tr');
+            subTableRow.id = `details-${index}`;
+            subTableRow.classList.add("sub-table-row", "hidden");
+
+            subTableRow.innerHTML = `
+                <td colspan="5">
+                    <table class="sub-table">
+                        <thead>
+                            <tr>
+                                <th>Product ID</th>
+                                <th>Date</th>
+                                <th>Store</th>
+                                <th>Quantity</th>
+                                <th>Amount</th>
+                                <th>Payment Method</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${purchase.purchases.map(p => `
+                                <tr>
+                                    <td>${p.product_id}</td>
+                                    <td>${p.purchase_date}</td>
+                                    <td>${p.store_location}</td>
+                                    <td>${p.quantity}</td>
+                                    <td>${p.total_amount}</td>
+                                    <td>${p.payment_method}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </td>
+            `;
+            tableBody.appendChild(subTableRow);
+        }
+    });
 }
-  
-  
-  // Function to toggle subtable visibility
-  function toggleDetails(index) {
-    let subTableRow = document.getElementById(`details-${index}`);
-    
-    if (subTableRow) {
-        subTableRow.classList.toggle("hidden");
-    }
-}
-  
-  document.addEventListener("DOMContentLoaded", function () {
-      const searchInput = document.getElementById("customer-name");
-      let suggestionsBox = document.getElementById("suggestions-box");
-  
-      // Prevent duplicate suggestion boxes
-      if (!suggestionsBox) {
-          suggestionsBox = document.createElement("div");
-          suggestionsBox.setAttribute("id", "suggestions-box");
-          searchInput.parentNode.appendChild(suggestionsBox);
-      }
-  
-      searchInput.addEventListener("input", async function () {
-          const query = this.value.trim().toLowerCase();
-          if (query.length < 2) {
-              suggestionsBox.style.display = "none";
-              return;
-          }
-  
-          try {
-              console.log("Fetching autocomplete for:", query);
-              const response = await fetch(`/autocomplete?query=${query}`);
-              if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
-              const data = await response.json();
-  
-              // Clear existing suggestions
-              suggestionsBox.innerHTML = "";
-              if (data.length > 0) {
-                  suggestionsBox.style.display = "block";
-                  positionSuggestionsBox(); // Adjust based on input height
-              } else {
-                  suggestionsBox.style.display = "none";
-              }
-  
-              data.forEach(customer => {
-                  const suggestion = document.createElement("div");
-                  suggestion.classList.add("suggestion-item");
-                  suggestion.innerHTML = `<strong>${customer.first_name} ${customer.last_name}</strong> <span>(${customer.customer_id})</span>`;
-  
-                  suggestion.addEventListener("click", function () {
-                      searchInput.value = `${customer.first_name} ${customer.last_name}`;
-                      suggestionsBox.style.display = "none";
-                  });
-  
-                  suggestionsBox.appendChild(suggestion);
-              });
-  
-          } catch (error) {
-              console.error("Error fetching autocomplete suggestions:", error);
-          }
-      });
-  
-      document.addEventListener("click", function (event) {
-          if (!searchInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
-              suggestionsBox.style.display = "none";
-          }
-      });
-  });
+
   
   
   async function fetchAutocomplete(query) {
