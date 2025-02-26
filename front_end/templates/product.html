@@ -170,12 +170,27 @@
     display: block;
 }
 
-/* ✅ Bullet Styling for Details */
+/* ✅ Add orange left border to the Details section */
+#details-content {
+    border-left: 3px solid #E27D30; /* Orange border */
+    padding-left: 15px; /* Adds spacing from the border */
+    margin-top: 10px;
+}
+
+/* ✅ Style the list inside Details */
 #product-details li {
-    list-style: none;
+    list-style: none; /* Remove default bullets */
     padding: 6px 0;
     font-size: 15px;
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid #EAEAEA; /* Light grey separator */
+}
+
+/* ✅ Add a `-` dash before each detail */
+#product-details li::before {
+    content: "- ";
+    font-weight: bold;
+    color: #000000;
+    margin-right: 5px;
 }
 
 #product-details li:last-child {
@@ -246,6 +261,7 @@
 
 /* ✅ Related Products Section - Minimal & Modern */
 .related-products {
+    display: block; /* Ensure it's not hidden */
     margin-top: 50px;
     padding: 20px;
     text-align: center;
@@ -301,27 +317,22 @@
     color: green;
 }
 
-.product-colors {
-    margin-top: 20px;
+/* ✅ "Color" label remains dark while {color name} is lighter */
+.product-colors h3 {
     font-size: 16px;
+    font-weight: bold;
+    color: #000; /* Keep "Color" text dark */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* ✅ Ensure the color swatch (circle) is fully right-aligned */
 .color-options {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.color-swatch {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-
-.color-swatch.selected {
-    border: 2px solid black;
+    justify-content: flex-end; /* Moves swatch to the right */
+    align-items: center;
+    flex-grow: 1;
 }
 
 #selected-color {
@@ -333,40 +344,44 @@
     margin-bottom: 10px;
 }
 
+/* ✅ Keep "Color" dark and separate it from {color name} */
 .product-colors {
     font-size: 16px;
+    font-weight: bold;
+    color: #000; /* "Color" remains dark */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px; /* Adds spacing between "Color" and the color name */
 }
 
-.color-options {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
 
+/* ✅ Swatch (color circle) styling */
 .color-swatch {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid transparent;
     transition: transform 0.2s ease-in-out;
 }
 
-.color-swatch:hover {
-    transform: scale(1.1);
-}
-
+/* ✅ Highlight selected swatch */
 .color-swatch.selected {
     border: 2px solid black;
 }
 
-#selected-color-name {
-    font-weight: bold;
-    margin-left: 10px;
+/* ✅ Add hover effect */
+.color-swatch:hover {
+    transform: scale(1.1);
 }
+
+/* ✅ Make the color name lighter */
+#selected-color-name {
+    font-weight: normal;
+    color: #888; /* Lighter gray for better contrast */
+    margin-left: 4px; /* Small spacing for a natural flow */
+}
+
 
 .add-to-bag {
     background-color: black;
@@ -471,33 +486,67 @@ document.addEventListener("DOMContentLoaded", function () {
     const styleNumber = params.get("style-number");
     const colorCode = params.get("color-code");
 
+    // ✅ Fetch Product Details
     fetch(`/get_product_by_id?style-number=${styleNumber}&color-code=${colorCode}`)
         .then(response => response.json())
         .then(product => {
             document.getElementById("product-title").textContent = product["name"];
             document.getElementById("product-image").src = product["product-img"];
             document.getElementById("product-price").textContent = product["price"];
-            
-            // ✅ Material Section
+
+            // ✅ Load Product Description
+            document.getElementById("description-content").innerHTML = `<p>${product["description"] || "No description available."}</p>`;
+
+            // ✅ Load & Format Details Section Without Labels
+            let detailsList = document.getElementById("product-details");
+            detailsList.innerHTML = ""; // Clear previous content
+
+            const detailKeys = [
+                "dimension",
+                "material",
+                "finish",
+                "characteristic",
+                "closure-type",
+                "strap",
+                "num-of-pockets",
+                "technique",
+                "dust-bag",
+                "bag-size",
+                "bag-type"
+            ];
+
+            detailKeys.forEach(key => {
+                if (product[key] && product[key] !== "null") {
+                    let listItem = document.createElement("li");
+                    listItem.textContent = product[key]; // Display just the value, no label
+                    detailsList.appendChild(listItem);
+                }
+            });
+
+            if (detailsList.innerHTML.trim() === "") {
+                detailsList.innerHTML = "<li>No additional details available.</li>";
+            }
+
+            // ✅ Load Material
             document.getElementById("product-material").textContent = product["material"] || "N/A";
 
-            // ✅ Color Swatches
+            // ✅ Load Colors & Swatches
             let colorContainer = document.getElementById("color-options");
             colorContainer.innerHTML = "";
-
             let colors = product["color"] ? product["color"].split(",") : [];
 
             if (colors.length > 0) {
                 colors.forEach(colorName => {
+                    let formattedColor = formatColorName(colorName.trim());
                     let swatch = document.createElement("div");
                     swatch.classList.add("color-swatch");
-                    swatch.dataset.colorName = colorName.trim();
-                    swatch.style.backgroundColor = getColorCode(colorName.trim());
+                    swatch.dataset.colorName = formattedColor;
+                    swatch.style.backgroundColor = getColorCode(formattedColor);
 
                     swatch.addEventListener("click", function () {
                         document.querySelector(".color-swatch.selected")?.classList.remove("selected");
                         this.classList.add("selected");
-                        document.getElementById("selected-color-name").textContent = colorName;
+                        document.getElementById("selected-color-name").textContent = formattedColor;
                     });
 
                     colorContainer.appendChild(swatch);
@@ -505,82 +554,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // ✅ Auto-select the first color
                 colorContainer.firstChild.classList.add("selected");
-                document.getElementById("selected-color-name").textContent = colors[0].trim();
+                document.getElementById("selected-color-name").textContent = formatColorName(colors[0].trim());
             } else {
                 document.getElementById("selected-color-name").textContent = "No color available";
             }
         })
         .catch(error => console.error("❌ Error fetching product details:", error));
-});
 
-// ✅ Function to map color names to actual color codes
-function getColorCode(colorName) {
-    const colorMap = {
-        "Powder Blue": "#B0C4DE",
-        "Tory Navy": "#1C2B4B",
-        "Black": "#000000",
-        "Brown": "#8B4513",
-        "Red": "#FF0000",
-        "Green": "#008000",
-        "White": "#FFFFFF",
-        "Pink": "#FFC0CB"
-    };
-    return colorMap[colorName] || "#D3D3D3"; // Default to light gray if unknown
-}
+    // ✅ Fetch Related Products (Fix for "You May Also Like" section)
+// ✅ Fetch Related Products (Fixed Handling)
+fetch(`/get_related_products?style-number=${styleNumber}`)
+    .then(response => response.json())
+    .then(relatedProducts => {
+        let relatedContainer = document.getElementById("related-products");
+        relatedContainer.innerHTML = ""; // Clear previous content
 
+        // ✅ Check if API returned valid products
+        if (!relatedProducts || relatedProducts.length === 0) {
+            console.warn("⚠ No related products found for style:", styleNumber);
+            relatedContainer.innerHTML = "<p>No related products found.</p>";
+            return;
+        }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const params = new URLSearchParams(window.location.search);
-    const styleNumber = params.get("style-number");
-    const colorCode = params.get("color-code");
+        // ✅ Limit display to 4 related products
+        relatedProducts.slice(0, 4).forEach(related => {
+            let productCard = document.createElement("div");
+            productCard.classList.add("related-card");
 
-    fetch(`/get_product_by_id?style-number=${styleNumber}&color-code=${colorCode}`)
-        .then(response => response.json())
-        .then(product => {
-            document.getElementById("product-title").textContent = product["name"];
-            document.getElementById("product-image").src = product["product-img"];
-            document.getElementById("product-price").textContent = product["price"];
+            let link = document.createElement("a");
+            link.href = `product.html?style-number=${related["style-number"]}&color-code=${related["color-code"]}`;
 
-            if (product["promo"]) {
-                let promo = document.getElementById("product-promo");
-                promo.textContent = product["promo"];
-                promo.style.display = "inline-block";
-            }
+            let img = document.createElement("img");
+            img.src = related["product-img"];
+            img.alt = related["name"];
+            img.loading = "lazy"; // Optimize performance
 
-            // Fetch Related Products
-            fetch(`/get_related_products?bag-type=${encodeURIComponent(product["bag-type"])}&exclude=${styleNumber}`)
-                .then(response => response.json())
-                .then(relatedProducts => {
-                    let relatedContainer = document.getElementById("related-products");
-                    relatedContainer.innerHTML = ""; // Clear existing content
+            let title = document.createElement("h3");
+            title.textContent = related["name"];
 
-                    relatedProducts.slice(0, 4).forEach(related => {
-                        let productCard = document.createElement("div");
-                        productCard.classList.add("related-card");
+            let price = document.createElement("p");
+            price.classList.add("price");
+            price.textContent = related["price"];
 
-                        let link = document.createElement("a");
-                        link.href = `product.html?style-number=${related["style-number"]}&color-code=${related["color-code"]}`;
+            link.appendChild(img);
+            productCard.appendChild(link);
+            productCard.appendChild(title);
+            productCard.appendChild(price);
+            relatedContainer.appendChild(productCard);
+        });
 
-                        let img = document.createElement("img");
-                        img.src = related["product-img"];
-                        img.alt = related["name"];
-
-                        let title = document.createElement("h3");
-                        title.textContent = related["name"];
-
-                        let price = document.createElement("p");
-                        price.classList.add("price");
-                        price.textContent = related["price"];
-
-                        link.appendChild(img);
-                        productCard.appendChild(link);
-                        productCard.appendChild(title);
-                        productCard.appendChild(price);
-                        relatedContainer.appendChild(productCard);
-                    });
-                });
+        console.log("✅ Successfully loaded related products:", relatedProducts);
+        
         })
-        .catch(error => console.error("Error fetching product details:", error));
+        .catch(error => {
+            console.error("❌ Error fetching related products:", error);
+            document.getElementById("related-products").innerHTML = "<p>Error loading related products.</p>";
+        });
 });
 
 // ✅ Toggle Function for Description & Details
@@ -592,7 +621,55 @@ function toggleDetails(id, element) {
     let arrow = element.querySelector(".arrow");
     arrow.textContent = section.classList.contains("visible") ? "−" : "+";
 }
-</script>
+
+// ✅ Function to Format Color Names to Proper Case
+function formatColorName(color) {
+    return color.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// ✅ Function to Map Color Names to Actual Color Codes
+function getColorCode(colorName) {
+    const colorMap = {
+        "Black": "#000000",
+        "Vanilla Soft Serve": "#F3E5AB",
+        "Powder Blue": "#B0C4DE",
+        "Tory Navy": "#1C2B4B",
+        "Brown": "#8B4513",
+        "Red": "#FF0000",
+        "Green": "#008000",
+        "White": "#FFFFFF",
+        "Pink": "#FFC0CB",
+        "Grey": "#808080",
+        "Beige": "#F5F5DC",
+        "Tan": "#D2B48C",
+        "Gold": "#FFD700",
+        "Silver": "#C0C0C0",
+        "Ivory": "#FFFFF0",
+        "Camel": "#C19A6B",
+        "Olive": "#808000",
+        "Burgundy": "#800020",
+        "Navy Blue": "#000080",
+        "Light Blue": "#ADD8E6",
+        "Dark Blue": "#00008B",
+        "Coral": "#FF7F50",
+        "Lavender": "#E6E6FA",
+        "Teal": "#008080",
+        "Mint": "#98FF98",
+        "Yellow": "#FFFF00",
+        "Orange": "#FFA500",
+        "Rose": "#FF007F",
+        "Lilac": "#C8A2C8",
+        "Charcoal": "#36454F",
+        "Mauve": "#E0B0FF",
+        "Mustard": "#FFDB58",
+        "Sand": "#C2B280",
+        "Sky Blue": "#87CEEB"
+    };
+    return colorMap[colorName] || "#D3D3D3"; // Default to light gray if unknown
+}
+
+    </script>
+    
 
 </body>
 </html>

@@ -64,15 +64,24 @@ def get_product_by_id():
 
 @app.route('/get_related_products', methods=['GET'])
 def get_related_products():
-    bag_type = request.args.get('bag-type')
-    exclude_style_number = request.args.get('exclude')
+    style_number = request.args.get('style-number')  # Get current product's style-number
+    product = next((p for p in products if str(p.get("style-number")) == style_number), None)
 
+    # ✅ If the product is not found, return an empty list
+    if not product:
+        return jsonify([])
+
+    bag_type = product.get("bag-type", "Other Bags")  # ✅ Get bag-type, default to "Other Bags"
+
+    # ✅ Find products with the same bag-type, but exclude the current product
     related_products = [
         p for p in products
-        if p.get("bag-type") == bag_type and str(p.get("style-number")) != exclude_style_number
+        if p.get("bag-type") == bag_type and str(p.get("style-number")) != style_number
     ]
 
-    return jsonify(related_products)
+    # ✅ Limit to a maximum of 4 related products
+    return jsonify(related_products[:4])
+
 
 
 # 🌍 API: Get all products
