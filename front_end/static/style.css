@@ -21,49 +21,36 @@ body {
   padding: 15px 50px;
   background-color: white;
   border-bottom: 2px solid #E27D30;
-  
 }
-
-/* Left Section - Logo */
-.nav-left {
+.nav-left, .nav-center, .nav-right {
   flex: 1;
 }
-
 .nav-left .nav-logo {
   height: 50px;
   width: auto;
 }
-
-/* Center Section - Banner */
 .nav-center {
-  flex: 2;
   text-align: center;
 }
-
 .nav-center .nav-banner {
-  max-width: 300px; /* Adjust size as needed */
+  max-width: 300px;
   height: auto;
 }
-
 .nav-right {
-  flex: 1;
   text-align: right;
 }
-
 .nav-right .nav-text {
-  font-size: 18px; /* Increase text size */
-  font-weight: bold; /* Make it bolder */
-  color: #333; /* Keep dark gray for readability */
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
   text-decoration: none;
-  letter-spacing: 0.5px; /* Slightly improve spacing */
-  text-transform: uppercase; /* Optional: Makes text uppercase */
+  text-transform: uppercase;
   transition: color 0.3s ease, transform 0.2s ease-in-out;
   font-family: 'Proxima Nova', sans-serif;
 }
-
 .nav-right .nav-text:hover {
-  color: #E27D30; /* Change to brand color on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  color: #E27D30;
+  transform: scale(1.05);
 }
 
 

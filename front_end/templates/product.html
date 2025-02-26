@@ -244,6 +244,7 @@
     display: none;
 }
 
+/* ✅ Related Products Section - Minimal & Modern */
 .related-products {
     margin-top: 50px;
     padding: 20px;
@@ -251,20 +252,29 @@
 }
 
 .related-title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 20px;
+    color: black;
 }
 
 .related-container {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
 .related-card {
-    width: 200px;
+    width: 250px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.related-card:hover {
+    transform: scale(1.05);
 }
 
 .related-card img {
@@ -273,14 +283,24 @@
 }
 
 .related-card h3 {
-    font-size: 14px;
-    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    margin: 8px 0;
 }
 
 .related-card .price {
     font-size: 16px;
     font-weight: bold;
+    color: black;
 }
+
+.related-card .promo-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}
+
     </style>
 </head>
 <body>
