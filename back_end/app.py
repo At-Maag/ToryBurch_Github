@@ -62,6 +62,18 @@ def get_product_by_id():
         return jsonify(product)
     return jsonify({"error": "Product not found"}), 404
 
+@app.route('/get_related_products', methods=['GET'])
+def get_related_products():
+    bag_type = request.args.get('bag-type')
+    exclude_style_number = request.args.get('exclude')
+
+    related_products = [
+        p for p in products
+        if p.get("bag-type") == bag_type and str(p.get("style-number")) != exclude_style_number
+    ]
+
+    return jsonify(related_products)
+
 
 # 🌍 API: Get all products
 @app.route('/get_products')

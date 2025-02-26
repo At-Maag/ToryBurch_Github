@@ -291,9 +291,10 @@
                     viewAllButton.classList.add("view-all-container");
     
                     viewAllButton.innerHTML = `
-                        <button class="view-all-btn" onclick="toggleCategory('${category}')">
-                            ${expandedCategories[category] ? "COLLAPSE " : "VIEW ALL "} ${category.toUpperCase()}
-                        </button>
+                        <button class="view-all-btn" data-category="${category}">
+    ${expandedCategories[category] ? "COLLAPSE " : "VIEW ALL "} ${category.toUpperCase()}
+</button>
+
                     `;
     
                     categories[category].appendChild(viewAllButton);
@@ -350,6 +351,59 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error("Error loading products:", error));
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    document.body.addEventListener("click", function (event) {
+        if (event.target.classList.contains("view-all-btn")) {
+            let category = event.target.getAttribute("data-category");
+            expandedCategories[category] = !expandedCategories[category];
+
+            fetch('/get_products')
+                .then(response => response.json())
+                .then(data => {
+                    displayProducts(data);
+                })
+                .catch(error => console.error("Error fetching products:", error));
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.addEventListener("click", function (event) {
+        if (event.target.classList.contains("view-all-btn")) {
+            let category = event.target.getAttribute("data-category");
+            let categoryElement = document.getElementById(category.toLowerCase().replace(" ", "-") + "-container");
+
+            if (categoryElement) {
+                // Save the current scroll position before expanding
+                if (!expandedCategories[category]) {
+                    expandedCategories[category] = true;
+                    sessionStorage.setItem("scrollPosition", window.scrollY); // Store scroll position
+                } else {
+                    // Scroll back to the stored position when collapsing
+                    expandedCategories[category] = false;
+                    let savedPosition = sessionStorage.getItem("scrollPosition");
+                    if (savedPosition !== null) {
+                        window.scrollTo({
+                            top: parseInt(savedPosition),
+                            behavior: "smooth"
+                        });
+                    }
+                }
+
+                // Fetch and update products
+                fetch('/get_products')
+                    .then(response => response.json())
+                    .then(data => {
+                        displayProducts(data);
+                    })
+                    .catch(error => console.error("Error fetching products:", error));
+            }
+        }
+    });
+});
+
+
     </script>
      
 </body>

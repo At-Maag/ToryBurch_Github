@@ -399,60 +399,40 @@ document.addEventListener("DOMContentLoaded", function () {
                 promo.style.display = "inline-block";
             }
 
-            if (product["rating"] !== null && product["rating"] !== undefined) {
-                let ratingContainer = document.getElementById("product-rating");
-                let stars = document.getElementById("stars");
-                let ratingNumber = document.getElementById("rating-number");
-
-                let ratingValue = Math.round(product["rating"]);
-                stars.innerHTML = "★".repeat(ratingValue);
-                ratingNumber.textContent = `(${product["rating"]})`;
-
-                ratingContainer.classList.remove("hidden");
-            } else {
-                document.getElementById("product-rating").classList.add("hidden");
-            }
-
-            // ✅ Populate Details Section Dynamically
-            let detailsList = document.getElementById("product-details");
-            detailsList.innerHTML = "";
-
-            let detailsKeys = [
-                "dimension", "material", "closure-type", "strap",
-                "num-of-pockets", "dust-bag", "bag-size", "bag-type"
-            ];
-
-            detailsKeys.forEach(key => {
-                if (product[key] && product[key] !== null) { 
-                    let listItem = document.createElement("li");
-                    listItem.textContent = product[key];
-                    detailsList.appendChild(listItem);
-                }
-            });
-
-            // ✅ Fetch Related Products
-            fetch(`/get_related_products?style-number=${styleNumber}`)
+            // Fetch Related Products
+            fetch(`/get_related_products?bag-type=${encodeURIComponent(product["bag-type"])}&exclude=${styleNumber}`)
                 .then(response => response.json())
                 .then(relatedProducts => {
                     let relatedContainer = document.getElementById("related-products");
-                    relatedContainer.innerHTML = "";
+                    relatedContainer.innerHTML = ""; // Clear existing content
 
                     relatedProducts.slice(0, 4).forEach(related => {
                         let productCard = document.createElement("div");
                         productCard.classList.add("related-card");
 
-                        productCard.innerHTML = `
-                            <a href="product.html?style-number=${related['style-number']}&color-code=${related['color-code']}">
-                                <img src="${related['product-img']}" alt="${related['name']}">
-                            </a>
-                            <h3>${related["name"]}</h3>
-                            <p class="price">${related["price"]}</p>
-                        `;
+                        let link = document.createElement("a");
+                        link.href = `product.html?style-number=${related["style-number"]}&color-code=${related["color-code"]}`;
 
+                        let img = document.createElement("img");
+                        img.src = related["product-img"];
+                        img.alt = related["name"];
+
+                        let title = document.createElement("h3");
+                        title.textContent = related["name"];
+
+                        let price = document.createElement("p");
+                        price.classList.add("price");
+                        price.textContent = related["price"];
+
+                        link.appendChild(img);
+                        productCard.appendChild(link);
+                        productCard.appendChild(title);
+                        productCard.appendChild(price);
                         relatedContainer.appendChild(productCard);
                     });
                 });
-        });
+        })
+        .catch(error => console.error("Error fetching product details:", error));
 });
 
 // ✅ Toggle Function for Description & Details
