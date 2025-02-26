@@ -39,5 +39,14 @@ resource "aws_internet_gateway" "igw" {
   })
 }
 
+#public subnet route table  
+resource "aws_route_table" "public-route-table" {
+  vpc_id = aws_vpc.main-vpc.id
+
+  #add custom tags
+  tags = merge(var.tags, {
+    Name = "ToryBurch-public-route-table"
+  })
+}
 
 
