@@ -30,5 +30,14 @@ resource "aws_subnet" "private-subnet" {
   })
 }
 
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.main-vpc.id
+
+  #add custom tags
+  tags = merge(var.tags, {
+    Name = "ToryBurch-igw"
+  })
+}
+
 
 
