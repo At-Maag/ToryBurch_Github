@@ -62,124 +62,139 @@ document.getElementById('lookup-form').addEventListener('submit', function(event
     }
 }
   
-  document.addEventListener("DOMContentLoaded", async function () {
-      const filterContainer = document.getElementById("filter-options");
-  
-      try {
+document.addEventListener("DOMContentLoaded", async function () {
+    try {
         let response = await fetch("/get_products");
         window.allProducts = await response.json();
 
-        // ✅ Ensure `allProducts` is available before loading customer data
-        console.log("Products loaded:", window.allProducts);
-  
-          let categories = new Set();
-          products.forEach(product => {
-              let bagType = product["bag-type"] || "Other Bags";
-              bagType = bagType.replace("|", "").trim();
-              categories.add(bagType);
-          });
-  
-          let sortedCategories = Array.from(categories).filter(c => c !== "Other Bags").sort();
-          sortedCategories.push("Other Bags"); // Keep "Other Bags" at the bottom
-  
-          filterContainer.innerHTML = "";  
-  
-          // Create "All" checkbox (default checked)
-          let allLabel = document.createElement("label");
-          allLabel.style.display = "block";
-          let allCheckbox = document.createElement("input");
-          allCheckbox.type = "checkbox";
-          allCheckbox.value = "All";
-          allCheckbox.checked = true;  
-          allCheckbox.addEventListener("change", function () {
-              if (this.checked) {
-                  selectAll();
-              }
-          });
-          allLabel.appendChild(allCheckbox);
-          allLabel.append(" All");
-          filterContainer.appendChild(allLabel);
-  
-          let checkboxes = [];
-  
-          sortedCategories.forEach(category => {
-              let label = document.createElement("label");
-              label.style.display = "block";
-  
-              let checkbox = document.createElement("input");
-              checkbox.type = "checkbox";
-              checkbox.name = "bag-filter";
-              checkbox.value = category;
-              checkbox.checked = (category === "All" || category === "Other Bags");  // Default check both
-  
-              checkbox.addEventListener("change", function () {
-                  handleCategorySelection();
-              });
-  
-              label.appendChild(checkbox);
-              label.append(` ${category}`);
-              filterContainer.appendChild(label);
-              checkboxes.push(checkbox);
-          });
-  
-          function selectAll() {
-              checkboxes.forEach(checkbox => checkbox.checked = false);
-              allCheckbox.checked = true;
-              filterProducts();
-          }
-  
-          function handleCategorySelection() {
-            let checkboxes = document.querySelectorAll('input[name="bag-filter"]');
-            let checkedBoxes = Array.from(checkboxes).filter(cb => cb.checked);
-        
-            if (checkedBoxes.length === 0) {
-                // ✅ If nothing is selected, reselect "All" and "Other Bags"
-                checkboxes.forEach(cb => {
-                    if (cb.value === "All" || cb.value === "Other Bags") {
-                        cb.checked = true;
-                    }
-                });
+        console.log("✅ Products loaded:", window.allProducts);
+
+        let categories = new Set();
+        window.allProducts.forEach(product => {
+            let bagType = product["bag-type"] ? product["bag-type"].trim() : "Other Bags"; // ✅ Only null `bag-type` goes to "Other Bags"
+            categories.add(bagType);
+        });
+
+        updateFilterOptions(categories);
+    } catch (error) {
+        console.error("❌ Error loading products:", error);
+    }
+});
+
+/* ✅ Function to Populate Filter Options */
+function updateFilterOptions(bagTypes) {
+    const filterContainer = document.getElementById("filter-options");
+    filterContainer.innerHTML = "";  
+
+    // ✅ Always add "All" checkbox first
+    let allLabel = createFilterCheckbox("All", true, handleCategorySelection);
+    filterContainer.appendChild(allLabel);
+
+    let sortedBagTypes = Array.from(bagTypes).filter(c => c !== "Other Bags").sort();
+    sortedBagTypes.push("Other Bags"); // ✅ Ensure "Other Bags" stays at the bottom
+
+    sortedBagTypes.forEach(category => {
+        let categoryLabel = createFilterCheckbox(category, category === "Other Bags", handleCategorySelection);
+        filterContainer.appendChild(categoryLabel);
+    });
+}
+
+/* ✅ Function to Create a Checkbox */
+function createFilterCheckbox(value, isChecked, eventHandler) {
+    let label = document.createElement("label");
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "bag-filter";
+    checkbox.value = value;
+    checkbox.checked = isChecked;
+
+    checkbox.addEventListener("change", eventHandler);
+
+    label.appendChild(checkbox);
+    label.append(` ${value}`);
+    return label;
+}
+
+/* ✅ Function to Handle Category Selection */
+function handleCategorySelection() {
+    let allCheckbox = document.querySelector('input[value="All"]');
+    let otherBagsCheckbox = document.querySelector('input[value="Other Bags"]');
+    let categoryCheckboxes = document.querySelectorAll('input[name="bag-filter"]:not([value="All"])');
+
+    let selectedCategories = Array.from(categoryCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
+
+    // ✅ If selecting a category, auto-deselect "All"
+    if (selectedCategories.length > 0) {
+        allCheckbox.checked = false;
+    }
+
+    // ✅ If "All" is selected, deselect everything else except "Other Bags"
+    if (allCheckbox.checked) {
+        categoryCheckboxes.forEach(cb => cb.checked = false);
+        otherBagsCheckbox.checked = true;
+    }
+
+    // ✅ Ensure "Other Bags" remains checked ONLY IF there are products with null `bag-type`
+    let hasNullBagTypes = window.allProducts.some(p => !p["bag-type"]);
+    if (!hasNullBagTypes) {
+        otherBagsCheckbox.checked = false;
+    }
+
+    // ✅ If no categories are selected, reset to "All" and "Other Bags"
+    if (!allCheckbox.checked && selectedCategories.length === 0) {
+        allCheckbox.checked = true;
+        otherBagsCheckbox.checked = hasNullBagTypes;
+    }
+
+    filterProducts(); // ✅ Apply filter after selection change
+}
+
+/* ✅ Function to Filter the Purchase History Table */
+function filterProducts() {
+    let selectedCategories = new Set();
+    let allCheckbox = document.querySelector('input[value="All"]');
+    let checkboxes = document.querySelectorAll('input[name="bag-filter"]:checked');
+
+    if (allCheckbox.checked) {
+        selectedCategories.add("All");  
+    } else {
+        checkboxes.forEach(cb => {
+            if (cb.value !== "All") {
+                selectedCategories.add(cb.value);
             }
-        
-            filterProducts(); // ✅ Make sure filtering happens immediately
+        });
+    }
+
+    let rows = document.querySelectorAll("#purchase-history-body tr");
+
+    rows.forEach(row => {
+        let styleNumberCell = row.querySelector("td:first-child");
+        if (!styleNumberCell) return;
+
+        // ✅ Extract the base style number (ignoring color code)
+        let fullStyleNumber = styleNumberCell.textContent.trim();
+        let baseStyleNumber = fullStyleNumber.includes('-') ? fullStyleNumber.split('-')[0] : fullStyleNumber;
+
+        // ✅ Find matching product using base style number
+        let productMatch = window.allProducts.find(p => 
+            p["style-number"].toString() === baseStyleNumber
+        );
+
+        let bagType = productMatch && productMatch["bag-type"] 
+            ? productMatch["bag-type"].trim() 
+            : "Other Bags"; // ✅ Only null bag-types go to "Other Bags"
+
+        // ✅ Apply the filter based on bag-type only
+        if (selectedCategories.has("All") || selectedCategories.has(bagType)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
         }
-  
-          function filterProducts() {
-              let selectedCategories = new Set();
-              if (allCheckbox.checked) {
-                  selectedCategories.add("All");  // ✅ Ensure "All" is handled
-              } else {
-                  checkboxes.forEach(cb => {
-                      if (cb.checked) {
-                          selectedCategories.add(cb.value);
-                      }
-                  });
-              }
-  
-              let rows = document.querySelectorAll("#purchase-history-body tr");
-  
-              rows.forEach(row => {
-                  let categoryCell = row.querySelector("td:nth-child(3)");  // Adjust based on table structure
-                  if (!categoryCell) return;
-  
-                  let bagType = categoryCell.textContent.trim();
-                  if (selectedCategories.has("All") || selectedCategories.has(bagType)) {
-                      row.style.display = "";
-                  } else {
-                      row.style.display = "none";
-                  }
-              });
-          }
-  
-          // Initial filter to show "All" at first
-          filterProducts();
-  
-      } catch (error) {
-          console.error("Error loading bag type data:", error);
-      }
-  });
-  
-  
+    });
+
+    sortTable(2, 'date', true); // ✅ Ensure sorting is applied after filtering
+}
+
   function handleFilterSelection(category) {
       let allCheckbox = document.querySelector('input[name="bag-filter"][value="All"]');
       let checkboxes = document.querySelectorAll('input[name="bag-filter"]');
@@ -604,34 +619,6 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   });
   
-  function filterProducts() {
-    let selectedCategories = new Set();
-    let checkboxes = document.querySelectorAll("input[name='bag-filter']:checked");
-
-    checkboxes.forEach(checkbox => {
-        selectedCategories.add(checkbox.value);
-    });
-
-    let rows = document.querySelectorAll("#purchase-history-body tr");
-
-    rows.forEach(row => {
-        let styleNumberCell = row.querySelector("td:first-child");
-        if (!styleNumberCell) return;
-
-        let styleNumber = styleNumberCell.textContent.trim();
-        let productMatch = window.allProducts.find(p => p["style-number"].toString() === styleNumber);
-        let bagType = productMatch ? (productMatch["bag-type"] || "Other Bags").replace("|", "").trim() : "Other Bags";
-
-        if (selectedCategories.has("All") || selectedCategories.has(bagType)) {
-            row.style.display = "";
-        } else {
-            row.style.display = "none";
-        }
-    });
-
-    // ✅ Ensure sorting is applied after filtering
-    sortTable(2, 'date', true);
-}
 
 
   function handleSelectAll(isChecked) {
@@ -645,22 +632,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateFilterOptions(bagTypes) {
     const filterContainer = document.getElementById("filter-options");
-    filterContainer.innerHTML = ""; // ✅ Clear existing filters
+    filterContainer.innerHTML = "";  
 
     // ✅ Always add "All" checkbox first
     let allLabel = document.createElement("label");
-    allLabel.style.display = "block";
     let allCheckbox = document.createElement("input");
     allCheckbox.type = "checkbox";
     allCheckbox.value = "All";
     allCheckbox.checked = true;  
-    allCheckbox.addEventListener("change", function () {
-        if (this.checked) {
-            checkboxes.forEach(checkbox => checkbox.checked = false);
-            allCheckbox.checked = true;
-        }
-        filterProducts();
-    });
+    allCheckbox.addEventListener("change", handleCategorySelection);
     allLabel.appendChild(allCheckbox);
     allLabel.append(" All");
     filterContainer.appendChild(allLabel);
@@ -670,22 +650,17 @@ document.addEventListener("DOMContentLoaded", function() {
     let sortedBagTypes = Array.from(bagTypes)
         .map(type => type.replace("|", "").trim())
         .filter(c => c !== "Other Bags").sort();
-    sortedBagTypes.push("Other Bags"); // ✅ Ensure "Other Bags" stays at the bottom
+    sortedBagTypes.push("Other Bags"); 
 
     sortedBagTypes.forEach(category => {
         let label = document.createElement("label");
-        label.style.display = "block";
-
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.name = "bag-filter";
         checkbox.value = category;
-        checkbox.checked = (category === "All" || category === "Other Bags"); // ✅ Default check
+        checkbox.checked = (category === "All" || category === "Other Bags");
 
-        // ✅ Attach event listener to immediately update filter when clicked
-        checkbox.addEventListener("change", function () {
-            handleCategorySelection();
-        });
+        checkbox.addEventListener("change", handleCategorySelection);
 
         label.appendChild(checkbox);
         label.append(` ${category}`);
@@ -693,3 +668,4 @@ document.addEventListener("DOMContentLoaded", function() {
         checkboxes.push(checkbox);
     });
 }
+

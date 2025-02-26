@@ -206,7 +206,6 @@ body {
   text-align: center;
 }
 
-
 /* ✅ Triangle should always be on the right */
 .expand-btn .triangle {
   margin-left: 8px; /* Moves it to the right side */
