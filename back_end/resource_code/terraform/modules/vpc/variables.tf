@@ -23,15 +23,17 @@ variable "tags" {
   default     = {}
 }
 
-variable "public_subnet_cidr_block" {
-  description = "The CIDR block for the public subnet"
-  type        = string
-  default     = "10.16.0.0/20"
-}
-variable "availability_zone" {
+
+variable "availability_zone-1" {
   description = "The availability zone for the public subnet"
   type        = string
   default     = "us-west-2a"
+}
+
+variable "availability_zone-2" {
+  description = "The availability zone for the public subnet"
+  type        = string
+  default     = "us-west-2b"
 }
 
 variable "map_public_ip_on_launch" {
@@ -40,11 +42,7 @@ variable "map_public_ip_on_launch" {
   default     = true
 }
 
-variable "private_subnet_cidr_block" {
-  description = "The CIDR block for the private subnet"
-  type        = string
-  default     = "10.16.16.0/20"
-}
+
 
 
 
