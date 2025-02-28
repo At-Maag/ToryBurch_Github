@@ -43,6 +43,19 @@ resource "aws_subnet" "private-subnet-1" {
   })
 }
 
+resource "aws_subnet" "private-subnet-2" {
+  vpc_id     = aws_vpc.main-vpc.id
+  cidr_block = cidrsubnet(aws_vpc.main-vpc.cidr_block, 4, 3) #10.16.48.0/2
+
+  availability_zone       = var.availability_zone-2
+  map_public_ip_on_launch = false
+
+  #add custom tags
+  tags = merge(var.tags, {
+    Name = "ToryBurch-private-subnet-2b"
+  })
+}
+
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main-vpc.id
 
