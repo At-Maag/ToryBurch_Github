@@ -20,6 +20,28 @@ resource "aws_subnet" "public-subnet-1" {
   })
 }
 
+resource "aws_instance" "web_server-1" {
+  ami                         = "ami-027951e78de46a00e" # Ubuntu 20.04 AMI 
+  instance_type               = "t2.micro"
+  subnet_id                   = aws_subnet.public-subnet-1.id
+  associate_public_ip_address = true
+  vpc_security_group_ids      = [aws_security_group.web_server_sg.id]
+  user_data                   = <<-EOF
+                                #!/bin/bash
+                                sudo yum update -y
+                                sudo yum install httpd -y
+                                sudo systemctl start httpd
+                                sudo bash -c 'echo Your very first web server > /var/www/html/index.html'
+                                EOF
+
+  tags = merge(var.tags, {
+    Name = "ToryBurch-web-server-1"
+  })
+
+}
+
+
+
 resource "aws_subnet" "public-subnet-2" {
   vpc_id                  = aws_vpc.main-vpc.id
   cidr_block              = cidrsubnet(aws_vpc.main-vpc.cidr_block, 4, 2) #10.16.32.0/20
