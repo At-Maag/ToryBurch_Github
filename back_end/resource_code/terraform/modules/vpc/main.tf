@@ -37,9 +37,40 @@ resource "aws_instance" "web_server-1" {
   tags = merge(var.tags, {
     Name = "ToryBurch-web-server-1"
   })
-
 }
 
+# create security group for web_server-1
+resource "aws_security_group" "web_server_sg" {
+  name        = "web_server_sg"
+  description = "Allow HTTP traffic"
+  vpc_id      = aws_vpc.main-vpc.id
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  #add port 22
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = merge(var.tags, {
+    Name = "ToryBurch-web-server-sg"
+  })
+}
 
 
 resource "aws_subnet" "public-subnet-2" {
