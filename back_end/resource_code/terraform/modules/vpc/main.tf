@@ -3,7 +3,9 @@ resource "aws_vpc" "main-vpc" {
   enable_dns_hostnames = var.enable_dns_hostnames
   enable_dns_support   = var.enable_dns_support
 
-  tags = var.tags # this is a map of tags
+  tags = {
+    Name = "TonyB_VPC"
+  } # this is a map of tags
 }
 
 resource "aws_subnet" "public-subnet-1" {
@@ -32,7 +34,7 @@ resource "aws_subnet" "public-subnet-2" {
 
 resource "aws_subnet" "private-subnet-1" {
   vpc_id     = aws_vpc.main-vpc.id
-  cidr_block = cidrsubnet(aws_vpc.main-vpc.cidr_block, 4, 1) #10.16.16.0/2
+  cidr_block = cidrsubnet(aws_vpc.main-vpc.cidr_block, 4, 1) #10.16.16.0/20
 
   availability_zone       = var.availability_zone-1
   map_public_ip_on_launch = false
@@ -45,16 +47,16 @@ resource "aws_subnet" "private-subnet-1" {
 
 resource "aws_subnet" "private-subnet-2" {
   vpc_id     = aws_vpc.main-vpc.id
-  cidr_block = cidrsubnet(aws_vpc.main-vpc.cidr_block, 4, 3) #10.16.48.0/2
+  cidr_block = cidrsubnet(aws_vpc.main-vpc.cidr_block, 4, 3) #10.16.48.0/20
 
   availability_zone       = var.availability_zone-2
   map_public_ip_on_launch = false
 
   #add custom tags
-  tags = merge(var.tags, {
+  tags = {
     Name = "ToryBurch-private-subnet-2b"
-  })
-}
+  }
+}"
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main-vpc.id
