@@ -106,6 +106,7 @@ def get_product():
     return jsonify(product) if product else ('Not Found', 404)
 
 # 🔎 CUSTOMER LOOKUP FUNCTION
+
 @app.route('/lookup', methods=['POST'])
 def lookup_customer():
     query = request.form.get('name', '').strip().lower()
@@ -115,79 +116,67 @@ def lookup_customer():
     customers = load_json(CUSTOMERS_FILE)
     purchase_history = load_json(PURCHASE_HISTORY_FILE)
 
+    matched_customers = [c for c in customers
+                         if query == c.get('customer_id', '').lower() or
+                         query in f"{c.get('first_name', '')} {c.get('last_name', '')}".lower()]
+
+    if not matched_customers and any(ph['customer_id'] == query for ph in purchase_history):
+        matched_customers.append({
+            'customer_id': query,
+            'first_name': 'N/A',
+            'last_name': '',
+            'email': 'N/A',
+            'phone_number': 'N/A'
+        })
+
     result = []
-    for customer in customers:
-        full_name = f"{customer['first_name']} {customer['last_name']}".lower()
-        if query == customer['customer_id'] or query in full_name:
-            customer_purchases = []
-            grouped_purchases = defaultdict(list)
-
-            for h in purchase_history:
-                if h['customer_id'] == customer['customer_id']:
-                    style_number = h['product_id'].split('-')[0]  
-
-                    # ✅ Find the product and assign "Other Bags" if `bag-type` is missing
-                    # ✅ Ensure we get the correct product based on style_number
-                    product_info = next((p for p in products if str(p.get("style-number", "")) == style_number), None)
-
-                    # ✅ Prevent overwriting product names with incorrect data
-                    if product_info:
-                        product_name = product_info.get("name", f"Unknown Product ({style_number})")
-                    else:
-                        product_name = f"Unknown Product ({style_number})"
-                    bag_type = product_info.get("bag-type", "Other Bags") if product_info else "Other Bags"
-
-                    try:
-                        raw_date = h.get("date", "Unknown Date").strip()
-                        formatted_date = datetime.strptime(raw_date, "%m/%d/%Y").strftime("%Y-%m-%d") \
-                            if "/" in raw_date else datetime.strptime(raw_date, "%Y-%m-%d").strftime("%Y-%m-%d")
-                    except ValueError:
-                        formatted_date = "Unknown Date"
-
-                    grouped_purchases[style_number].append({
-                        "purchase_date": formatted_date,
-                        "product_id": h.get("product_id"),
-                        "quantity": h.get("quantity", 0),
-                        "total_amount": h.get("total_amount", "$0.00"),
-                        "store_location": h.get("store_location", "Unknown"),
-                        "payment_method": h.get("payment_method", "Unknown"),
-                        "bag_type": bag_type  # ✅ Assign bag-type including "Other Bags"
-                    })
-
-            for style_number, purchases in grouped_purchases.items():
-                total_quantity = sum(p["quantity"] for p in purchases)
-                total_amount = sum(float(p["total_amount"].replace("$", "")) for p in purchases)
-
-                # ✅ Get the correct product name for this style_number
-                correct_product = next((p for p in products if str(p.get("style-number", "")) == style_number), None)
-                correct_product_name = correct_product["name"] if correct_product else f"Unknown Product ({style_number})"
-
-                # ✅ If there's only 1 purchase, include the color code; otherwise, just show the style number
-                color_code = purchases[0]["product_id"].split('-')[1] if len(purchases) == 1 else None
-                display_style_number = f"{style_number}-{color_code}" if color_code else style_number
-
-                customer_purchases.append({
-                    "style_number": display_style_number,  # ✅ Shows `style_number-color_code` for single items
-                    "product_name": correct_product_name,  # ✅ Now assigns the correct name
-                    "bag_type": purchases[0]["bag_type"],
-                    "total_quantity": total_quantity,
-                    "total_amount": f"${total_amount:.2f}",
-                    "purchases": purchases
+    for customer in matched_customers:
+        grouped_purchases = defaultdict(list)
+        for h in purchase_history:
+            if h['customer_id'] == customer['customer_id']:
+                style_number = h['product_id'].split('-')[0]
+                product_info = next((p for p in products if str(p.get('style-number', '')) == style_number), None)
+                bag_type = product_info.get('bag-type', 'Other Bags') if product_info else 'Other Bags'
+                raw_date = h.get('date', '').strip()
+                try:
+                    formatted_date = datetime.strptime(raw_date, '%m/%d/%Y').strftime('%Y-%m-%d') if '/' in raw_date else datetime.strptime(raw_date, '%Y-%m-%d').strftime('%Y-%m-%d')
+                except ValueError:
+                    formatted_date = 'Unknown Date'
+                grouped_purchases[style_number].append({
+                    'purchase_date': formatted_date,
+                    'product_id': h.get('product_id'),
+                    'quantity': h.get('quantity', 0),
+                    'total_amount': h.get('total_amount', '$0.00'),
+                    'store_location': h.get('store_location', 'Unknown'),
+                    'payment_method': h.get('payment_method', 'Unknown'),
+                    'bag_type': bag_type
                 })
 
-            customer_info = {
-                "customer_id": customer.get("customer_id", "N/A"),
-                "first_name": customer.get("first_name", "N/A"),
-                "last_name": customer.get("last_name", "N/A"),
-                "email": customer.get("email", "N/A"),
-                "phone": customer.get("phone_number", "N/A"),
-                "purchase_history": customer_purchases
-            }
+        customer_purchases = []
+        for style_number, purchases in grouped_purchases.items():
+            total_quantity = sum(p['quantity'] for p in purchases)
+            total_amount = sum(float(p['total_amount'].replace('$', '')) for p in purchases)
+            product_info = next((p for p in products if str(p.get('style-number', '')) == style_number), None)
+            product_name = product_info['name'] if product_info else f'Unknown Product ({style_number})'
+            customer_purchases.append({
+                'style_number': style_number,
+                'product_name': product_name,
+                'bag_type': purchases[0]['bag_type'],
+                'total_quantity': total_quantity,
+                'total_amount': f"${total_amount:.2f}",
+                'purchases': purchases
+            })
 
-            result.append(customer_info)
+        result.append({
+            'customer_id': customer.get('customer_id', 'N/A'),
+            'first_name': customer.get('first_name', 'N/A'),
+            'last_name': customer.get('last_name', 'N/A'),
+            'email': customer.get('email', 'N/A'),
+            'phone': customer.get('phone_number', 'N/A'),
+            'purchase_history': customer_purchases
+        })
 
     return jsonify(result=result)
-
 # 🔍 CUSTOMER SEARCH AUTOCOMPLETE
 @app.route('/autocomplete', methods=['GET'])
 def autocomplete():
