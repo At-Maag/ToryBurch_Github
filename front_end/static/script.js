@@ -359,34 +359,30 @@ document.addEventListener("DOMContentLoaded", function() {
   // Function to populate purchase history correctly
   function populatePurchaseHistory(purchaseHistory) {
     const tableBody = document.getElementById('purchase-history-body');
-    tableBody.innerHTML = ''; // Clear previous content
+    tableBody.innerHTML = '';
 
     if (!purchaseHistory || purchaseHistory.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="5" style="text-align: center;">No purchase history found</td></tr>';
+        tableBody.innerHTML = '<tr><td colspan="5" style="text-align: center;">No data available</td></tr>';
         return;
     }
 
     purchaseHistory.forEach((purchase, index) => {
+        let latestDate = purchase.purchases[0]?.purchase_date || 'N/A';
         let row = document.createElement('tr');
         row.innerHTML = `
             <td class="product-number">${purchase.style_number}</td>
             <td class="product-name">${purchase.product_name}</td>
-            <td>${purchase.purchases.length > 1 
-    ? `<button class="expand-btn" onclick="toggleDetails(${index}, this)">Expand <span class="triangle">▼</span></button>` 
-    : purchase.purchases[0]?.purchase_date || 'N/A'}
-</td>
+            <td>${latestDate} <button class="expand-btn" onclick="toggleDetails(${index}, this)">Expand <span class="triangle">▼</span></button></td>
             <td>${purchase.total_quantity}</td>
             <td>${purchase.total_amount}</td>
         `;
         tableBody.appendChild(row);
 
-        /* ✅ Compact Sub-Table (Expand Section) */
-        if (purchase.purchases.length > 1) {
-            let subTableRow = document.createElement('tr');
-            subTableRow.id = `details-${index}`;
-            subTableRow.classList.add("sub-table-row", "hidden");
+        let subTableRow = document.createElement('tr');
+        subTableRow.id = `details-${index}`;
+        subTableRow.classList.add("sub-table-row", "hidden");
 
-            subTableRow.innerHTML = `
+        subTableRow.innerHTML = `
                 <td colspan="5">
                     <table class="sub-table">
                         <thead>
@@ -414,8 +410,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </table>
                 </td>
             `;
-            tableBody.appendChild(subTableRow);
-        }
+        tableBody.appendChild(subTableRow);
     });
 }
 
