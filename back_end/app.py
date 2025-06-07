@@ -114,13 +114,14 @@ def lookup_customer():
         return jsonify(result=[])
 
     customers = load_json(CUSTOMERS_FILE)
+    print(f"Loading purchase history from {PURCHASE_HISTORY_FILE}")
     purchase_history = load_json(PURCHASE_HISTORY_FILE)
 
     matched_customers = [c for c in customers
-                         if query == c.get('customer_id', '').lower() or
+                         if query == str(c.get('customer_id', '')).lower() or
                          query in f"{c.get('first_name', '')} {c.get('last_name', '')}".lower()]
 
-    if not matched_customers and any(ph['customer_id'] == query for ph in purchase_history):
+    if not matched_customers and any(str(ph.get('customer_id')) == str(query) for ph in purchase_history):
         matched_customers.append({
             'customer_id': query,
             'first_name': 'N/A',
@@ -133,7 +134,8 @@ def lookup_customer():
     for customer in matched_customers:
         grouped_purchases = defaultdict(list)
         for h in purchase_history:
-            if h['customer_id'] == customer['customer_id']:
+            if str(h.get('customer_id')) == str(customer.get('customer_id')):
+                print(f"Matched purchase for customer_id: {h.get('customer_id')}")
                 style_number = h['product_id'].split('-')[0]
                 product_info = next((p for p in products if str(p.get('style-number', '')) == style_number), None)
                 bag_type = product_info.get('bag-type', 'Other Bags') if product_info else 'Other Bags'
